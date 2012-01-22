@@ -1,0 +1,18 @@
+#N canvas 334 148 450 300 10;
+#X obj 11 72 gemwin;
+#X msg 18 5 create \, 1;
+#X msg 18 27 0 \, destroy;
+#X msg 98 27 FSAA 2;
+#X msg 37 47 dimen 320 240;
+#X obj 75 69 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 19 116 \; pd dsp \$1;
+#N canvas 661 91 450 300 dsp 1;
+#X restore 54 193 pd dsp;
+#X obj 51 164 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
