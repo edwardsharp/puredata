@@ -1,0 +1,16 @@
+#N canvas 534 252 450 300 10;
+#X obj 123 120 osc~ 440;
+#X obj 155 206 dac~;
+#X obj 185 124 osc~ 1;
+#X obj 162 167 *~;
+#X msg 284 192 \; pd dsp 1;
+#X obj 273 110 loadbang;
+#X obj 249 234 print Running;
+#X obj 272 148 delay 100;
+#X connect 0 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 3 0 1 1;
+#X connect 5 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 0 6 0;
