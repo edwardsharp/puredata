@@ -1,0 +1,25 @@
+#N canvas 0 22 450 300 10;
+#X msg -123 -66 /1;
+#X msg -122 -36 /toggle;
+#X msg -122 -8 1;
+#X obj -72 -9 t l;
+#X obj -70 24 list prepend;
+#X obj -133 53 list append;
+#X obj -143 13 bng 15 250 50 0 empty empty done 0 -6 0 8 -262144 -1
+-1;
+#X obj -21 -3 bng 15 250 50 0 empty empty clear 0 -6 0 8 -262144 -1
+-1;
+#X obj -133 87 print;
+#X obj -160 -103 loadbang;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 3 0;
+#X connect 4 0 5 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 1;
+#X connect 9 0 0 0;
+#X connect 9 0 1 0;
+#X connect 9 0 2 0;
