@@ -1,0 +1,275 @@
+#N canvas 77 22 542 477 10;
+#X obj 55 38 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 21.4 256;
+#X obj 55 97 print;
+#X text 56 164 ctrl/cmd + e to switch;
+#X text 67 180 between edit (finger cursor);
+#X text 61 196 & play mode (black arrow);
+#X text 57 257 #GOTCHA comments do not use newlines!;
+#X text 51 466 Edit -> Autopatch;
+#X text 50 449 NEW PD FEATURES;
+#X text 59 484 will automatically connect new atoms;
+#X text 59 497 to previously selected one;
+#X text 50 516 Edit -> Magic Glass;
+#X text 61 533 hover over wires to see the signal going through;
+#X text 49 555 Edit -> Perf Mode;
+#X text 62 572 will not be able to close the window;
+#X text 50 591 Edit -> Autotips;
+#X text 56 608 hover over atoms to get help tips in bottom left corner
+of window;
+#X obj 49 928 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 78 924 <-- Bang!;
+#X obj 59 952 bang;
+#X text 94 950 <-- Bang!;
+#X obj 60 1014 print;
+#X msg 73 977 bang;
+#X text 112 976 <-- Bang!;
+#X text 56 234 SHIFT + DRAG to use decimals in number atom;
+#X obj 62 1346 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 53 1230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 75 1280 bang;
+#X msg 91 1309 bang;
+#X obj 62 1365 print BANG!;
+#X obj 75 1255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 62 1616 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 15 256;
+#X obj 65 1585 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1500 1;
+#X obj 62 1635 print SLIDE!;
+#X text 242 1592 right click for properties;
+#X obj 62 2016 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 63 256;
+#X obj 80 1941 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6300 1;
+#X text 64 1855 hot & cold inlets;
+#X obj 62 1975 f;
+#X obj 62 1911 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 87 1909 <-- HOT!;
+#X text 224 1940 <-- COLD!;
+#X text 243 1616 right click for help;
+#X text 236 1286 everything is an object;
+#X text 67 214 (last item on edit menu);
+#X text 56 278 #NOTE every number is a float;
+#X msg 59 2250 bang;
+#X obj 61 2298 f;
+#X obj 61 2327 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 3492 256;
+#X obj 94 2298 + 1;
+#X text 57 2218 STACK OVERFLOW!;
+#X msg 61 2596 bang;
+#X obj 61 2618 f;
+#X obj 61 2647 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 17 256;
+#X text 137 2644 <-- Number2 (can save values when patch is saved \,
+;
+#X obj 94 2618 + 1;
+#X text 59 2556 COOL OFF WITH COLD INLETS!;
+#X text 52 2712 ...but there's probably an object for that;
+#X obj 53 2776 cup;
+#X floatatom 53 2798 5 0 0 0 - - -;
+#X obj 53 2751 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 71 2268 onoz! that's hot!;
+#X text 66 2277 /;
+#X text 161 2658 right click and select init/no init button);
+#X text 101 3455 MOD!;
+#X obj 53 3454 mod 2;
+#X obj 53 3396 cup;
+#X floatatom 53 3418 5 0 0 0 - - -;
+#X obj 53 3371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 60 4784 comment;
+#X floatatom 53 3496 5 0 0 0 - - -;
+#X obj 97 3498 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 97 3532 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 147 3504 HEY \, THAT'S HOT!!;
+#X text 67 3610 ...but what about?;
+#X obj 58 3837 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 191 3798 Hradio!;
+#X msg 74 3371 setbang 0;
+#X text 148 3369 reset!;
+#X obj 58 3802 mod 8;
+#X obj 59 3729 spigot;
+#X obj 92 3706 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 117 3728 flow control on/off;
+#X obj 53 3321 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 53 2976 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 53 3066 cup;
+#X floatatom 53 3088 5 0 0 0 - - -;
+#X obj 53 3041 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 53 3005 metro 1666;
+#X msg 81 3039 0;
+#X text 53 2923 metro (a clock);
+#X obj 53 3345 metro 1000;
+#X text 61 3870 toggle stuff!;
+#X obj 249 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2800 1;
+#X obj 18 4048 select 0 1 2 3 4 5 6 7;
+#X obj 270 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2000 1;
+#X obj 310 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3300 1;
+#X obj 351 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3000 1;
+#X obj 391 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2200 1;
+#X obj 18 4077 f;
+#X obj 34 4102 f;
+#X obj 66 4158 f;
+#X obj 97 4210 f;
+#X obj 129 4258 f;
+#X obj 373 4591 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 1900 1;
+#X obj 290 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3800 1;
+#X obj 330 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3400 1;
+#X obj 371 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3200 1;
+#X obj 50 4132 f;
+#X obj 82 4183 f;
+#X obj 114 4231 f;
+#X obj 38 4584 nbx 2 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 28 256;
+#X obj 38 4626 s \$1-main-pitch;
+#X obj 110 3240 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X obj 110 3260 * 100;
+#X obj 110 3282 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 200 256;
+#X obj 23 4257 t f f b;
+#X obj 39 4282 t f f b;
+#X obj 55 4305 t f f b;
+#X obj 71 4329 t f f b;
+#X obj 87 4353 t f f b;
+#X obj 103 4377 t f f b;
+#X obj 119 4397 t f f b;
+#X obj 137 4419 t f f b;
+#X obj 70 4584 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 34 256;
+#X obj 313 4630 delay 1000;
+#X obj 301 4510 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0
+10 -262144 -1 -1 8600 1;
+#X obj 315 4684 s \$0-bangdelayoff;
+#X obj 247 4557 pipe 1000;
+#X obj 313 4660 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 52 2352 ...with flexability comes responsiblity.;
+#X text 51 2372 you will probabbly make puredata crash at some point
+\, so:;
+#X text 52 2389 SAVE YO FILEZ!;
+#X text 62 2399 SAVE YO FILEZ!;
+#X text 72 2409 SAVE YO FILEZ!;
+#X text 126 3978 SELECT STUFF;
+#X connect 0 0 1 0;
+#X connect 16 0 20 0;
+#X connect 18 0 20 0;
+#X connect 21 0 20 0;
+#X connect 24 0 28 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 0;
+#X connect 27 0 24 0;
+#X connect 29 0 26 0;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 35 0 37 1;
+#X connect 37 0 34 0;
+#X connect 38 0 37 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 46 0 48 0;
+#X connect 48 0 46 0;
+#X connect 50 0 51 0;
+#X connect 51 0 52 0;
+#X connect 51 0 54 0;
+#X connect 54 0 51 1;
+#X connect 57 0 58 0;
+#X connect 59 0 57 0;
+#X connect 64 0 69 0;
+#X connect 64 0 70 0;
+#X connect 64 0 71 0;
+#X connect 65 0 66 0;
+#X connect 66 0 64 0;
+#X connect 66 0 79 0;
+#X connect 67 0 65 0;
+#X connect 74 0 93 0;
+#X connect 76 0 65 0;
+#X connect 78 0 74 0;
+#X connect 79 0 78 0;
+#X connect 80 0 79 1;
+#X connect 82 0 90 0;
+#X connect 83 0 87 0;
+#X connect 84 0 85 0;
+#X connect 86 0 84 0;
+#X connect 87 0 86 0;
+#X connect 88 0 84 0;
+#X connect 90 0 67 0;
+#X connect 92 0 98 1;
+#X connect 93 0 98 0;
+#X connect 93 1 99 0;
+#X connect 93 2 107 0;
+#X connect 93 3 100 0;
+#X connect 93 4 108 0;
+#X connect 93 5 101 0;
+#X connect 93 6 109 0;
+#X connect 93 7 102 0;
+#X connect 94 0 99 1;
+#X connect 95 0 100 1;
+#X connect 96 0 101 1;
+#X connect 97 0 102 1;
+#X connect 98 0 115 0;
+#X connect 99 0 116 0;
+#X connect 100 0 118 0;
+#X connect 101 0 120 0;
+#X connect 102 0 122 0;
+#X connect 103 0 124 1;
+#X connect 104 0 107 1;
+#X connect 105 0 108 1;
+#X connect 106 0 109 1;
+#X connect 107 0 117 0;
+#X connect 108 0 119 0;
+#X connect 109 0 121 0;
+#X connect 110 0 111 0;
+#X connect 112 0 113 0;
+#X connect 113 0 114 0;
+#X connect 114 0 90 1;
+#X connect 115 0 110 0;
+#X connect 115 1 127 0;
+#X connect 115 2 124 0;
+#X connect 116 0 110 0;
+#X connect 116 1 127 0;
+#X connect 116 2 124 0;
+#X connect 117 0 110 0;
+#X connect 117 1 127 0;
+#X connect 117 2 124 0;
+#X connect 118 0 110 0;
+#X connect 118 1 127 0;
+#X connect 118 2 124 0;
+#X connect 119 0 110 0;
+#X connect 119 1 127 0;
+#X connect 119 2 124 0;
+#X connect 120 0 110 0;
+#X connect 120 1 127 0;
+#X connect 120 2 124 0;
+#X connect 121 0 110 0;
+#X connect 121 1 127 0;
+#X connect 121 2 124 0;
+#X connect 122 0 110 0;
+#X connect 122 1 127 0;
+#X connect 122 2 124 0;
+#X connect 124 0 128 0;
+#X connect 125 0 127 1;
+#X connect 127 0 123 0;
+#X connect 128 0 126 0;
