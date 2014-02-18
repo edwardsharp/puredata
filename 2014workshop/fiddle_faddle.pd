@@ -1,0 +1,20 @@
+#N canvas 90 109 450 300 10;
+#X obj 148 80 adc~;
+#X obj 142 122 env~;
+#X obj 121 166 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 44.3431 256;
+#X obj 238 181 autoscale 0 10;
+#X obj 226 235 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 3.27803 256;
+#X obj 133 215 fiddle~;
+#X obj 231 109 fiddle~ 1024 1 20 3;
+#X obj 279 154 phasor~;
+#X obj 341 234 dac~;
+#X obj 228 145 mtof;
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 6 0 9 0;
+#X connect 9 0 7 0;

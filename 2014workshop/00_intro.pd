@@ -1,275 +1,528 @@
-#N canvas 77 22 542 477 10;
-#X obj 55 38 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 21.4 256;
-#X obj 55 97 print;
-#X text 56 164 ctrl/cmd + e to switch;
-#X text 67 180 between edit (finger cursor);
-#X text 61 196 & play mode (black arrow);
-#X text 57 257 #GOTCHA comments do not use newlines!;
-#X text 51 466 Edit -> Autopatch;
-#X text 50 449 NEW PD FEATURES;
-#X text 59 484 will automatically connect new atoms;
-#X text 59 497 to previously selected one;
-#X text 50 516 Edit -> Magic Glass;
-#X text 61 533 hover over wires to see the signal going through;
-#X text 49 555 Edit -> Perf Mode;
-#X text 62 572 will not be able to close the window;
-#X text 50 591 Edit -> Autotips;
-#X text 56 608 hover over atoms to get help tips in bottom left corner
-of window;
-#X obj 49 928 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 78 924 <-- Bang!;
-#X obj 59 952 bang;
-#X text 94 950 <-- Bang!;
-#X obj 60 1014 print;
-#X msg 73 977 bang;
-#X text 112 976 <-- Bang!;
-#X text 56 234 SHIFT + DRAG to use decimals in number atom;
-#X obj 62 1346 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#N canvas 341 41 617 616 10;
+#X obj 16 705 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 53 1230 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 16 763 print;
+#X text 53 225 ctrl/cmd + e to switch;
+#X text 190 225 between edit (finger cursor);
+#X text 55 257 & play mode (black arrow);
+#X text 47 470 Edit -> Autopatch;
+#X text 80 482 will automatically connect new atoms;
+#X text 301 482 to previously selected one;
+#X text 46 505 Edit -> Magic Glass;
+#X text 57 522 hover over wires to see the signal going through;
+#X text 45 537 Edit -> Perf Mode;
+#X text 58 554 will not be able to close the window;
+#X text 46 575 Edit -> Autotips;
+#X text 52 592 hover over atoms to get help tips in bottom left corner
+of window;
+#X obj 23 881 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 33 905 bang;
+#X obj 34 967 print;
+#X msg 47 930 bang;
+#X obj 54 1700 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 222 256;
+#X obj 45 1584 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 75 1280 bang;
-#X msg 91 1309 bang;
-#X obj 62 1365 print BANG!;
-#X obj 75 1255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 67 1634 bang;
+#X msg 83 1663 bang;
+#X obj 54 1719 print BANG!;
+#X obj 67 1609 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 62 1616 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 15 256;
-#X obj 65 1585 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1500 1;
-#X obj 62 1635 print SLIDE!;
-#X text 242 1592 right click for properties;
-#X obj 62 2016 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 63 256;
-#X obj 80 1941 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6300 1;
-#X text 64 1855 hot & cold inlets;
-#X obj 62 1975 f;
-#X obj 62 1911 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 40 1345 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 43 1314 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 40 1364 print SLIDE!;
+#X text 197 1312 right click for properties;
+#X obj 64 3242 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 82 3167 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 28 3086 hot & cold inlets;
+#X obj 64 3201 f;
+#X obj 64 3137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 87 1909 <-- HOT!;
-#X text 224 1940 <-- COLD!;
-#X text 243 1616 right click for help;
-#X text 236 1286 everything is an object;
-#X text 67 214 (last item on edit menu);
-#X text 56 278 #NOTE every number is a float;
-#X msg 59 2250 bang;
-#X obj 61 2298 f;
-#X obj 61 2327 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 3492 256;
-#X obj 94 2298 + 1;
-#X text 57 2218 STACK OVERFLOW!;
-#X msg 61 2596 bang;
-#X obj 61 2618 f;
-#X obj 61 2647 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 17 256;
-#X text 137 2644 <-- Number2 (can save values when patch is saved \,
+#X text 89 3135 <-- HOT!;
+#X text 226 3166 <-- COLD!;
+#X text 198 1336 right click for help;
+#X msg 45 3344 bang;
+#X obj 47 3392 f;
+#X obj 47 3421 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 80 3392 + 1;
+#X text 43 3312 STACK OVERFLOW!;
+#X msg 42 3618 bang;
+#X obj 42 3640 f;
+#X obj 42 3669 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 5 256;
+#X text 118 3666 <-- Number2 (can save values when patch is saved \,
 ;
-#X obj 94 2618 + 1;
-#X text 59 2556 COOL OFF WITH COLD INLETS!;
-#X text 52 2712 ...but there's probably an object for that;
-#X obj 53 2776 cup;
-#X floatatom 53 2798 5 0 0 0 - - -;
-#X obj 53 2751 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 75 3640 + 1;
+#X text 40 3578 COOL OFF WITH COLD INLETS!;
+#X text 33 3719 ...but there's probably an object for that;
+#X obj 34 3783 cup;
+#X floatatom 34 3805 5 0 0 0 - - -;
+#X obj 34 3758 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 71 2268 onoz! that's hot!;
-#X text 66 2277 /;
-#X text 161 2658 right click and select init/no init button);
-#X text 101 3455 MOD!;
-#X obj 53 3454 mod 2;
-#X obj 53 3396 cup;
-#X floatatom 53 3418 5 0 0 0 - - -;
-#X obj 53 3371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X text 57 3362 onoz! that's hot!;
+#X text 52 3371 /;
+#X text 142 3680 right click and select init/no init button);
+#X text 45 4208 MOD!;
+#X obj -3 4207 mod 2;
+#X obj -3 4149 cup;
+#X floatatom -3 4171 5 0 0 0 - - -;
+#X obj -3 4124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 60 4784 comment;
-#X floatatom 53 3496 5 0 0 0 - - -;
-#X obj 97 3498 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X floatatom -3 4249 5 0 0 0 - - -;
+#X obj 41 4251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 97 3532 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 41 4285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 147 3504 HEY \, THAT'S HOT!!;
-#X text 67 3610 ...but what about?;
-#X obj 58 3837 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+#X text 91 4257 HEY \, THAT'S HOT!!;
+#X obj 11 4633 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X text 191 3798 Hradio!;
-#X msg 74 3371 setbang 0;
-#X text 148 3369 reset!;
-#X obj 58 3802 mod 8;
-#X obj 59 3729 spigot;
-#X obj 92 3706 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X text 144 4594 Hradio!;
+#X msg 18 4124 setbang 0;
+#X text 92 4122 reset!;
+#X obj 11 4598 mod 8;
+#X obj 12 4555 spigot;
+#X obj 45 4532 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 117 3728 flow control on/off;
-#X obj 53 3321 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X text 70 4554 flow control on/off;
+#X obj -3 4074 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 53 2976 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 33 3895 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 53 3066 cup;
-#X floatatom 53 3088 5 0 0 0 - - -;
-#X obj 53 3041 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 33 3985 cup;
+#X floatatom 33 4007 5 0 0 0 - - -;
+#X obj 33 3960 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 53 3005 metro 1666;
-#X msg 81 3039 0;
-#X text 53 2923 metro (a clock);
-#X obj 53 3345 metro 1000;
-#X text 61 3870 toggle stuff!;
-#X obj 249 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2800 1;
-#X obj 18 4048 select 0 1 2 3 4 5 6 7;
-#X obj 270 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2000 1;
-#X obj 310 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3300 1;
-#X obj 351 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3000 1;
-#X obj 391 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2200 1;
-#X obj 18 4077 f;
-#X obj 34 4102 f;
-#X obj 66 4158 f;
-#X obj 97 4210 f;
-#X obj 129 4258 f;
-#X obj 373 4591 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 1900 1;
-#X obj 290 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3800 1;
-#X obj 330 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
-#X obj 371 4096 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3200 1;
-#X obj 50 4132 f;
-#X obj 82 4183 f;
-#X obj 114 4231 f;
-#X obj 38 4584 nbx 2 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 28 256;
-#X obj 38 4626 s \$1-main-pitch;
-#X obj 110 3240 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
-#X obj 110 3260 * 100;
-#X obj 110 3282 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
-10 -262144 -1 -1 200 256;
-#X obj 23 4257 t f f b;
-#X obj 39 4282 t f f b;
-#X obj 55 4305 t f f b;
-#X obj 71 4329 t f f b;
-#X obj 87 4353 t f f b;
-#X obj 103 4377 t f f b;
-#X obj 119 4397 t f f b;
-#X obj 137 4419 t f f b;
-#X obj 70 4584 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 34 256;
-#X obj 313 4630 delay 1000;
-#X obj 301 4510 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0
-10 -262144 -1 -1 8600 1;
-#X obj 315 4684 s \$0-bangdelayoff;
-#X obj 247 4557 pipe 1000;
-#X obj 313 4660 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 61 3958 0;
+#X text 30 3870 metro (a clock);
+#X obj -3 4098 metro 1000;
+#X obj 242 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 11 4678 select 0 1 2 3 4 5 6 7;
+#X obj 263 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 303 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 344 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 384 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 11 4707 f;
+#X obj 27 4732 f;
+#X obj 59 4788 f;
+#X obj 90 4840 f;
+#X obj 122 4888 f;
+#X obj 366 5221 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 283 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 323 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 364 4726 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 43 4762 f;
+#X obj 75 4813 f;
+#X obj 107 4861 f;
+#X obj 31 5214 nbx 2 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 31 5256 s \$1-main-pitch;
+#X obj 54 3993 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 54 4013 * 100;
+#X obj 54 4035 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 16 4887 t f f b;
+#X obj 32 4912 t f f b;
+#X obj 48 4935 t f f b;
+#X obj 64 4959 t f f b;
+#X obj 80 4983 t f f b;
+#X obj 96 5007 t f f b;
+#X obj 112 5027 t f f b;
+#X obj 130 5049 t f f b;
+#X obj 63 5214 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 306 5260 delay 1000;
+#X obj 294 5140 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 308 5314 s \$0-bangdelayoff;
+#X obj 240 5187 pipe 1000;
+#X obj 306 5290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 52 2352 ...with flexability comes responsiblity.;
-#X text 51 2372 you will probabbly make puredata crash at some point
+#X text 42 3474 ...with flexability comes responsiblity.;
+#X text 41 3494 you will probabbly make puredata crash at some point
 \, so:;
-#X text 52 2389 SAVE YO FILEZ!;
-#X text 62 2399 SAVE YO FILEZ!;
-#X text 72 2409 SAVE YO FILEZ!;
-#X text 126 3978 SELECT STUFF;
+#X text 42 3511 SAVE YO FILEZ!;
+#X text 52 3521 SAVE YO FILEZ!;
+#X text 62 3531 SAVE YO FILEZ!;
+#X text 180 4675 SELECT STUFF;
+#X text 53 8174 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+_ _ _ _;
+#X text 57 366 RTFM: http://puredata.info/docs && http://en.flossmanuals.net/pure-data/
+;
+#X msg 142 705 print hello;
+#X obj 34 1551 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 55 1549 <-- toggle!;
+#X obj 46 1234 f;
+#X obj 61 1204 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 29 1181 A TYPE MISMATCH!;
+#X obj 62 1061 osc~;
+#X obj 58 1106 print;
+#X text 71 1083 CAN'T CONNECT THESE!;
+#X text 61 1090 /;
+#X text 62 1077 |;
+#X obj 33 3924 metro 666;
+#X obj 129 2953 r foo;
+#X obj 181 2923 s \$0-foo;
+#X obj 182 2953 r \$0-foo;
+#X obj 11 2876 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 28 3005 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 17 2922 send f;
+#X obj 17 2953 receive f;
+#X obj 77 2923 s f;
+#X obj 78 2952 r f;
+#X msg 128 2857 label foo! blammmm;
+#X obj 132 2994 print;
+#X obj 130 2921 s foo;
+#X obj 136 2207 dac~;
+#X obj 213 1880 throw~;
+#X obj 274 1881 catch~;
+#X obj 247 4092 route;
+#X obj 249 4064 line~;
+#X obj 22 4376 route;
+#X obj 78 4373 metro;
+#X obj 78 4404 line;
+#X obj 249 4381 trigger;
+#X text 248 4397 outlet ordering;
+#X obj 252 4504 -;
+#X msg 290 4473 6;
+#X obj 252 4445 t b b;
+#X obj 252 4420 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 252 4538 5 0 0 0 - - -;
+#X msg 252 4474 10;
+#X text 209 257 (last item on edit menu);
+#X obj 19 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 19 228 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 19 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 19 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 474 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 506 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 539 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 15 575 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 18 420 === NEW PD FEATURES ===;
+#X msg 21 31 hello world!;
+#X obj 21 77 print;
+#X text 501 43 Jesse Mejia;
+#X text 502 57 Alex Norman;
+#X text 503 70 Jason Plumb;
+#X text 497 83 Edward Sharp;
+#X text 423 6 PURE DATA WORKSHOP @FLUX;
+#X text 436 24 Sunday \, Feb 23rd \, 2014;
+#X text 23 124 ===== INTRO =====;
+#X obj 142 757 print world;
+#X text 16 663 === Part 1 ===;
+#X obj 16 2663 +;
+#X obj 58 2663 -;
+#X obj 103 2661 *;
+#X obj 140 2660 /;
+#X obj 12 2704 +~;
+#X obj 54 2701 -~;
+#X obj 99 2703 *~;
+#X obj 139 2704 /~;
+#X text 11 1034 Cord types (thick or thin);
+#X text 81 1201 <-- needs a number (float). not a bang!;
+#X text 16 2625 === PART 2 ===;
+#X obj 147 1699 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 222 256;
+#X text 208 1697 number2!;
+#X obj 174 1552 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 200 1663 <-- vslider!;
+#X obj 14 1513 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 146 1510 <-- hradio!;
+#X text 86 929 <-- Bang Message!;
+#X text 68 903 <-- Bang Object!;
+#X text 52 877 <-- Bang Bang!;
+#X text 172 878 SOME THINGS CAN BE CLICKED!;
+#X text 182 902 SOME CANNOT :(;
+#X text 34 1984 MAKE SOME NOISE!;
+#X obj 75 1838 noise~;
+#X obj 19 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 53 164 is my dsp running?;
+#X text 54 317 #GOTCHA comments do not use newlines!;
+#X obj 19 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 254 288 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 53 286 SHIFT + DRAG to use decimals in (;
+#X text 291 286 ) number atom;
+#X text 54 195 audio settings;
+#X obj 332 1120 dac~;
+#X text 334 1027 MAKE SOME NOISE!;
+#X obj 336 1057 noise~;
+#X text 247 1086 (hook 'em up!);
+#X text 328 1072 /;
+#X text 325 1103 |;
+#X obj 139 4372 spigot;
+#X obj 314 4379 t b b;
+#X text 6 4334 === Part 3 ===;
+#X obj 22 4410 pack;
+#X obj 21 4439 select;
+#X text 8 6207 === Part 4 ===;
+#X obj 21 6312 dac~;
+#X obj 65 6312 adc~;
+#X obj 23 6347 osc~;
+#X obj 68 6344 phasor~;
+#X obj 130 6343 sig~;
+#X obj 24 6374 env~;
+#X obj 21 6409 lop~;
+#X obj 67 6411 hip~;
+#X obj 106 6412 bp~;
+#X obj 147 6413 moog~;
+#X obj 21 6445 line~;
+#X obj 70 6445 vline~;
+#X obj 23 6273 mtof;
+#X text 6 6652 karplus strong (seinfeld);
+#X text 40 6695 subpatches;
+#X obj 44 6969 *~;
+#X obj 7 6938 noise~;
+#X obj 171 7115 pack f 50;
+#X obj 171 7135 line~;
+#X obj 173 7037 mtof;
+#X msg 172 7067 1000 \$1;
+#X obj 172 7089 /;
+#X obj 252 7279 dac~;
+#X obj 331 7374 vsl 15 128 0 10000 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 219 7407 pack f 50;
+#X obj 219 7430 line;
+#X text 354 7427 this controls filter/string damping;
+#X obj 179 6796 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 62 6781 click here;
+#X obj 59 6799 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 198 7013 (will also retrigger the note when moved);
+#X text 234 7451 low pass filter;
+#X text 44 7594 this sends the noise impulse into a delay line called
+"delay";
+#X msg 59 6842 1 2 \, 0 2 2;
+#X obj 59 6938 vline~;
+#X obj 169 7453 lop~ 6000;
+#X text 202 7038 translates 0-127 (midi values) into corresponding
+frequency numbers;
+#X text 231 7074 a little scaling;
+#X text 211 7178 this reads the signal back out at with voltage controllable
+delay rate - determined by the slider above;
+#X text 173 6774 change delay time / frequency here (slider spits out
+0-127);
+#X text 284 7280 out to soundcard;
+#X text 66 6868 <-- this creates a fast enveloped noise impulse;
+#X text 50 4511 A SIMPLE STEP SEQUENCER;
+#X obj 49 7571 delwrite~ delay_example 1000;
+#X obj 171 7161 vd~ delay_example 1000;
+#X obj 20 6480 delread~ ex 100;
+#X obj 120 6481 delwrite~ ex 100;
+#X obj 227 6481 vd~ ex;
+#X text 278 6480 <-- REQUIRE ARGZ;
+#X obj 11 6697 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 231 5669 DEMO A SYNTH HERE!;
+#X obj 137 2149 *~;
+#X obj 41 2023 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 206 2023 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 367 2021 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 38 2067 phasor~;
+#X obj 38 2044 mtof;
+#X obj 203 2043 mtof;
+#X obj 364 2041 mtof;
+#X obj 364 2069 osc~;
+#X obj 203 2065 cos~;
+#X obj 288 2118 *~;
+#X text 27 7757 === Part 5 ===;
+#X text 50 7791 wavetable synth;
+#X text 50 7816 show tables \, tabread \, phasor;
+#X text 50 7840 abstractions \, subpatches;
+#X text 34 8020 === Part 6 ===;
+#X text 55 8055 HACK!;
+#X text 36 8106 cool objects;
+#X obj 41 8132 fiddle~;
+#X obj 138 8129 autoscale;
+#X obj 82 4437 moses;
+#X obj 141 4436 until;
+#X obj 30 4472 random;
+#X obj 95 4474 min;
+#X obj 142 4472 max;
+#X obj 182 4470 clip;
+#X obj 20 6519 send~;
+#X obj 65 6520 receive~;
+#X obj 22 6554 readsf~;
+#X obj 98 6553 writesf~;
 #X connect 0 0 1 0;
-#X connect 16 0 20 0;
-#X connect 18 0 20 0;
-#X connect 21 0 20 0;
-#X connect 24 0 28 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 17 0 16 0;
+#X connect 18 0 22 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 23 0 20 0;
+#X connect 24 0 26 0;
 #X connect 25 0 24 0;
-#X connect 26 0 24 0;
-#X connect 27 0 24 0;
-#X connect 29 0 26 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 0;
-#X connect 35 0 37 1;
-#X connect 37 0 34 0;
-#X connect 38 0 37 0;
-#X connect 45 0 46 0;
-#X connect 46 0 47 0;
-#X connect 46 0 48 0;
-#X connect 48 0 46 0;
-#X connect 50 0 51 0;
-#X connect 51 0 52 0;
-#X connect 51 0 54 0;
-#X connect 54 0 51 1;
-#X connect 57 0 58 0;
-#X connect 59 0 57 0;
-#X connect 64 0 69 0;
-#X connect 64 0 70 0;
-#X connect 64 0 71 0;
-#X connect 65 0 66 0;
-#X connect 66 0 64 0;
-#X connect 66 0 79 0;
-#X connect 67 0 65 0;
-#X connect 74 0 93 0;
-#X connect 76 0 65 0;
-#X connect 78 0 74 0;
-#X connect 79 0 78 0;
-#X connect 80 0 79 1;
-#X connect 82 0 90 0;
-#X connect 83 0 87 0;
-#X connect 84 0 85 0;
-#X connect 86 0 84 0;
-#X connect 87 0 86 0;
-#X connect 88 0 84 0;
-#X connect 90 0 67 0;
-#X connect 92 0 98 1;
-#X connect 93 0 98 0;
-#X connect 93 1 99 0;
-#X connect 93 2 107 0;
-#X connect 93 3 100 0;
-#X connect 93 4 108 0;
-#X connect 93 5 101 0;
-#X connect 93 6 109 0;
-#X connect 93 7 102 0;
-#X connect 94 0 99 1;
-#X connect 95 0 100 1;
-#X connect 96 0 101 1;
-#X connect 97 0 102 1;
-#X connect 98 0 115 0;
-#X connect 99 0 116 0;
-#X connect 100 0 118 0;
-#X connect 101 0 120 0;
-#X connect 102 0 122 0;
-#X connect 103 0 124 1;
-#X connect 104 0 107 1;
-#X connect 105 0 108 1;
-#X connect 106 0 109 1;
-#X connect 107 0 117 0;
-#X connect 108 0 119 0;
-#X connect 109 0 121 0;
-#X connect 110 0 111 0;
-#X connect 112 0 113 0;
-#X connect 113 0 114 0;
-#X connect 114 0 90 1;
-#X connect 115 0 110 0;
-#X connect 115 1 127 0;
-#X connect 115 2 124 0;
-#X connect 116 0 110 0;
-#X connect 116 1 127 0;
-#X connect 116 2 124 0;
-#X connect 117 0 110 0;
-#X connect 117 1 127 0;
-#X connect 117 2 124 0;
-#X connect 118 0 110 0;
-#X connect 118 1 127 0;
-#X connect 118 2 124 0;
-#X connect 119 0 110 0;
-#X connect 119 1 127 0;
-#X connect 119 2 124 0;
-#X connect 120 0 110 0;
-#X connect 120 1 127 0;
-#X connect 120 2 124 0;
-#X connect 121 0 110 0;
-#X connect 121 1 127 0;
-#X connect 121 2 124 0;
-#X connect 122 0 110 0;
-#X connect 122 1 127 0;
-#X connect 122 2 124 0;
-#X connect 124 0 128 0;
-#X connect 125 0 127 1;
-#X connect 127 0 123 0;
-#X connect 128 0 126 0;
+#X connect 29 0 31 1;
+#X connect 31 0 28 0;
+#X connect 32 0 31 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 0;
+#X connect 37 0 39 0;
+#X connect 39 0 37 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 42 0 45 0;
+#X connect 45 0 42 1;
+#X connect 48 0 49 0;
+#X connect 50 0 48 0;
+#X connect 55 0 59 0;
+#X connect 55 0 60 0;
+#X connect 55 0 61 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 57 0 68 0;
+#X connect 58 0 56 0;
+#X connect 63 0 80 0;
+#X connect 65 0 56 0;
+#X connect 67 0 63 0;
+#X connect 68 0 67 0;
+#X connect 69 0 68 1;
+#X connect 71 0 78 0;
+#X connect 72 0 135 0;
+#X connect 73 0 74 0;
+#X connect 75 0 73 0;
+#X connect 76 0 73 0;
+#X connect 78 0 58 0;
+#X connect 79 0 85 1;
+#X connect 80 0 85 0;
+#X connect 80 1 86 0;
+#X connect 80 2 94 0;
+#X connect 80 3 87 0;
+#X connect 80 4 95 0;
+#X connect 80 5 88 0;
+#X connect 80 6 96 0;
+#X connect 80 7 89 0;
+#X connect 81 0 86 1;
+#X connect 82 0 87 1;
+#X connect 83 0 88 1;
+#X connect 84 0 89 1;
+#X connect 85 0 102 0;
+#X connect 86 0 103 0;
+#X connect 87 0 105 0;
+#X connect 88 0 107 0;
+#X connect 89 0 109 0;
+#X connect 90 0 111 1;
+#X connect 91 0 94 1;
+#X connect 92 0 95 1;
+#X connect 93 0 96 1;
+#X connect 94 0 104 0;
+#X connect 95 0 106 0;
+#X connect 96 0 108 0;
+#X connect 97 0 98 0;
+#X connect 99 0 100 0;
+#X connect 100 0 101 0;
+#X connect 101 0 78 1;
+#X connect 102 0 97 0;
+#X connect 102 1 114 0;
+#X connect 102 2 111 0;
+#X connect 103 0 97 0;
+#X connect 103 1 114 0;
+#X connect 103 2 111 0;
+#X connect 104 0 97 0;
+#X connect 104 1 114 0;
+#X connect 104 2 111 0;
+#X connect 105 0 97 0;
+#X connect 105 1 114 0;
+#X connect 105 2 111 0;
+#X connect 106 0 97 0;
+#X connect 106 1 114 0;
+#X connect 106 2 111 0;
+#X connect 107 0 97 0;
+#X connect 107 1 114 0;
+#X connect 107 2 111 0;
+#X connect 108 0 97 0;
+#X connect 108 1 114 0;
+#X connect 108 2 111 0;
+#X connect 109 0 97 0;
+#X connect 109 1 114 0;
+#X connect 109 2 111 0;
+#X connect 111 0 115 0;
+#X connect 112 0 114 1;
+#X connect 114 0 110 0;
+#X connect 115 0 113 0;
+#X connect 124 0 183 0;
+#X connect 125 0 22 0;
+#X connect 128 0 127 1;
+#X connect 135 0 75 0;
+#X connect 136 0 146 0;
+#X connect 139 0 141 0;
+#X connect 142 0 140 0;
+#X connect 145 0 147 0;
+#X connect 158 0 162 0;
+#X connect 159 0 158 1;
+#X connect 160 0 163 0;
+#X connect 160 1 159 0;
+#X connect 161 0 160 0;
+#X connect 163 0 158 0;
+#X connect 174 0 175 0;
+#X connect 196 0 18 0;
+#X connect 198 0 18 0;
+#X connect 200 0 18 0;
+#X connect 244 0 272 0;
+#X connect 245 0 244 0;
+#X connect 246 0 247 0;
+#X connect 247 0 273 0;
+#X connect 248 0 249 0;
+#X connect 249 0 250 0;
+#X connect 250 0 246 0;
+#X connect 252 0 253 0;
+#X connect 253 0 254 0;
+#X connect 254 0 264 1;
+#X connect 256 0 248 0;
+#X connect 256 0 262 0;
+#X connect 258 0 262 0;
+#X connect 262 0 263 0;
+#X connect 263 0 244 1;
+#X connect 264 0 272 0;
+#X connect 273 0 251 0;
+#X connect 273 0 251 1;
+#X connect 273 0 264 0;
+#X connect 281 0 285 0;
+#X connect 282 0 286 0;
+#X connect 283 0 287 0;
+#X connect 284 0 280 0;
+#X connect 285 0 284 0;
+#X connect 286 0 289 0;
+#X connect 287 0 288 0;
+#X connect 288 0 290 1;
+#X connect 289 0 290 0;
+#X connect 290 0 280 1;
