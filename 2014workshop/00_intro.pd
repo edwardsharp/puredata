@@ -393,12 +393,44 @@ delay rate - determined by the slider above;
 #X obj 236 5965 mtof;
 #X obj 236 5993 phasor~;
 #X msg 181 5943 0;
-#X text 53 8464 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+#X text 53 8904 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _;
 #X text 25 5872 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _;
 #X text 50 5051 A SIMPLE STEP SEQUENCER DEMO;
 #X text 83 6189 DEMO A WAVETABLE SYNTH HERE!;
+#X obj 251 8412 drunk;
+#X obj 311 8407 gaussian;
+#X obj 381 8392 mavg;
+#X obj 436 8388 bpm;
+#X obj 361 8498 exciter 200 200 8 0.1 1 1;
+#X text 382 8478 exciter;
+#X obj 90 8481 metroplus;
+#X obj 220 8461 timebang;
+#X obj 25 8613 MouseState;
+#X obj 95 8613 mousefilter;
+#X obj 180 8612 tastin;
+#X obj 385 8767 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
+135 135 0;
+#X text 387 8744 Scope~;
+#X obj 41 8753 pwm~;
+#X text 33 8575 mouse & keyboard;
+#X obj 170 8746 LFO_noise~;
+#X obj 95 8751 loop~;
+#X obj 48 8712 pink~;
+#X obj 255 8747 step~;
+#X obj 138 8822 dynwav~;
+#X obj 208 8812 junction~;
+#X obj 38 8792 scrollgrid1D~;
+#X obj 48 8852 wave~;
+#X obj 118 8847 rand~;
+#X obj 37 37;
+#X obj 208 8867 quantize~;
+#X obj 170 8682 rev3~;
+#X obj 220 8682 rev2~;
+#X text 73 8194 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+_ _ _ _;
+#X obj 118 8682 rev1~;
 #X connect 0 0 1 0;
 #X connect 14 0 16 0;
 #X connect 15 0 16 0;
