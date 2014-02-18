@@ -2,9 +2,9 @@
 #X obj 16 705 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 16 763 print;
-#X text 53 225 ctrl/cmd + e to switch;
-#X text 190 225 between edit (finger cursor);
-#X text 55 257 & play mode (black arrow);
+#X text 53 245 ctrl/cmd + e to switch;
+#X text 190 245 between edit (finger cursor);
+#X text 55 277 & play mode (black arrow);
 #X text 47 470 Edit -> Autopatch;
 #X text 80 482 will automatically connect new atoms;
 #X text 301 482 to previously selected one;
@@ -209,14 +209,14 @@ _ _ _ _;
 -1 -1;
 #X floatatom 252 4538 5 0 0 0 - - -;
 #X msg 252 4474 10;
-#X text 209 257 (last item on edit menu);
-#X obj 19 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 209 277 (last item on edit menu);
+#X obj 19 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 19 228 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 19 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 19 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 19 277 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 19 288 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 19 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 15 474 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -265,17 +265,17 @@ _ _ _ _;
 #X text 182 902 SOME CANNOT :(;
 #X text 34 1984 MAKE SOME NOISE!;
 #X obj 75 1838 noise~;
-#X obj 19 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 19 186 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 53 164 is my dsp running?;
-#X text 54 317 #GOTCHA comments do not use newlines!;
-#X obj 19 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 53 184 is my dsp running?;
+#X text 54 337 #GOTCHA comments do not use newlines!;
+#X obj 19 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 254 288 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 254 308 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X text 53 286 SHIFT + DRAG to use decimals in (;
-#X text 291 286 ) number atom;
-#X text 54 195 audio settings;
+#X text 53 306 SHIFT + DRAG to use decimals in (;
+#X text 291 306 ) number atom;
+#X text 54 215 audio settings;
 #X obj 332 1120 dac~;
 #X text 334 1027 MAKE SOME NOISE!;
 #X obj 336 1057 noise~;
@@ -380,6 +380,9 @@ delay rate - determined by the slider above;
 #X obj 65 6520 receive~;
 #X obj 22 6554 readsf~;
 #X obj 98 6553 writesf~;
+#X obj 19 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 53 154 patching wires;
 #X connect 0 0 1 0;
 #X connect 14 0 16 0;
 #X connect 15 0 16 0;
