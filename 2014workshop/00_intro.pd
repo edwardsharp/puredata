@@ -424,7 +424,6 @@ _ _ _ _;
 #X obj 38 8792 scrollgrid1D~;
 #X obj 48 8852 wave~;
 #X obj 118 8847 rand~;
-#X obj 37 37;
 #X obj 208 8867 quantize~;
 #X obj 170 8682 rev3~;
 #X obj 220 8682 rev2~;
