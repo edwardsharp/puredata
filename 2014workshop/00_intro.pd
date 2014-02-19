@@ -1,4 +1,4 @@
-#N canvas 341 41 617 616 10;
+#N canvas 276 25 617 616 10;
 #X obj 16 705 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 16 763 print;
@@ -82,7 +82,7 @@ of window;
 #X text 58 4322 HEY \, THAT'S HOT!!;
 #X obj 11 5173 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X text 144 5134 Hradio!;
+#X text 141 5173 Hradio!;
 #X msg 34 4180 setbang 0;
 #X text 108 4178 reset!;
 #X obj 11 5138 mod 8;
@@ -158,7 +158,7 @@ of window;
 #X text 42 3511 SAVE YO FILEZ!;
 #X text 52 3521 SAVE YO FILEZ!;
 #X text 62 3531 SAVE YO FILEZ!;
-#X text 180 5215 SELECT STUFF;
+#X text 159 5218 SELECT STUFF;
 #X text 57 366 RTFM: http://puredata.info/docs && http://en.flossmanuals.net/pure-data/
 ;
 #X msg 142 705 print hello;
@@ -361,8 +361,8 @@ delay rate - determined by the slider above;
 #X text 34 8310 === Part 6 ===;
 #X text 55 8345 HACK!;
 #X text 36 8396 cool objects;
-#X obj 41 8422 fiddle~;
-#X obj 138 8419 autoscale;
+#X obj 22 8675 fiddle~;
+#X obj 174 8414 autoscale;
 #X obj 82 4577 moses;
 #X obj 141 4576 until;
 #X obj 30 4612 random;
@@ -395,26 +395,26 @@ delay rate - determined by the slider above;
 #X msg 181 5943 0;
 #X text 53 8904 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _;
-#X text 25 5872 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+#X text 9 5872 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _;
 #X text 50 5051 A SIMPLE STEP SEQUENCER DEMO;
 #X text 83 6189 DEMO A WAVETABLE SYNTH HERE!;
 #X obj 251 8412 drunk;
-#X obj 311 8407 gaussian;
+#X obj 311 8403 gaussian;
 #X obj 381 8392 mavg;
 #X obj 436 8388 bpm;
 #X obj 361 8498 exciter 200 200 8 0.1 1 1;
 #X text 382 8478 exciter;
-#X obj 90 8481 metroplus;
-#X obj 220 8461 timebang;
-#X obj 25 8613 MouseState;
-#X obj 95 8613 mousefilter;
-#X obj 180 8612 tastin;
+#X obj 100 8425 metroplus;
+#X obj 34 8432 timebang;
+#X obj 13 8558 MouseState;
+#X obj 83 8558 mousefilter;
+#X obj 168 8557 tastin;
 #X obj 385 8767 Scope~ 130 130 256 3 128 -1 1 0 0 0 0 102 255 51 135
 135 135 0;
 #X text 387 8744 Scope~;
 #X obj 41 8753 pwm~;
-#X text 33 8575 mouse & keyboard;
+#X text 21 8520 mouse & keyboard;
 #X obj 170 8746 LFO_noise~;
 #X obj 95 8751 loop~;
 #X obj 48 8712 pink~;
@@ -427,9 +427,9 @@ _ _ _ _;
 #X obj 208 8867 quantize~;
 #X obj 170 8682 rev3~;
 #X obj 220 8682 rev2~;
-#X text 73 8194 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-_ _ _ _;
 #X obj 118 8682 rev1~;
+#X obj 473 8443 clock;
+#X text 474 8425 clock;
 #X connect 0 0 1 0;
 #X connect 14 0 16 0;
 #X connect 15 0 16 0;
