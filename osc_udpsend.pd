@@ -1,0 +1,79 @@
+#N canvas 711 119 517 515 10;
+#X declare -lib mrpeach;
+#X text 2 3 send some osc messagez;
+#X obj 5 30 import mrpeach;
+#X obj 11 158 udpsend;
+#X msg 85 82 disconnect;
+#X floatatom 86 112 5 0 0 0 - - -;
+#X msg 86 135 send /test \$1;
+#X obj 84 158 packOSC;
+#X text 206 158 <-- pack the message as an array of bytez;
+#X text 211 134 <-- OSC obj/val combo pair;
+#X msg 4 60 connect e 9000;
+#X msg 121 272 /inst2/note B;
+#X msg 138 313 /inst3/note F;
+#X msg 128 292 /player3/note D;
+#X obj 323 360 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 83 403 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 21 430 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 263 402 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 201 404 f;
+#X obj 201 429 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 428 402 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 366 404 f;
+#X obj 366 429 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 83 475 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 21 477 f;
+#X obj 263 475 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 201 477 f;
+#X obj 428 475 bng 15 250 50 0 empty empty unmatched 18 8 0 12 -262144
+-1 -1;
+#X obj 366 477 f;
+#X msg 109 226 /1/multitoggleRed 0;
+#X obj 201 381 OSCroute /multitoggleBlue;
+#X obj 366 381 OSCroute /multitoggleYellow;
+#X obj 21 454 OSCroute /multitogglePurple;
+#X obj 201 454 OSCroute /multitoggleOrange;
+#X obj 366 454 OSCroute /multitogglePink;
+#X obj 111 340 OSCroute /1;
+#X obj 41 281 print 1;
+#X obj 21 382 OSCroute /multitoggleRed;
+#X msg 120 248 /1/multitoggleRed 1;
+#X obj 21 405 unpack f;
+#X obj 17 191 netreceive 5000 1;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 9 0 2 0;
+#X connect 11 0 34 0;
+#X connect 12 0 34 0;
+#X connect 17 0 18 0;
+#X connect 20 0 21 0;
+#X connect 28 0 34 0;
+#X connect 29 0 17 0;
+#X connect 29 1 16 0;
+#X connect 30 0 20 0;
+#X connect 30 1 19 0;
+#X connect 31 0 23 0;
+#X connect 31 1 22 0;
+#X connect 32 0 25 0;
+#X connect 32 1 24 0;
+#X connect 33 0 27 0;
+#X connect 33 1 26 0;
+#X connect 34 0 36 0;
+#X connect 34 1 13 0;
+#X connect 36 0 38 0;
+#X connect 36 1 14 0;
+#X connect 37 0 34 0;
+#X connect 38 0 15 0;
+#X connect 39 0 35 0;
