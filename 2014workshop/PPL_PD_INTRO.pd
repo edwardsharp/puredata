@@ -1,0 +1,4356 @@
+#N canvas 5 22 388 752 10;
+#N canvas 516 136 438 384 PPL_PD_INTRO_05_edit_mode 0;
+#X obj 18 20 cnv 15 400 30 empty empty edit_mode 20 12 0 24 -260097
+-66577 0;
+#X text 29 77 There are two modes when editing a patch: play and edit.
+In order to edit an existing patch \, or create new boxes \, you need
+to switch to edit mode.;
+#X text 30 141 To switch to edit mode \, go to the "Edit" menu and
+select "Edit mode". Now try putting down some boxes on this canvas.
+You can select which one from the "Put" menu.;
+#X text 36 267 To stop editing \, go to the "Edit" menu again \, and
+select "Edit mode" again.;
+#X text 36 314 You can also use the key command Ctrl-E (Cmd-E on Mac
+OS X) to switch between edit and play mode.;
+#X obj 44 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 208 199 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 141 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 142 236 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X restore 15 93 pd PPL_PD_INTRO_05_edit_mode;
+#N canvas 496 114 450 342 PPL_PD_INTRO_04_getting_help 0;
+#X obj 22 23 cnv 15 400 30 empty empty getting_help 20 12 0 24 -260097
+-66577 0;
+#X msg 149 160;
+#X obj 51 160 trigger;
+#X text 46 251 You can right-click on the canvas to get a list of the
+core Pd objects. A more complete list is in the Help Browser \, available
+under the Help menu.;
+#X text 48 197 object;
+#X text 149 196 message;
+#X floatatom 225 160 5 0 0 0 - - -;
+#X text 226 192 number box;
+#X symbolatom 333 161 10 0 0 0 - - -;
+#X text 336 192 symbol box;
+#X text 51 85 Right-click on anything and select "Help" \, and a help
+patch will pop up.;
+#X restore 15 73 pd PPL_PD_INTRO_04_getting_help;
+#N canvas 470 91 589 425 PPL_PD_INTRO_03_make_a_patch 0;
+#X obj 18 20 cnv 15 550 30 empty empty EXERCISEY0GAME-ya_gotta_make_a_patch
+20 12 0 24 -260097 -66577 0;
+#X text 40 68 Its time to make your first patch. Follow the instructions
+on the right:;
+#X text 283 178 2- make a new object box \, in it \, type: symbol;
+#X text 283 222 3- make a new symbol box;
+#X text 283 270 4- connect the message box to the object box;
+#X text 283 321 5- connect the object box to the symbol box;
+#X text 282 368 6- click the message box \, and viola!;
+#X text 283 128 1- make a message box \, in it type anything;
+#X text 300 141 like: foobar;
+#X obj 35 128 cnv 15 210 266 empty empty make_it_here! 20 12 0 14 -233017
+-66577 0;
+#X restore 15 53 pd PPL_PD_INTRO_03_make_a_patch;
+#N canvas 447 68 586 438 PPL_PD_INTRO_02_messages 0;
+#X obj 20 20 cnv 15 550 30 empty empty messages 20 12 0 24 -260097
+-66577 0;
+#X obj 144 259 + 1;
+#X msg 143 171 1;
+#X floatatom 143 316 5 0 0 0 - - -;
+#X text 188 171 <-- messages -->;
+#X text 192 260 <-- objects -->;
+#X obj 253 412 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s3
+;
+#X text 30 74 Objects respond to messages received on their inlets
+\, and output messages on their outlets. These messages can be anything
+from data to commands.;
+#X text 136 138 data;
+#X text 333 137 commands;
+#X text 55 357 All communication within Pd is in the form of messages
+\, including when the user is controlling the program.;
+#X msg 155 199 2;
+#X text 217 398 For more info:;
+#X obj 398 260 readsf~;
+#X obj 398 292 dac~;
+#X msg 411 199 1;
+#X msg 398 171 open ../../sound/voice.wav;
+#X text 192 313 <-- number box;
+#X obj 301 260 metro 500;
+#X obj 301 292 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X msg 301 171 bang;
+#X msg 314 199 stop;
+#X obj 40 259 print;
+#X msg 41 171 word;
+#X msg 55 199 another;
+#X obj 501 260 send pd;
+#X msg 501 199 dsp 1;
+#X text 397 155 declare a static file...;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 11 0 1 0;
+#X connect 13 0 14 0;
+#X connect 13 0 14 1;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
+#X connect 18 0 19 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 26 0 25 0;
+#X restore 15 33 pd PPL_PD_INTRO_02_messages;
+#N canvas 416 46 457 449 PPL_PD_INTRO_01_objects 0;
+#X obj 10 13 cnv 15 420 30 empty empty objects 20 12 0 24 -260097 -66577
+0;
+#X obj 38 151 float;
+#X text 20 61 The fundamental building block of a Pd program is the
+object. Each object is itself like a tiny program that does a very
+specific thing.;
+#X text 21 124 These are all objects which store data:;
+#X obj 106 151 symbol;
+#X obj 184 151 list;
+#X text 23 188 With most objects \, you can read the name of the object
+in the object box:;
+#X obj 39 231 moses;
+#X obj 115 231 select;
+#X obj 199 231 route;
+#X obj 274 231 trigger;
+#X text 21 264 GUI objects convert themselves into a GUI element \,
+usually some kind of control. In the process \, they often hide the
+text name of the object:;
+#X obj 37 347 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 25 318 [bng];
+#X obj 118 344 vsl 15 80 0 127 0 0 empty empty empty 0 -8 0 8 -262144
+-1 -1 0 1;
+#X text 95 318 [vslider];
+#X text 217 320 [hslider];
+#X obj 187 342 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 373 340 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 362 315 [tgl];
+#X restore 15 13 pd PPL_PD_INTRO_01_objects;
+#N canvas 393 22 429 402 PPL_PD_INTRO_00_basic_elements 0;
+#X obj 12 13 cnv 15 400 26 empty empty basic_elementz 20 12 0 24 -260097
+-66577 0;
+#X obj 146 64 cnv 15 266 320 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 46 134;
+#X obj 44 84 float;
+#X msg 44 180 message;
+#X floatatom 44 229 5 0 0 0 - - -;
+#X symbolatom 44 278 10 0 0 0 - - -;
+#X text 43 327 comment;
+#X text 173 323 comment (like the rest of this text);
+#X text 171 82 object box;
+#X text 171 131 empty object box;
+#X text 172 222 number box (click and drag/type);
+#X text 172 274 symbol box (click and type);
+#X text 172 177 message box (click);
+#X text 184 356 watch out for comment new lines!;
+#X text 177 340 #PROTIP:;
+#X restore 15 -7 pd PPL_PD_INTRO_00_basic_elements;
+#N canvas 542 158 488 433 PPL_PD_INTRO_06_bang 0;
+#X obj 18 20 cnv 15 450 30 empty empty bang 20 12 0 24 -260097 -66577
+0;
+#X obj 58 122 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 58 179 bang;
+#X text 80 120 <--bang button;
+#X text 102 180 <--you can also send "bang" using a message box;
+#X text 54 97 Here \, this toggle changes state when it receives a
+bang:;
+#X text 53 59 In Pd \, "bang" means "do it". What that "it" is depends
+on the object receiving the bang.;
+#X msg 59 239 bang;
+#X obj 59 277 print word;
+#X obj 118 242 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 220 243 bang;
+#X obj 230 317 pddp/print_long;
+#X msg 220 269 send me!;
+#X obj 336 239 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 335 268 234;
+#X obj 58 150 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 58 207 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#N canvas 215 154 783 479 PPL_PD_INTRO_06_what_is_a_bang 0;
+#X floatatom 90 308 5 0 0 0 - - -;
+#X symbolatom 138 307 10 0 0 0 - - -;
+#X obj 43 328 bng 15 250 50 0 empty empty bang -6 23 1 12 -262144 -1
+-1;
+#X obj 43 284 route bang float symbol list;
+#X obj 90 328 bng 15 250 50 0 empty empty float -4 23 1 12 -262144
+-1 -1;
+#X obj 138 328 bng 15 250 50 0 empty empty symbol -12 23 1 12 -262144
+-1 -1;
+#X obj 186 328 bng 15 250 50 0 empty empty list -2 23 1 12 -262144
+-1 -1;
+#X obj 234 328 bng 15 250 50 0 empty empty undefined -18 23 1 12 -262144
+-1 -1;
+#X msg 42 31 bang;
+#X obj 56 50 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 82 41 element;
+#X obj 78 64 bang;
+#X msg 91 106 float bang;
+#X text 174 106 invalid;
+#X msg 96 128 symbol bang;
+#X text 183 128 not a bang \, but a symbol;
+#X msg 102 152 list bang;
+#X msg 104 179 list bang bang bang;
+#X text 173 151 not a bang \, but a symbol;
+#X text 245 180 not a bang \, but a list;
+#X msg 97 213 bang bang bang;
+#X text 205 213 this is a bang;
+#X msg 101 236 bang 1 2;
+#X msg 102 257 bang one two;
+#X text 170 236 this is a bang;
+#X text 201 257 this is a bang;
+#X msg 432 37 bang;
+#X obj 446 56 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 479 53 element;
+#X obj 457 84 bang;
+#X msg 481 112 float bang;
+#X text 564 112 invalid;
+#X msg 486 134 symbol bang;
+#X text 573 134 not a bang \, but a symbol;
+#X msg 492 158 list bang;
+#X msg 494 185 list bang bang bang;
+#X text 563 157 not a bang \, but a symbol;
+#X text 635 186 not a bang \, but a list;
+#X msg 487 219 bang bang bang;
+#X text 595 219 this is a bang;
+#X msg 491 242 bang 1 2;
+#X msg 492 263 bang one two;
+#X text 560 242 this is a bang;
+#X text 591 263 this is a bang;
+#X obj 433 290 print;
+#X text 492 84 this turns [element( into a bang;
+#X msg 57 402 list bang;
+#X obj 57 426 list trim;
+#X obj 57 450 print;
+#X text 134 424 another way to convert a list to a bang;
+#X msg 87 87 list;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 0 0;
+#X connect 3 2 1 0;
+#X connect 3 3 6 0;
+#X connect 3 4 7 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 14 0 3 0;
+#X connect 16 0 3 0;
+#X connect 17 0 3 0;
+#X connect 20 0 3 0;
+#X connect 22 0 3 0;
+#X connect 23 0 3 0;
+#X connect 26 0 44 0;
+#X connect 27 0 44 0;
+#X connect 28 0 29 0;
+#X connect 29 0 44 0;
+#X connect 30 0 44 0;
+#X connect 32 0 44 0;
+#X connect 34 0 44 0;
+#X connect 35 0 44 0;
+#X connect 38 0 44 0;
+#X connect 40 0 44 0;
+#X connect 41 0 44 0;
+#X connect 46 0 47 0;
+#X connect 47 0 48 0;
+#X connect 50 0 3 0;
+#X restore 57 372 pd PPL_PD_INTRO_06_what_is_a_bang;
+#X connect 1 0 15 0;
+#X connect 2 0 16 0;
+#X connect 7 0 8 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 0;
+#X restore 15 113 pd PPL_PD_INTRO_06_bang;
+#N canvas 569 181 542 457 PPL_PD_INTRO_07_metro 0;
+#X obj 20 20 cnv 15 500 30 empty empty metro 20 12 0 24 -260097 -66577
+0;
+#X obj 27 331 metro;
+#X text 22 82 The timing of events is an essential function of Pd.
+For example: in a piece of music \, each note is played at a specific
+time of the whole piece.;
+#X text 22 142 The [metro] object provides a method for making things
+happen at a regular time interval. "metro" comes from metronome. A
+metronome makes repeating clicks and the time between each click can
+be set.;
+#X msg 26 263 bang;
+#X msg 65 263 stop;
+#X obj 54 300 nbx 3 18 100 999 0 1 empty empty empty 0 -6 0 16 -262144
+-1 -1 500 256;
+#X obj 27 369 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
+-1;
+#X msg 434 102 bang;
+#X obj 434 153 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 286 432 pddp/pddplink http://en.wikipedia.org/wiki/Metronome
+;
+#X text 264 419 For more info:;
+#X msg 372 277 bang;
+#X msg 411 277 stop;
+#X obj 386 383 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 386 355 metro 500;
+#X obj 434 128 metro 500;
+#X text 22 216 The same is true of [metro] \, using a number to represent
+the time in milliseconds (ms):;
+#X msg 414 306 1;
+#X msg 447 306 0;
+#X obj 359 329 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X text 327 249 Ways to start/stop [metro]:;
+#X obj 478 26 metro;
+#X text 111 298 <-change the time between bangs;
+#X connect 1 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 8 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 9 0;
+#X connect 18 0 15 0;
+#X connect 19 0 15 0;
+#X connect 20 0 15 0;
+#X restore 15 133 pd PPL_PD_INTRO_07_metro;
+#N canvas 598 192 523 466 PPL_PD_INTRO_08_hot_and_cold_inlets 0;
+#X obj 16 10 cnv 15 500 30 empty empty hot_and_cold_inlets 20 12 0
+24 -260097 -66577 0;
+#X obj 119 240 +;
+#X floatatom 119 269 5 0 0 0 - - -;
+#X msg 119 186 1;
+#X msg 137 215 5;
+#X text 51 56 For most objects in Pd \, the leftmost inlet is the "hot"
+inlet. This means that it will output something whenever it receives
+data on the "hot" inlet.;
+#X text 165 214 2) click this and there will be no new output;
+#X obj 221 352 +;
+#X floatatom 221 376 5 0 0 0 - - -;
+#X msg 90 317 1;
+#X text 55 293 Try a number of different combinations to see for yourself:
+;
+#X text 285 345 <-- "cold" inlet;
+#X text 89 345 "hot" inlet -->;
+#X msg 130 317 2;
+#X msg 170 317 3;
+#X msg 284 317 4;
+#X msg 324 317 5;
+#X msg 374 317 6;
+#X text 165 186 1) click this first \, and [+ ] immediately outputs
+a 1;
+#X text 50 113 All other inlets are generally "cold" inlets \, which
+just store the data. When the object receives input on the "hot" inlet
+\, the object with read the data from all the inlets and do its thing.
+;
+#X text 165 240 3) now click the [1( message box;
+#X obj 447 81 +;
+#X msg 465 57 1;
+#X msg 433 57 1;
+#X text 57 397 Notice that the number is stored in the "cold" inlet
+until you change it. For example \, if you click [4( \, then click
+[1( \, [2( \, and [3( \, you will see that 1 \, 2 \, and 3 are all
+added to 4;
+#X floatatom 447 104 5 0 0 0 - - -;
+#X obj 447 124 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
+#X connect 7 0 8 0;
+#X connect 9 0 7 0;
+#X connect 13 0 7 0;
+#X connect 14 0 7 0;
+#X connect 15 0 7 1;
+#X connect 16 0 7 1;
+#X connect 17 0 7 1;
+#X connect 21 0 25 0;
+#X connect 22 0 21 1;
+#X connect 23 0 21 0;
+#X connect 25 0 26 0;
+#X restore 15 173 pd PPL_PD_INTRO_08_hot_and_cold_inlets;
+#N canvas 625 230 491 539 PPL_PD_INTRO_09_counters 0;
+#X obj 20 20 cnv 15 440 30 empty empty counters 20 12 0 24 -260097
+-66577 0;
+#X obj 116 372 cnv 15 100 60 empty empty empty 20 12 0 14 -261039 -66577
+0;
+#X obj 134 392 f;
+#X obj 169 392 + 1;
+#X obj 127 229 float;
+#X floatatom 90 256 5 0 0 0 - - -;
+#X msg 91 147 1;
+#X obj 90 229 +;
+#X msg 127 199 0;
+#X msg 103 170 -1;
+#X text 137 148 increment;
+#X text 142 171 decrement;
+#X text 165 197 reset;
+#X floatatom 276 254 5 0 0 0 - - -;
+#X msg 308 190 0;
+#X text 325 147 increment;
+#X obj 276 226 float;
+#X obj 334 226 + 1;
+#X msg 277 148 bang;
+#X text 238 387 DANGER! infinite loop!;
+#X text 60 88 Counters are used a lot when programming Pd. Here are
+two examples of simple counters that you will see frequently.;
+#X text 346 190 reset;
+#X text 60 287 Pd is designed to be as flexible and open as possible.
+This means that it will let you crash your computer. For example \,
+never start a counter like this \, it could crash your computer!;
+#X obj 116 449 cnv 15 100 60 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 148 458 cup;
+#X obj 137 483 counter;
+#X text 242 474 yay \, extended!;
+#X connect 2 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
+#X connect 9 0 7 0;
+#X connect 14 0 16 1;
+#X connect 16 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 16 1;
+#X connect 18 0 16 0;
+#X restore 15 193 pd PPL_PD_INTRO_09_counters;
+#N canvas 618 233 501 463 PPL_PD_INTRO_10_events 0;
+#X obj 20 20 cnv 15 450 30 empty empty event_driven_processing 20 12
+0 24 -260097 -66577 0;
+#X obj 63 318 tgl 20 0 empty empty empty 0 -6 0 8 -24198 -1 -1 0 1
+;
+#X obj 63 366 float;
+#X obj 120 366 + 1;
+#X floatatom 63 391 5 0 0 0 - - -;
+#X obj 63 412 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 63 342 metro 1000;
+#X obj 333 316 bng 20 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X obj 334 353 float;
+#X obj 391 353 + 1;
+#X floatatom 334 378 5 0 0 0 - - -;
+#X obj 334 399 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 54 140 cnv 15 80 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 206 140 cnv 15 80 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 344 139 cnv 15 80 30 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 72 176 + 1;
+#X floatatom 72 202 5 0 0 0 - - -;
+#X msg 72 144 1;
+#X msg 207 145 convert;
+#X obj 207 178 symbol;
+#X symbolatom 207 206 10 0 0 0 - - -;
+#X obj 72 229 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 207 233 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 361 176 float;
+#X obj 418 176 + 1;
+#X floatatom 361 204 5 0 0 0 - - -;
+#X obj 361 229 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 226 364 delay 1000;
+#X msg 361 144 bang;
+#X text 48 65 Message processing is driven by events \, nothing happens
+if there are no events. There is nothing happening in the patches below
+until you click on the messages (the bang buttons at the bottom of
+each patch illustrate this):;
+#X text 38 265 Pd is always ready to process messages \, you don't
+need to tell it to run. You can keep events happening by sending a
+stream of messages:;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 1;
+#X connect 10 0 11 0;
+#X connect 11 0 27 0;
+#X connect 15 0 16 0;
+#X connect 16 0 21 0;
+#X connect 17 0 15 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
+#X connect 24 0 23 1;
+#X connect 25 0 26 0;
+#X connect 27 0 8 0;
+#X connect 28 0 23 0;
+#X restore 15 213 pd PPL_PD_INTRO_10_events;
+#N canvas 642 258 491 417 PPL_PD_INTRO_11_ordering_messages 0;
+#X obj 22 20 cnv 15 450 30 empty empty ordering_messages 20 12 0 24
+-260097 -66577 0;
+#X text 40 62 Officially \, the execution order in Pd is undefined.
+;
+#X text 40 88 The [trigger] object allows you to specify the order
+of messages are sent. If you need to make sure that one thing runs
+before another \, use [trigger]:;
+#X obj 41 149 cnv 15 50 25 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X obj 142 148 cnv 15 50 25 empty empty empty 20 12 0 14 -257985 -66577
+0;
+#X msg 295 259 now;
+#X msg 236 260 this;
+#X msg 177 260 makes;
+#X msg 118 260 sense;
+#X msg 149 151 bang;
+#X msg 49 151 bang;
+#X obj 150 188 trigger bang bang bang bang bang bang;
+#X obj 137 325 mapping/tolist;
+#X obj 137 372 pddp/print;
+#X msg 358 258 bang;
+#X msg 60 260 bang;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 11 0;
+#X connect 10 0 14 0;
+#X connect 10 0 15 0;
+#X connect 10 0 6 0;
+#X connect 10 0 5 0;
+#X connect 10 0 8 0;
+#X connect 10 0 7 0;
+#X connect 11 0 15 0;
+#X connect 11 1 8 0;
+#X connect 11 2 7 0;
+#X connect 11 3 6 0;
+#X connect 11 4 5 0;
+#X connect 11 5 14 0;
+#X connect 12 0 13 0;
+#X connect 14 0 12 1;
+#X connect 14 0 12 0;
+#X connect 15 0 12 1;
+#X restore 15 233 pd PPL_PD_INTRO_11_ordering_messages;
+#N canvas 667 281 434 462 PPL_PD_INTRO_12_right_to_left_order 0;
+#X obj 13 13 cnv 15 400 30 empty empty right_to_left_order 20 12 0
+24 -260097 -66577 0;
+#X obj 110 188 bng 25 250 50 0 empty empty empty -2 -8 1 10 -24198
+-1 -1;
+#X obj 110 228 trigger bang bang bang;
+#X msg 326 267 1;
+#X msg 218 267 2;
+#X msg 110 267 3;
+#X obj 218 343 print ORDER;
+#X text 157 191 <-- click here \,;
+#X text 15 68 In Pd \, you read a patch from right to left \, from
+top to bottom. Objects also output from right to left;
+#X obj 87 429 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s3.3
+;
+#X text 102 372 then check the Pd window to see the order;
+#X text 16 122 The [trigger] object is used to enforce execution order.
+If you need things to run in a certain sequence \, then use a [trigger].
+;
+#X text 21 412 For more info:;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 1 4 0;
+#X connect 2 2 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X restore 15 253 pd PPL_PD_INTRO_12_right_to_left_order;
+#N canvas 689 305 519 350 PPL_PD_INTRO_13_top_to_bottom_order 0;
+#X obj 10 10 cnv 15 500 30 empty empty top_to_bottom 20 12 0 24 -260097
+-66577 0;
+#X msg 442 87 1;
+#X obj 442 114 + 1;
+#X floatatom 449 140 5 0 0 0 - - -;
+#X obj 442 164 + 1;
+#X floatatom 449 190 5 0 0 0 - - -;
+#X obj 442 214 + 1;
+#X floatatom 449 240 5 0 0 0 - - -;
+#X obj 442 264 + 1;
+#X floatatom 449 290 5 0 0 0 - - -;
+#X msg 26 263 1;
+#X obj 33 309 + 1;
+#X floatatom 68 262 5 0 0 0 - - -;
+#X obj 131 265 + 1;
+#X floatatom 159 319 5 0 0 0 - - -;
+#X obj 104 300 + 1;
+#X floatatom 209 271 5 0 0 0 - - -;
+#X obj 202 295 + 1;
+#X floatatom 209 321 5 0 0 0 - - -;
+#X text 15 175 The example below is just as functional as the example
+on the right. But the example on the right clearly shows the flow of
+the messages.;
+#X text 16 81 Messages flow from the top to the bottom of a patch \,
+always flowing from the outlets on the bottom to inlets on the top.
+Therefore it is also a good idea to structure your patch to represent
+that.;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 0 15 0;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 17 0 18 0;
+#X restore 15 273 pd PPL_PD_INTRO_13_top_to_bottom_order;
+#N canvas 407 100 422 464 PPL_PD_INTRO_14_depth_first 0;
+#X obj 10 10 cnv 15 400 30 empty empty depth_first 20 12 0 24 -260097
+-66577 0;
+#X obj 225 229 trigger bang bang;
+#X msg 175 338 add2 \$1;
+#X msg 112 234 set;
+#X msg 224 195 4;
+#X msg 225 262 3;
+#X msg 324 260 2;
+#X msg 324 295 1;
+#X text 37 376 see result here -->;
+#X obj 225 164 bng 25 250 50 0 empty empty empty 0 -6 0 8 -24198 -1
+-1;
+#X text 12 66 Pd processes messages in "depth first". This means the
+bottom-most message in a chain runs first. Everything below a spot
+in a chain is run before. As you'll see from the example below \, the
+[4( message actually runs last \, since everything below it executed
+before it.;
+#X obj 53 441 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s3.2
+;
+#X msg 174 377 1 2 3 4;
+#X text 15 426 For more info:;
+#X text 8 234 clear the box:;
+#X connect 1 0 5 0;
+#X connect 1 1 6 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 9 0 4 0;
+#X restore 15 293 pd PPL_PD_INTRO_14_depth_first;
+#N canvas 484 164 585 461 PPL_PD_INTRO_15_creation_arguments 0;
+#X obj 16 13 cnv 15 550 30 empty empty creation_arguments 20 12 0 24
+-260097 -66577 0;
+#X obj 442 87 float;
+#X text 40 82 Many objects can accept "arguments" to define their behavior.
+Here is a plain [float] object:;
+#X obj 442 145 float 5.5;
+#X obj 442 217 float 5.5;
+#X obj 442 199 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 442 238 5 0 0 0 - - -;
+#X text 219 412 For more info:;
+#X obj 237 429 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s1.2
+;
+#X text 40 145 Here is a [float] object with a creation argument of
+"5.5":;
+#X text 40 197 Here \, the creation argument of "5.5" makes this [float]
+store the value 5.5 by default. Clicking the bang makes [float] output
+the value that it is currently storing:;
+#X obj 442 315 float 5.5;
+#X floatatom 442 336 7 0 0 0 - - -;
+#X obj 442 297 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 478 290 -123;
+#X msg 516 290 0.0044;
+#X text 40 296 On most objects \, the creation arguments can be replaced
+by data coming in from the inlets. With the [float] object \, the right
+inlet \, a cold inlet \, sets the value that the [float] object stores:
+;
+#N canvas 573 291 472 393 PPL_PD_INTRO_mixing_creation_args 0;
+#X obj 132 265 route 1 bla;
+#X msg 128 123 list bla hu;
+#X obj 124 303 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 159 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 207 306 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 96 95 bla hu;
+#X msg 169 157 1 two;
+#X msg 213 157 list 1 two;
+#X text 42 32 mixing different data types in one route object is not
+supported and thus leads to unexpected behaviour.;
+#X msg 179 230 0;
+#X text 207 228 <- unexpectedly matches 'bla';
+#X text 144 93 <- unexpectedly not matching;
+#X text 210 123 unexpectedly matches 'bla';
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 4 0;
+#X connect 1 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X restore 40 377 pd PPL_PD_INTRO_mixing_creation_args;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 1;
+#X connect 15 0 11 1;
+#X restore 15 313 pd PPL_PD_INTRO_15_creation_arguments;
+#N canvas 202 36 431 343 PPL_PD_INTRO_16_8step_sequencer 0;
+#X obj 12 11 cnv 15 400 30 empty empty 8step-seq 20 12 0 24 -260097
+-66577 0;
+#X text 24 111 The pattern can be changed gradually by applied operations.
+;
+#X text 26 77 An 8-step sequencer whose patterns can be created by
+random or by supplying a list (see below).;
+#X obj 30 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 58 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 31 216 f;
+#X obj 65 216 + 1;
+#X obj 32 277 hradio 16 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 32 249 mod 8;
+#X floatatom 32 308 5 0 0 0 - - -;
+#X obj 31 188 metro 666;
+#X connect 3 0 10 0;
+#X connect 4 0 10 1;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 10 0 5 0;
+#X restore 15 333 pd PPL_PD_INTRO_16_8step_sequencer;
+#N canvas 570 75 626 375 PPL_PD_INTRO_17_16step_sequencer 0;
+#X obj 10 8 cnv 15 600 30 empty empty 16step-seq 20 12 0 24 -260097
+-66577 0;
+#X obj 82 99 loadbang;
+#N canvas 74 64 598 412 another 0;
+#X obj 135 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 256 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 278 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 298 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 199 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 235 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 178 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 156 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -44 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -22 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 35 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -1 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 98 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 78 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 56 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -65 332 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 249 107 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 135 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 256 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 278 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 298 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 199 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 235 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 178 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 156 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -44 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -22 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 35 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -1 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 98 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 78 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 56 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -65 305 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 191 84 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 136 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 258 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 279 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 299 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 200 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 236 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 179 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 158 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -42 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -21 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 36 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 0 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 99 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 79 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 58 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -64 277 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 175 53 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 136 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 258 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 279 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 299 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 200 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 236 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 179 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 158 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -42 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj -21 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 36 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 0 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 99 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 79 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 58 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj -64 251 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 155 21 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj -65 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 4 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj -21 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 18 457 452 188 pat 0;
+#X obj 86 59 inlet;
+#X obj 41 59 inlet;
+#X obj 86 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 89 72 500 267 change-pattern 0;
+#X obj 435 47 inlet;
+#X obj 24 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 228 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 250 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 295 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 273 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 363 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 385 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 340 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 318 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 138 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 160 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 205 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 183 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 115 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 70 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 48 201 outlet;
+#X obj 125 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 125 47 inlet;
+#N canvas 196 256 474 314 random-pattern 0;
+#X obj 234 196 outlet;
+#X obj 255 196 outlet;
+#X obj 298 197 outlet;
+#X obj 276 197 outlet;
+#X obj 361 198 outlet;
+#X obj 383 198 outlet;
+#X obj 340 197 outlet;
+#X obj 319 197 outlet;
+#X obj 149 195 outlet;
+#X obj 170 195 outlet;
+#X obj 213 196 outlet;
+#X obj 191 196 outlet;
+#X obj 106 195 outlet;
+#X obj 128 195 outlet;
+#X obj 85 194 outlet;
+#X obj 186 43 inlet;
+#X obj 64 166 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 90 t b b;
+#X msg 236 127 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 194 outlet;
+#X obj 64 46 inlet;
+#X obj 64 124 make-choice-list 16 16 0 1;
+#X obj 64 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 14 0;
+#X connect 16 2 12 0;
+#X connect 16 3 13 0;
+#X connect 16 4 8 0;
+#X connect 16 5 9 0;
+#X connect 16 6 11 0;
+#X connect 16 7 10 0;
+#X connect 16 8 0 0;
+#X connect 16 9 1 0;
+#X connect 16 10 3 0;
+#X connect 16 11 2 0;
+#X connect 16 12 7 0;
+#X connect 16 13 6 0;
+#X connect 16 14 4 0;
+#X connect 16 15 5 0;
+#X connect 17 0 21 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 22 0;
+#X connect 21 0 16 0;
+#X connect 22 0 17 0;
+#X restore 125 95 pd random-pattern;
+#X obj 48 47 inlet;
+#X obj 48 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 95 random 16;
+#X obj 250 119 sel 8 9 10 11 12 13 14 15;
+#X obj 48 119 sel 0 1 2 3 4 5 6 7;
+#X connect 0 0 22 1;
+#X connect 1 0 18 0;
+#X connect 2 0 18 8;
+#X connect 3 0 18 9;
+#X connect 4 0 18 11;
+#X connect 5 0 18 10;
+#X connect 6 0 18 14;
+#X connect 7 0 18 15;
+#X connect 8 0 18 13;
+#X connect 9 0 18 12;
+#X connect 10 0 18 4;
+#X connect 11 0 18 5;
+#X connect 12 0 18 7;
+#X connect 13 0 18 6;
+#X connect 14 0 18 2;
+#X connect 15 0 18 3;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 17 0;
+#X connect 22 1 16 0;
+#X connect 22 2 14 0;
+#X connect 22 3 15 0;
+#X connect 22 4 10 0;
+#X connect 22 5 11 0;
+#X connect 22 6 13 0;
+#X connect 22 7 12 0;
+#X connect 22 8 2 0;
+#X connect 22 9 3 0;
+#X connect 22 10 5 0;
+#X connect 22 11 4 0;
+#X connect 22 12 9 0;
+#X connect 22 13 8 0;
+#X connect 22 14 6 0;
+#X connect 22 15 7 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 0;
+#X connect 26 0 2 0;
+#X connect 26 1 3 0;
+#X connect 26 2 5 0;
+#X connect 26 3 4 0;
+#X connect 26 4 9 0;
+#X connect 26 5 8 0;
+#X connect 26 6 6 0;
+#X connect 26 7 7 0;
+#X connect 27 0 17 0;
+#X connect 27 1 16 0;
+#X connect 27 2 14 0;
+#X connect 27 3 15 0;
+#X connect 27 4 10 0;
+#X connect 27 5 11 0;
+#X connect 27 6 13 0;
+#X connect 27 7 12 0;
+#X connect 27 8 26 0;
+#X restore 41 112 pd change-pattern;
+#X obj 86 26 loadbang;
+#X msg 150 86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X msg 134 47 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1;
+#X msg 146 67 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 41 140 outlet;
+#X text 362 47 groove;
+#X text 376 67 all on;
+#X text 378 87 all off;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;
+#X connect 5 0 2 0;
+#X connect 6 0 4 2;
+#X connect 7 0 4 2;
+#X connect 8 0 4 2;
+#X restore -21 149 pd pat;
+#N canvas 18 457 429 187 pat 0;
+#X obj 86 59 inlet;
+#X obj 41 59 inlet;
+#X obj 86 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 89 72 500 267 change-pattern 0;
+#X obj 435 47 inlet;
+#X obj 24 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 228 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 250 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 295 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 273 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 363 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 385 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 340 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 318 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 138 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 160 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 205 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 183 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 115 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 70 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 48 201 outlet;
+#X obj 125 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 125 47 inlet;
+#N canvas 196 256 474 314 random-pattern 0;
+#X obj 234 196 outlet;
+#X obj 255 196 outlet;
+#X obj 298 197 outlet;
+#X obj 276 197 outlet;
+#X obj 361 198 outlet;
+#X obj 383 198 outlet;
+#X obj 340 197 outlet;
+#X obj 319 197 outlet;
+#X obj 149 195 outlet;
+#X obj 170 195 outlet;
+#X obj 213 196 outlet;
+#X obj 191 196 outlet;
+#X obj 106 195 outlet;
+#X obj 128 195 outlet;
+#X obj 85 194 outlet;
+#X obj 186 43 inlet;
+#X obj 64 166 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 90 t b b;
+#X msg 236 127 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 194 outlet;
+#X obj 64 46 inlet;
+#X obj 64 124 make-choice-list 16 16 0 1;
+#X obj 64 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 14 0;
+#X connect 16 2 12 0;
+#X connect 16 3 13 0;
+#X connect 16 4 8 0;
+#X connect 16 5 9 0;
+#X connect 16 6 11 0;
+#X connect 16 7 10 0;
+#X connect 16 8 0 0;
+#X connect 16 9 1 0;
+#X connect 16 10 3 0;
+#X connect 16 11 2 0;
+#X connect 16 12 7 0;
+#X connect 16 13 6 0;
+#X connect 16 14 4 0;
+#X connect 16 15 5 0;
+#X connect 17 0 21 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 22 0;
+#X connect 21 0 16 0;
+#X connect 22 0 17 0;
+#X restore 125 95 pd random-pattern;
+#X obj 48 47 inlet;
+#X obj 48 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 95 random 16;
+#X obj 250 119 sel 8 9 10 11 12 13 14 15;
+#X obj 48 119 sel 0 1 2 3 4 5 6 7;
+#X connect 0 0 22 1;
+#X connect 1 0 18 0;
+#X connect 2 0 18 8;
+#X connect 3 0 18 9;
+#X connect 4 0 18 11;
+#X connect 5 0 18 10;
+#X connect 6 0 18 14;
+#X connect 7 0 18 15;
+#X connect 8 0 18 13;
+#X connect 9 0 18 12;
+#X connect 10 0 18 4;
+#X connect 11 0 18 5;
+#X connect 12 0 18 7;
+#X connect 13 0 18 6;
+#X connect 14 0 18 2;
+#X connect 15 0 18 3;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 17 0;
+#X connect 22 1 16 0;
+#X connect 22 2 14 0;
+#X connect 22 3 15 0;
+#X connect 22 4 10 0;
+#X connect 22 5 11 0;
+#X connect 22 6 13 0;
+#X connect 22 7 12 0;
+#X connect 22 8 2 0;
+#X connect 22 9 3 0;
+#X connect 22 10 5 0;
+#X connect 22 11 4 0;
+#X connect 22 12 9 0;
+#X connect 22 13 8 0;
+#X connect 22 14 6 0;
+#X connect 22 15 7 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 0;
+#X connect 26 0 2 0;
+#X connect 26 1 3 0;
+#X connect 26 2 5 0;
+#X connect 26 3 4 0;
+#X connect 26 4 9 0;
+#X connect 26 5 8 0;
+#X connect 26 6 6 0;
+#X connect 26 7 7 0;
+#X connect 27 0 17 0;
+#X connect 27 1 16 0;
+#X connect 27 2 14 0;
+#X connect 27 3 15 0;
+#X connect 27 4 10 0;
+#X connect 27 5 11 0;
+#X connect 27 6 13 0;
+#X connect 27 7 12 0;
+#X connect 27 8 26 0;
+#X restore 41 112 pd change-pattern;
+#X obj 86 26 loadbang;
+#X text 346 89 all off;
+#X msg 155 89 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 323 48 groove;
+#X text 334 68 all on;
+#X msg 131 47 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1;
+#X msg 143 68 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 41 140 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 2 0;
+#X connect 7 0 4 2;
+#X connect 10 0 4 2;
+#X connect 11 0 4 2;
+#X restore 86 149 pd pat;
+#X obj 86 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 111 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 43 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 258 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 336 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 311 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 18 457 429 187 pat 0;
+#X obj 86 59 inlet;
+#X obj 41 59 inlet;
+#X obj 86 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 89 72 500 267 change-pattern 0;
+#X obj 435 47 inlet;
+#X obj 24 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 228 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 250 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 295 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 273 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 363 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 385 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 340 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 318 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 138 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 160 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 205 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 183 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 115 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 70 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 48 201 outlet;
+#X obj 125 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 125 47 inlet;
+#N canvas 196 256 474 314 random-pattern 0;
+#X obj 234 196 outlet;
+#X obj 255 196 outlet;
+#X obj 298 197 outlet;
+#X obj 276 197 outlet;
+#X obj 361 198 outlet;
+#X obj 383 198 outlet;
+#X obj 340 197 outlet;
+#X obj 319 197 outlet;
+#X obj 149 195 outlet;
+#X obj 170 195 outlet;
+#X obj 213 196 outlet;
+#X obj 191 196 outlet;
+#X obj 106 195 outlet;
+#X obj 128 195 outlet;
+#X obj 85 194 outlet;
+#X obj 186 43 inlet;
+#X obj 64 166 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 90 t b b;
+#X msg 236 127 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 194 outlet;
+#X obj 64 46 inlet;
+#X obj 64 124 make-choice-list 16 16 0 1;
+#X obj 64 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 14 0;
+#X connect 16 2 12 0;
+#X connect 16 3 13 0;
+#X connect 16 4 8 0;
+#X connect 16 5 9 0;
+#X connect 16 6 11 0;
+#X connect 16 7 10 0;
+#X connect 16 8 0 0;
+#X connect 16 9 1 0;
+#X connect 16 10 3 0;
+#X connect 16 11 2 0;
+#X connect 16 12 7 0;
+#X connect 16 13 6 0;
+#X connect 16 14 4 0;
+#X connect 16 15 5 0;
+#X connect 17 0 21 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 22 0;
+#X connect 21 0 16 0;
+#X connect 22 0 17 0;
+#X restore 125 95 pd random-pattern;
+#X obj 48 47 inlet;
+#X obj 48 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 95 random 16;
+#X obj 250 119 sel 8 9 10 11 12 13 14 15;
+#X obj 48 119 sel 0 1 2 3 4 5 6 7;
+#X connect 0 0 22 1;
+#X connect 1 0 18 0;
+#X connect 2 0 18 8;
+#X connect 3 0 18 9;
+#X connect 4 0 18 11;
+#X connect 5 0 18 10;
+#X connect 6 0 18 14;
+#X connect 7 0 18 15;
+#X connect 8 0 18 13;
+#X connect 9 0 18 12;
+#X connect 10 0 18 4;
+#X connect 11 0 18 5;
+#X connect 12 0 18 7;
+#X connect 13 0 18 6;
+#X connect 14 0 18 2;
+#X connect 15 0 18 3;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 17 0;
+#X connect 22 1 16 0;
+#X connect 22 2 14 0;
+#X connect 22 3 15 0;
+#X connect 22 4 10 0;
+#X connect 22 5 11 0;
+#X connect 22 6 13 0;
+#X connect 22 7 12 0;
+#X connect 22 8 2 0;
+#X connect 22 9 3 0;
+#X connect 22 10 5 0;
+#X connect 22 11 4 0;
+#X connect 22 12 9 0;
+#X connect 22 13 8 0;
+#X connect 22 14 6 0;
+#X connect 22 15 7 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 0;
+#X connect 26 0 2 0;
+#X connect 26 1 3 0;
+#X connect 26 2 5 0;
+#X connect 26 3 4 0;
+#X connect 26 4 9 0;
+#X connect 26 5 8 0;
+#X connect 26 6 6 0;
+#X connect 26 7 7 0;
+#X connect 27 0 17 0;
+#X connect 27 1 16 0;
+#X connect 27 2 14 0;
+#X connect 27 3 15 0;
+#X connect 27 4 10 0;
+#X connect 27 5 11 0;
+#X connect 27 6 13 0;
+#X connect 27 7 12 0;
+#X connect 27 8 26 0;
+#X restore 41 112 pd change-pattern;
+#X obj 86 26 loadbang;
+#X text 346 89 all off;
+#X msg 155 89 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 323 48 groove;
+#X text 334 68 all on;
+#X msg 131 47 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1;
+#X msg 143 68 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 41 140 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 2 0;
+#X connect 7 0 4 2;
+#X connect 10 0 4 2;
+#X connect 11 0 4 2;
+#X restore 311 149 pd pat;
+#N canvas 18 457 429 187 pat 0;
+#X obj 86 59 inlet;
+#X obj 41 59 inlet;
+#X obj 86 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 89 72 500 267 change-pattern 0;
+#X obj 435 47 inlet;
+#X obj 24 149 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 228 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 250 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 295 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 273 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 363 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 385 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 340 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 318 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 138 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 160 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 205 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 183 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 115 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 70 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 48 201 outlet;
+#X obj 125 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 125 47 inlet;
+#N canvas 196 256 474 314 random-pattern 0;
+#X obj 234 196 outlet;
+#X obj 255 196 outlet;
+#X obj 298 197 outlet;
+#X obj 276 197 outlet;
+#X obj 361 198 outlet;
+#X obj 383 198 outlet;
+#X obj 340 197 outlet;
+#X obj 319 197 outlet;
+#X obj 149 195 outlet;
+#X obj 170 195 outlet;
+#X obj 213 196 outlet;
+#X obj 191 196 outlet;
+#X obj 106 195 outlet;
+#X obj 128 195 outlet;
+#X obj 85 194 outlet;
+#X obj 186 43 inlet;
+#X obj 64 166 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 90 t b b;
+#X msg 236 127 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 194 outlet;
+#X obj 64 46 inlet;
+#X obj 64 124 make-choice-list 16 16 0 1;
+#X obj 64 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 14 0;
+#X connect 16 2 12 0;
+#X connect 16 3 13 0;
+#X connect 16 4 8 0;
+#X connect 16 5 9 0;
+#X connect 16 6 11 0;
+#X connect 16 7 10 0;
+#X connect 16 8 0 0;
+#X connect 16 9 1 0;
+#X connect 16 10 3 0;
+#X connect 16 11 2 0;
+#X connect 16 12 7 0;
+#X connect 16 13 6 0;
+#X connect 16 14 4 0;
+#X connect 16 15 5 0;
+#X connect 17 0 21 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 22 0;
+#X connect 21 0 16 0;
+#X connect 22 0 17 0;
+#X restore 125 95 pd random-pattern;
+#X obj 48 47 inlet;
+#X obj 48 70 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 95 random 16;
+#X obj 250 119 sel 8 9 10 11 12 13 14 15;
+#X obj 48 119 sel 0 1 2 3 4 5 6 7;
+#X connect 0 0 22 1;
+#X connect 1 0 18 0;
+#X connect 2 0 18 8;
+#X connect 3 0 18 9;
+#X connect 4 0 18 11;
+#X connect 5 0 18 10;
+#X connect 6 0 18 14;
+#X connect 7 0 18 15;
+#X connect 8 0 18 13;
+#X connect 9 0 18 12;
+#X connect 10 0 18 4;
+#X connect 11 0 18 5;
+#X connect 12 0 18 7;
+#X connect 13 0 18 6;
+#X connect 14 0 18 2;
+#X connect 15 0 18 3;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 17 0;
+#X connect 22 1 16 0;
+#X connect 22 2 14 0;
+#X connect 22 3 15 0;
+#X connect 22 4 10 0;
+#X connect 22 5 11 0;
+#X connect 22 6 13 0;
+#X connect 22 7 12 0;
+#X connect 22 8 2 0;
+#X connect 22 9 3 0;
+#X connect 22 10 5 0;
+#X connect 22 11 4 0;
+#X connect 22 12 9 0;
+#X connect 22 13 8 0;
+#X connect 22 14 6 0;
+#X connect 22 15 7 0;
+#X connect 23 0 24 0;
+#X connect 24 0 1 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 0;
+#X connect 26 0 2 0;
+#X connect 26 1 3 0;
+#X connect 26 2 5 0;
+#X connect 26 3 4 0;
+#X connect 26 4 9 0;
+#X connect 26 5 8 0;
+#X connect 26 6 6 0;
+#X connect 26 7 7 0;
+#X connect 27 0 17 0;
+#X connect 27 1 16 0;
+#X connect 27 2 14 0;
+#X connect 27 3 15 0;
+#X connect 27 4 10 0;
+#X connect 27 5 11 0;
+#X connect 27 6 13 0;
+#X connect 27 7 12 0;
+#X connect 27 8 26 0;
+#X restore 41 112 pd change-pattern;
+#X obj 86 26 loadbang;
+#X text 346 89 all off;
+#X msg 155 89 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 323 48 groove;
+#X text 334 68 all on;
+#X msg 131 47 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1;
+#X msg 143 68 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 41 140 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 2 0;
+#X connect 7 0 4 2;
+#X connect 10 0 4 2;
+#X connect 11 0 4 2;
+#X restore 194 149 pd pat;
+#X obj 194 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 219 125 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 150 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#N canvas 63 44 541 505 instr 0;
+#X obj 158 371 int 64;
+#X obj 203 371 int 43;
+#X obj 111 371 int 46;
+#X obj 299 276 + 35;
+#X obj 65 371 int 35;
+#X obj 299 156 pass 33;
+#X obj 241 330 gate 4;
+#X obj 299 185 t b b;
+#X obj 299 238 xrandom 46;
+#X floatatom 299 308 0 0 0 0 - - -;
+#X obj 321 211 between 1 5;
+#X obj 299 131 inlet;
+#X obj 189 295 inlet;
+#X obj 148 295 inlet;
+#X obj 106 295 inlet;
+#X obj 65 419 s seqpl;
+#X obj 65 295 inlet;
+#X connect 0 0 15 0;
+#X connect 1 0 15 0;
+#X connect 2 0 15 0;
+#X connect 3 0 9 0;
+#X connect 4 0 15 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 1;
+#X connect 6 1 2 1;
+#X connect 6 2 0 1;
+#X connect 6 3 1 1;
+#X connect 7 0 8 0;
+#X connect 7 1 10 0;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 1;
+#X connect 11 0 5 0;
+#X connect 12 0 1 0;
+#X connect 13 0 0 0;
+#X connect 14 0 2 0;
+#X connect 16 0 4 0;
+#X restore -65 215 pd instr;
+#X obj -65 75 tgl 15 0 empty empty start/stop 0 -6 0 8 -262144 -1 -1
+0 1;
+#X text -65 361 © 1998 by Karlheinz Essl;
+#X floatatom 409 309 5 0 0 1 BPM - -;
+#X obj 43 172 16step-seq 120;
+#X obj 150 172 16step-seq 120;
+#X obj 258 172 16step-seq 120;
+#N canvas 544 402 450 300 16step-seq 0;
+#X obj 641 80 sel 1;
+#X obj 683 134 * 4;
+#X obj 171 322 outlet;
+#X obj 127 352 outlet;
+#X obj 683 80 inlet;
+#X obj 127 34 inlet;
+#X obj 157 90 inlet;
+#X obj 427 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 456 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 513 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 484 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 599 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 628 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 571 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 542 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 312 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 341 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 398 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 369 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 254 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 283 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 226 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 197 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 197 116 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 683 116 int \$1;
+#N canvas 254 475 361 306 core 0;
+#X obj 168 250 outlet;
+#X obj 117 105 metro 500;
+#X obj 117 79 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 117 54 inlet;
+#X obj 175 30 inlet;
+#X obj 117 135 f;
+#X obj 143 136 + 1;
+#X obj 170 136 mod 16;
+#X obj 117 188 tabread \$0-seq;
+#N canvas 0 22 450 300 BPM2ms 0;
+#X obj 36 101 outlet;
+#X obj 36 46 inlet;
+#X text 60 102 1998 by Karlheinz Essl;
+#X obj 36 73 expr 60000/$f1;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X restore 175 53 pd BPM2ms;
+#X obj 239 250 outlet;
+#X obj 239 174 select 15;
+#X obj 117 157 t a a;
+#X obj 117 210 select 0;
+#X obj 168 230 b;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 8 0 13 0;
+#X connect 9 0 1 1;
+#X connect 11 0 10 0;
+#X connect 12 0 8 0;
+#X connect 12 1 11 0;
+#X connect 13 1 14 0;
+#X connect 14 0 0 0;
+#X restore 127 296 pd core;
+#X obj 197 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 157 232 list prepend 0;
+#X obj 266 200 table \$0-seq 16;
+#X obj 157 261 s \$0-seq;
+#X obj 127 62 t a a;
+#X text 371 328 1998 by Karlheinz Essel \, Pd version 2006 by Frank
+Barknecht;
+#X text 686 157 BPM;
+#X obj 197 88 spigot;
+#X obj 247 93 tgl 15 0 empty empty show_pattern 0 -6 0 8 -262144 -1
+-1 0 1;
+#X connect 0 0 24 0;
+#X connect 1 0 25 1;
+#X connect 4 0 24 0;
+#X connect 5 0 30 0;
+#X connect 6 0 33 0;
+#X connect 6 0 27 0;
+#X connect 7 0 26 8;
+#X connect 8 0 26 9;
+#X connect 9 0 26 11;
+#X connect 10 0 26 10;
+#X connect 11 0 26 14;
+#X connect 12 0 26 15;
+#X connect 13 0 26 13;
+#X connect 14 0 26 12;
+#X connect 15 0 26 4;
+#X connect 16 0 26 5;
+#X connect 17 0 26 7;
+#X connect 18 0 26 6;
+#X connect 19 0 26 2;
+#X connect 20 0 26 3;
+#X connect 21 0 26 1;
+#X connect 22 0 26 0;
+#X connect 23 0 22 0;
+#X connect 23 1 21 0;
+#X connect 23 2 19 0;
+#X connect 23 3 20 0;
+#X connect 23 4 15 0;
+#X connect 23 5 16 0;
+#X connect 23 6 18 0;
+#X connect 23 7 17 0;
+#X connect 23 8 7 0;
+#X connect 23 9 8 0;
+#X connect 23 10 10 0;
+#X connect 23 11 9 0;
+#X connect 23 12 14 0;
+#X connect 23 13 13 0;
+#X connect 23 14 11 0;
+#X connect 23 15 12 0;
+#X connect 24 0 1 0;
+#X connect 25 0 3 0;
+#X connect 25 1 2 0;
+#X connect 27 0 29 0;
+#X connect 30 0 25 0;
+#X connect 30 1 0 0;
+#X connect 33 0 23 0;
+#X connect 34 0 33 1;
+#X restore -69 173 pd 16step-seq 120;
+#X text -69 18 #TODO: fix other seqz!!;
+#X text -63 381 2014 CC 3dwardsharp;
+#X connect 16 0 15 0;
+#X connect 16 1 8 0;
+#X connect 16 2 9 0;
+#X connect 16 3 11 0;
+#X connect 16 4 10 0;
+#X connect 16 5 14 0;
+#X connect 16 6 13 0;
+#X connect 16 7 12 0;
+#X connect 16 8 0 0;
+#X connect 16 9 7 0;
+#X connect 16 10 6 0;
+#X connect 16 11 4 0;
+#X connect 16 12 5 0;
+#X connect 16 13 1 0;
+#X connect 16 14 2 0;
+#X connect 16 15 3 0;
+#X connect 33 0 32 0;
+#X connect 33 1 25 0;
+#X connect 33 2 26 0;
+#X connect 33 3 28 0;
+#X connect 33 4 27 0;
+#X connect 33 5 31 0;
+#X connect 33 6 30 0;
+#X connect 33 7 29 0;
+#X connect 33 8 17 0;
+#X connect 33 9 24 0;
+#X connect 33 10 23 0;
+#X connect 33 11 21 0;
+#X connect 33 12 22 0;
+#X connect 33 13 18 0;
+#X connect 33 14 19 0;
+#X connect 33 15 20 0;
+#X connect 50 0 49 0;
+#X connect 50 1 42 0;
+#X connect 50 2 43 0;
+#X connect 50 3 45 0;
+#X connect 50 4 44 0;
+#X connect 50 5 48 0;
+#X connect 50 6 47 0;
+#X connect 50 7 46 0;
+#X connect 50 8 34 0;
+#X connect 50 9 41 0;
+#X connect 50 10 40 0;
+#X connect 50 11 38 0;
+#X connect 50 12 39 0;
+#X connect 50 13 35 0;
+#X connect 50 14 36 0;
+#X connect 50 15 37 0;
+#X connect 67 0 66 0;
+#X connect 67 1 59 0;
+#X connect 67 2 60 0;
+#X connect 67 3 62 0;
+#X connect 67 4 61 0;
+#X connect 67 5 65 0;
+#X connect 67 6 64 0;
+#X connect 67 7 63 0;
+#X connect 67 8 51 0;
+#X connect 67 9 58 0;
+#X connect 67 10 57 0;
+#X connect 67 11 55 0;
+#X connect 67 12 56 0;
+#X connect 67 13 52 0;
+#X connect 67 14 53 0;
+#X connect 67 15 54 0;
+#X connect 68 0 75 0;
+#X connect 68 0 91 0;
+#X connect 69 0 71 1;
+#X connect 70 0 71 0;
+#X connect 71 0 67 0;
+#X connect 71 0 91 1;
+#X connect 72 0 50 0;
+#X connect 72 0 88 1;
+#X connect 73 0 72 0;
+#X connect 74 0 72 1;
+#X connect 75 0 83 0;
+#X connect 75 0 88 0;
+#X connect 76 0 90 0;
+#X connect 77 0 79 1;
+#X connect 78 0 79 0;
+#X connect 79 0 16 0;
+#X connect 79 0 90 1;
+#X connect 80 0 33 0;
+#X connect 80 0 89 1;
+#X connect 81 0 80 0;
+#X connect 82 0 80 1;
+#X connect 83 0 76 0;
+#X connect 83 0 89 0;
+#X connect 85 0 68 0;
+#X connect 87 0 88 2;
+#X connect 87 0 89 2;
+#X connect 87 0 90 2;
+#X connect 87 0 91 2;
+#X connect 88 0 84 1;
+#X connect 88 1 73 0;
+#X connect 89 0 84 2;
+#X connect 89 1 81 0;
+#X connect 90 0 84 3;
+#X connect 90 1 78 0;
+#X connect 91 0 84 0;
+#X connect 91 1 70 0;
+#X connect 91 1 84 4;
+#X restore 41 331 pd another;
+#X obj 119 233 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 47 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 168 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 189 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 209 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 110 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 147 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 89 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 68 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 268 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 289 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 347 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 310 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 409 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 389 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 368 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 247 282 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 214 120 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 149 100 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 63 44 508 353 player 0;
+#X floatatom 155 57 0 0 0 0 - - -;
+#X obj 111 62 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 151 109 0 0 0 0 - - -;
+#X obj 112 15 r seqpl;
+#X obj 111 83 int 127;
+#X obj 30 83 int 60;
+#X obj 30 18 inlet;
+#X obj 297 82 makenote 0.3 100;
+#X obj 297 140 pack 0 0 0;
+#N canvas 0 22 450 300 plip 0;
+#N canvas 0 22 528 439 blip 0;
+#X obj 153 236 osc~;
+#X obj 190 236 vline~;
+#X obj 189 262 *~;
+#X obj 172 285 *~;
+#X obj 153 26 inlet;
+#X obj 172 331 outlet~;
+#X msg 190 202 1 2 0 \, 0 \$1 3;
+#X obj 190 108 log;
+#X obj 190 85 pow 4;
+#X obj 190 151 * 1e+06;
+#X obj 190 130 pow -3;
+#X obj 190 174 * 2;
+#X obj 259 25 inlet;
+#X obj 265 87 pow -1;
+#X obj 265 112 * 1000;
+#X obj 153 56 t f f f;
+#X obj 265 136 log;
+#X obj 265 159 min 3;
+#X obj 173 307 *~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 1;
+#X connect 3 0 18 0;
+#X connect 4 0 15 0;
+#X connect 6 0 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 0 0;
+#X connect 15 1 8 0;
+#X connect 15 2 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 5 0;
+#X restore 89 139 pd blip;
+#X obj 89 116 stripnote;
+#X obj 88 167 throw~ \$0-blips;
+#X obj 89 92 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 3 0 1 0;
+#X restore 297 278 pd plip;
+#X obj 297 113 poly 4;
+#X obj 297 162 route 1 2 3 4;
+#N canvas 0 22 450 300 plip 0;
+#N canvas 0 22 528 439 blip 0;
+#X obj 153 236 osc~;
+#X obj 190 236 vline~;
+#X obj 189 262 *~;
+#X obj 172 285 *~;
+#X obj 153 26 inlet;
+#X obj 172 331 outlet~;
+#X msg 190 202 1 2 0 \, 0 \$1 3;
+#X obj 190 108 log;
+#X obj 190 85 pow 4;
+#X obj 190 151 * 1e+06;
+#X obj 190 130 pow -3;
+#X obj 190 174 * 2;
+#X obj 259 25 inlet;
+#X obj 265 87 pow -1;
+#X obj 265 112 * 1000;
+#X obj 153 56 t f f f;
+#X obj 265 136 log;
+#X obj 265 159 min 3;
+#X obj 173 307 *~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 1;
+#X connect 3 0 18 0;
+#X connect 4 0 15 0;
+#X connect 6 0 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 0 0;
+#X connect 15 1 8 0;
+#X connect 15 2 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 5 0;
+#X restore 89 139 pd blip;
+#X obj 89 116 stripnote;
+#X obj 88 167 throw~ \$0-blips;
+#X obj 89 92 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 3 0 1 0;
+#X restore 318 255 pd plip;
+#N canvas 0 22 450 300 plip 0;
+#N canvas 0 22 528 439 blip 0;
+#X obj 153 236 osc~;
+#X obj 190 236 vline~;
+#X obj 189 262 *~;
+#X obj 172 285 *~;
+#X obj 153 26 inlet;
+#X obj 172 331 outlet~;
+#X msg 190 202 1 2 0 \, 0 \$1 3;
+#X obj 190 108 log;
+#X obj 190 85 pow 4;
+#X obj 190 151 * 1e+06;
+#X obj 190 130 pow -3;
+#X obj 190 174 * 2;
+#X obj 259 25 inlet;
+#X obj 265 87 pow -1;
+#X obj 265 112 * 1000;
+#X obj 153 56 t f f f;
+#X obj 265 136 log;
+#X obj 265 159 min 3;
+#X obj 173 307 *~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 1;
+#X connect 3 0 18 0;
+#X connect 4 0 15 0;
+#X connect 6 0 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 0 0;
+#X connect 15 1 8 0;
+#X connect 15 2 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 5 0;
+#X restore 89 139 pd blip;
+#X obj 89 116 stripnote;
+#X obj 88 167 throw~ \$0-blips;
+#X obj 89 92 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 3 0 1 0;
+#X restore 340 227 pd plip;
+#N canvas 0 22 450 300 plip 0;
+#N canvas 0 22 528 439 blip 0;
+#X obj 153 236 osc~;
+#X obj 190 236 vline~;
+#X obj 189 262 *~;
+#X obj 172 285 *~;
+#X obj 153 26 inlet;
+#X obj 172 331 outlet~;
+#X msg 190 202 1 2 0 \, 0 \$1 3;
+#X obj 190 108 log;
+#X obj 190 85 pow 4;
+#X obj 190 151 * 1e+06;
+#X obj 190 130 pow -3;
+#X obj 190 174 * 2;
+#X obj 259 25 inlet;
+#X obj 265 87 pow -1;
+#X obj 265 112 * 1000;
+#X obj 153 56 t f f f;
+#X obj 265 136 log;
+#X obj 265 159 min 3;
+#X obj 173 307 *~;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 1;
+#X connect 3 0 18 0;
+#X connect 4 0 15 0;
+#X connect 6 0 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 15 0 0 0;
+#X connect 15 1 8 0;
+#X connect 15 2 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 5 0;
+#X restore 89 139 pd blip;
+#X obj 89 116 stripnote;
+#X obj 88 167 throw~ \$0-blips;
+#X obj 89 92 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 3 0 1 0;
+#X restore 361 202 pd plip;
+#X obj 30 48 t a a;
+#X obj 297 59 mtof;
+#X obj 101 35 t a a;
+#X obj 30 129 pack 0 0;
+#X obj 297 36 unpack 0 0;
+#X obj 353 60 / 127;
+#X connect 0 0 4 1;
+#X connect 1 0 4 0;
+#X connect 2 0 18 1;
+#X connect 3 0 17 0;
+#X connect 4 0 2 0;
+#X connect 5 0 18 0;
+#X connect 6 0 15 0;
+#X connect 7 0 10 0;
+#X connect 7 1 10 1;
+#X connect 8 0 11 0;
+#X connect 10 0 8 0;
+#X connect 10 1 8 1;
+#X connect 10 2 8 2;
+#X connect 11 0 9 0;
+#X connect 11 1 12 0;
+#X connect 11 2 13 0;
+#X connect 11 3 14 0;
+#X connect 15 0 5 0;
+#X connect 15 1 4 0;
+#X connect 16 0 7 0;
+#X connect 17 0 5 0;
+#X connect 17 1 1 0;
+#X connect 18 0 19 0;
+#X connect 19 0 16 0;
+#X connect 19 1 20 0;
+#X connect 20 0 7 1;
+#X restore 49 233 pd player;
+#N canvas 483 555 429 187 pattern 0;
+#X obj 86 59 inlet;
+#X obj 41 59 inlet;
+#X obj 86 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 41 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 89 72 457 247 change-pattern 0;
+#X obj 224 15 inlet;
+#X obj 228 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 250 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 295 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 273 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 363 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 385 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 340 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 318 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 138 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 160 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 205 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 183 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 93 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 115 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 70 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 48 149 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X obj 48 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 48 201 outlet;
+#X obj 125 50 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 124 15 inlet;
+#N canvas 196 256 532 309 random-pattern 0;
+#X obj 234 196 outlet;
+#X obj 255 196 outlet;
+#X obj 298 197 outlet;
+#X obj 276 197 outlet;
+#X obj 361 198 outlet;
+#X obj 383 198 outlet;
+#X obj 340 197 outlet;
+#X obj 319 197 outlet;
+#X obj 149 195 outlet;
+#X obj 170 195 outlet;
+#X obj 213 196 outlet;
+#X obj 191 196 outlet;
+#X obj 106 195 outlet;
+#X obj 128 195 outlet;
+#X obj 85 194 outlet;
+#X obj 186 43 inlet;
+#X obj 64 166 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 90 t b b;
+#X msg 263 124 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 64 194 outlet;
+#X obj 64 46 inlet;
+#X obj 64 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 439 28 646 616 make-choice-list 0;
+#X obj 234 173 + 1;
+#X obj 71 569 outlet;
+#X text 262 364 chooses list elements;
+#X text 283 248 chooses list size;
+#X text 92 162 generate a new list;
+#X obj 190 89 inlet;
+#X obj 234 89 inlet;
+#X obj 328 89 inlet;
+#X obj 285 89 inlet;
+#X obj 71 34 inlet;
+#X text 184 463 1993-98 by Karlheinz Essl;
+#X obj 232 332 outlet;
+#X text 184 479 vs. 1.1;
+#X obj 328 135 int \$4;
+#X obj 234 135 int \$2;
+#X obj 345 473 t a;
+#X obj 253 473 list prepend;
+#X obj 71 530 list;
+#X obj 202 372 until;
+#X obj 202 298 t a a;
+#X obj 158 245 moses 0;
+#X obj 202 268 int;
+#X obj 318 190 + 1;
+#X obj 384 89 loadbang;
+#X obj 130 52 s \$0-reset-output;
+#X obj 332 446 r \$0-reset-output;
+#X obj 94 473 r \$0-reset-output;
+#X obj 71 52 t b b b;
+#X text 232 349 length;
+#X obj 158 210 between \$1;
+#X obj 253 437 int;
+#N canvas 728 163 610 490 between 0;
+#X msg 59 98 seed \$1;
+#X obj 59 51 r RTC-rs;
+#X obj 129 383 outlet;
+#X obj 340 51 inlet;
+#X obj 265 51 inlet;
+#X obj 129 51 inlet;
+#X obj 129 115 random 65536;
+#X obj 129 301 * 1;
+#X obj 129 148 / 65536;
+#X obj 129 334 + \$1;
+#X obj 324 219 f \$1;
+#X obj 417 218 f \$2;
+#X obj 420 146 loadbang;
+#X obj 324 249 expr $f2 - $f1;
+#X obj 265 80 t a a;
+#X obj 129 79 b;
+#X obj 340 80 t b a;
+#X obj 420 170 t b b b;
+#X obj 229 326 f \$1;
+#X obj 266 326 f \$2;
+#X obj 229 303 loadbang;
+#X text 200 407 1992 by Gerhard Eckel;
+#X text 199 430 vs 1.1;
+#N canvas 195 22 809 530 int-or-float 0;
+#X obj 220 466 outlet;
+#X obj 557 156 select 0;
+#X obj 271 341 unpack 0 0;
+#X obj 287 426 int;
+#X obj 220 343 inlet;
+#X msg 608 293 0 1;
+#X obj 608 187 select i int f float;
+#X msg 675 291 1 0;
+#X obj 220 404 spigot 0;
+#X obj 285 406 spigot 1;
+#X obj 271 181 int;
+#X obj 271 208 ==;
+#X obj 271 159 t f f;
+#X obj 271 235 select 0;
+#X msg 271 260 1 0;
+#X text 72 75 check for "real" floats!;
+#X obj 271 316 spigot 1;
+#X msg 322 290 0;
+#X obj 557 99 loadbang;
+#X text 353 289 don't check \, if argument in use.;
+#X text 145 264 found a float!;
+#X obj 557 134 list append \$1;
+#X obj 271 99 t a b;
+#X obj 271 76 inlet;
+#X connect 1 1 6 0;
+#X connect 2 0 8 1;
+#X connect 2 1 9 1;
+#X connect 3 0 0 0;
+#X connect 4 0 8 0;
+#X connect 4 0 9 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 6 0 17 0;
+#X connect 6 1 5 0;
+#X connect 6 1 17 0;
+#X connect 6 2 7 0;
+#X connect 6 2 17 0;
+#X connect 6 3 7 0;
+#X connect 6 3 17 0;
+#X connect 7 0 2 0;
+#X connect 8 0 0 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 10 0;
+#X connect 12 1 11 1;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 16 0 2 0;
+#X connect 17 0 16 1;
+#X connect 18 0 21 0;
+#X connect 21 0 1 0;
+#X connect 22 0 12 0;
+#X connect 22 1 21 0;
+#X connect 23 0 22 0;
+#X restore 129 356 pd int-or-float \$3;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 3 0 16 0;
+#X connect 4 0 14 0;
+#X connect 5 0 15 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 23 0;
+#X connect 10 0 13 0;
+#X connect 11 0 13 1;
+#X connect 12 0 17 0;
+#X connect 13 0 7 1;
+#X connect 14 0 9 1;
+#X connect 14 1 10 0;
+#X connect 15 0 6 0;
+#X connect 16 0 10 0;
+#X connect 16 1 11 0;
+#X connect 17 0 10 0;
+#X connect 17 1 11 0;
+#X connect 18 0 23 1;
+#X connect 19 0 23 1;
+#X connect 20 0 18 0;
+#X connect 20 0 19 0;
+#X connect 23 0 2 0;
+#X restore 253 402 pd between \$3;
+#X connect 0 0 29 2;
+#X connect 5 0 29 1;
+#X connect 6 0 14 0;
+#X connect 7 0 13 0;
+#X connect 9 0 27 0;
+#X connect 13 0 22 0;
+#X connect 14 0 0 0;
+#X connect 15 0 16 1;
+#X connect 16 0 15 0;
+#X connect 16 0 17 1;
+#X connect 17 0 1 0;
+#X connect 19 0 18 0;
+#X connect 19 1 11 0;
+#X connect 20 1 21 0;
+#X connect 21 0 19 0;
+#X connect 23 0 13 0;
+#X connect 23 0 14 0;
+#X connect 25 0 16 1;
+#X connect 26 0 17 1;
+#X connect 27 0 17 0;
+#X connect 27 1 29 0;
+#X connect 27 2 24 0;
+#X connect 29 0 20 0;
+#X connect 30 0 16 0;
+#X restore 64 124 pd make-choice-list 16 16 0 1;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 14 0;
+#X connect 16 2 12 0;
+#X connect 16 3 13 0;
+#X connect 16 4 8 0;
+#X connect 16 5 9 0;
+#X connect 16 6 11 0;
+#X connect 16 7 10 0;
+#X connect 16 8 0 0;
+#X connect 16 9 1 0;
+#X connect 16 10 3 0;
+#X connect 16 11 2 0;
+#X connect 16 12 7 0;
+#X connect 16 13 6 0;
+#X connect 16 14 4 0;
+#X connect 16 15 5 0;
+#X connect 17 1 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 0;
+#X restore 125 75 pd random-pattern;
+#X obj 62 17 inlet;
+#X obj 62 50 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 48 75 random 16;
+#X obj 250 119 sel 8 9 10 11 12 13 14 15;
+#X obj 48 119 sel 0 1 2 3 4 5 6 7;
+#X obj 21 49 t b b;
+#X connect 0 0 21 1;
+#X connect 1 0 17 8;
+#X connect 2 0 17 9;
+#X connect 3 0 17 11;
+#X connect 4 0 17 10;
+#X connect 5 0 17 14;
+#X connect 6 0 17 15;
+#X connect 7 0 17 13;
+#X connect 8 0 17 12;
+#X connect 9 0 17 4;
+#X connect 10 0 17 5;
+#X connect 11 0 17 7;
+#X connect 12 0 17 6;
+#X connect 13 0 17 2;
+#X connect 14 0 17 3;
+#X connect 15 0 17 1;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 16 0;
+#X connect 21 1 15 0;
+#X connect 21 2 13 0;
+#X connect 21 3 14 0;
+#X connect 21 4 9 0;
+#X connect 21 5 10 0;
+#X connect 21 6 12 0;
+#X connect 21 7 11 0;
+#X connect 21 8 1 0;
+#X connect 21 9 2 0;
+#X connect 21 10 4 0;
+#X connect 21 11 3 0;
+#X connect 21 12 8 0;
+#X connect 21 13 7 0;
+#X connect 21 14 5 0;
+#X connect 21 15 6 0;
+#X connect 22 0 23 0;
+#X connect 22 0 27 0;
+#X connect 24 0 26 0;
+#X connect 25 0 1 0;
+#X connect 25 1 2 0;
+#X connect 25 2 4 0;
+#X connect 25 3 3 0;
+#X connect 25 4 8 0;
+#X connect 25 5 7 0;
+#X connect 25 6 5 0;
+#X connect 25 7 6 0;
+#X connect 26 0 16 0;
+#X connect 26 1 15 0;
+#X connect 26 2 13 0;
+#X connect 26 3 14 0;
+#X connect 26 4 9 0;
+#X connect 26 5 10 0;
+#X connect 26 6 12 0;
+#X connect 26 7 11 0;
+#X connect 26 8 25 0;
+#X connect 27 0 17 0;
+#X connect 27 1 24 0;
+#X restore 41 112 pd change-pattern;
+#X obj 86 26 loadbang;
+#X text 346 89 all off;
+#X msg 155 89 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 323 48 groove;
+#X text 334 68 all on;
+#X msg 131 47 1 0 0 1 0 1 1 0 0 0 0 1 0 1 1 1;
+#X msg 143 68 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 41 140 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 2 0;
+#X connect 7 0 4 2;
+#X connect 10 0 4 2;
+#X connect 11 0 4 2;
+#X restore 149 147 pd pattern;
+#X obj 49 202 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 49 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 249 149 4 0 0 1 BPM - -;
+#X obj 249 204 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 441 281 current pattern;
+#X text 38 258 ___________________________________________________________
+;
+#X text 189 324 1998 by Karlheinz Essl;
+#X text 167 98 randomly change one pattern cell;
+#X text 36 40 A 16-step sequencer whose patterns can be created by
+random or by supplying a list (see below).;
+#X text 35 72 The pattern can be changed gradually by applied operations.
+;
+#X text 288 207 sequence finished;
+#X text 78 202 rhythm bangs;
+#X obj 443 234 dac~;
+#X obj 442 119 catch~ \$0-blips;
+#X obj 442 203 *~ 0;
+#X obj 468 159 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#N canvas 544 402 450 300 16step-seq 0;
+#X obj 641 80 sel 1;
+#X obj 683 134 * 4;
+#X obj 171 322 outlet;
+#X obj 127 352 outlet;
+#X obj 683 80 inlet;
+#X obj 127 34 inlet;
+#X obj 157 90 inlet;
+#X obj 427 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 456 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 513 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 484 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 599 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 628 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 571 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 542 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 312 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 341 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 398 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 369 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 254 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 283 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 226 146 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 197 147 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 197 116 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 683 116 int \$1;
+#N canvas 254 475 361 306 core 0;
+#X obj 168 250 outlet;
+#X obj 117 105 metro 500;
+#X obj 117 79 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 117 54 inlet;
+#X obj 175 30 inlet;
+#X obj 117 135 f;
+#X obj 143 136 + 1;
+#X obj 170 136 mod 16;
+#X obj 117 188 tabread \$0-seq;
+#N canvas 0 22 450 300 BPM2ms 0;
+#X obj 36 101 outlet;
+#X obj 36 46 inlet;
+#X text 60 102 1998 by Karlheinz Essl;
+#X obj 36 73 expr 60000/$f1;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X restore 175 53 pd BPM2ms;
+#X obj 239 250 outlet;
+#X obj 239 174 select 15;
+#X obj 117 157 t a a;
+#X obj 117 210 select 0;
+#X obj 168 230 b;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 8 0 13 0;
+#X connect 9 0 1 1;
+#X connect 11 0 10 0;
+#X connect 12 0 8 0;
+#X connect 12 1 11 0;
+#X connect 13 1 14 0;
+#X connect 14 0 0 0;
+#X restore 127 296 pd core;
+#X obj 197 175 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 157 232 list prepend 0;
+#X obj 266 200 table \$0-seq 16;
+#X obj 157 261 s \$0-seq;
+#X obj 127 62 t a a;
+#X text 371 328 1998 by Karlheinz Essel \, Pd version 2006 by Frank
+Barknecht;
+#X text 686 157 BPM;
+#X obj 197 88 spigot;
+#X obj 247 93 tgl 15 0 empty empty show_pattern 0 -6 0 8 -262144 -1
+-1 0 1;
+#X connect 0 0 24 0;
+#X connect 1 0 25 1;
+#X connect 4 0 24 0;
+#X connect 5 0 30 0;
+#X connect 6 0 33 0;
+#X connect 6 0 27 0;
+#X connect 7 0 26 8;
+#X connect 8 0 26 9;
+#X connect 9 0 26 11;
+#X connect 10 0 26 10;
+#X connect 11 0 26 14;
+#X connect 12 0 26 15;
+#X connect 13 0 26 13;
+#X connect 14 0 26 12;
+#X connect 15 0 26 4;
+#X connect 16 0 26 5;
+#X connect 17 0 26 7;
+#X connect 18 0 26 6;
+#X connect 19 0 26 2;
+#X connect 20 0 26 3;
+#X connect 21 0 26 1;
+#X connect 22 0 26 0;
+#X connect 23 0 22 0;
+#X connect 23 1 21 0;
+#X connect 23 2 19 0;
+#X connect 23 3 20 0;
+#X connect 23 4 15 0;
+#X connect 23 5 16 0;
+#X connect 23 6 18 0;
+#X connect 23 7 17 0;
+#X connect 23 8 7 0;
+#X connect 23 9 8 0;
+#X connect 23 10 10 0;
+#X connect 23 11 9 0;
+#X connect 23 12 14 0;
+#X connect 23 13 13 0;
+#X connect 23 14 11 0;
+#X connect 23 15 12 0;
+#X connect 24 0 1 0;
+#X connect 25 0 3 0;
+#X connect 25 1 2 0;
+#X connect 27 0 29 0;
+#X connect 30 0 25 0;
+#X connect 30 1 0 0;
+#X connect 33 0 23 0;
+#X connect 34 0 33 1;
+#X restore 49 177 pd 16step-seq 120;
+#X text 237 118 create random pattern #BROK3 :(;
+#X text 38 308 ____________________________________________________________
+;
+#X connect 1 0 21 0;
+#X connect 3 0 4 0;
+#X connect 3 1 11 0;
+#X connect 3 2 10 0;
+#X connect 3 3 8 0;
+#X connect 3 4 9 0;
+#X connect 3 5 5 0;
+#X connect 3 6 6 0;
+#X connect 3 7 7 0;
+#X connect 3 8 19 0;
+#X connect 3 9 12 0;
+#X connect 3 10 13 0;
+#X connect 3 11 15 0;
+#X connect 3 12 14 0;
+#X connect 3 13 18 0;
+#X connect 3 14 17 0;
+#X connect 3 15 16 0;
+#X connect 20 0 23 1;
+#X connect 21 0 23 0;
+#X connect 23 0 3 0;
+#X connect 23 0 40 1;
+#X connect 24 0 22 0;
+#X connect 25 0 40 0;
+#X connect 26 0 40 2;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
+#X connect 38 0 36 1;
+#X connect 39 0 38 1;
+#X connect 40 0 24 0;
+#X connect 40 1 27 0;
+#X restore 15 353 pd PPL_PD_INTRO_17_16step_sequencer;
+#N canvas 620 22 527 524 PPL_PD_INTRO_18_scale_changer 0;
+#X obj 12 11 cnv 15 500 30 empty empty scale_changer 20 12 0 24 -260097
+-66577 0;
+#X text 176 166 change harmony;
+#X msg 258 360 0 1 0 1 0 0 1 0 1 0 1 0;
+#X msg 263 314 1 3 6 8 10;
+#X text 267 337 active/inactive pitch classes;
+#X text 268 293 current pitch classes;
+#X msg 450 18 Harmony;
+#X text 33 189 select rhythm;
+#N canvas 63 44 340 273 register 0;
+#X floatatom 131 141 0 0 0 0 - - -;
+#X obj 38 207 outlet;
+#X obj 38 171 brownian 3 8 0.3;
+#X text 179 142 brown factor;
+#X msg 131 107 0.3;
+#X msg 163 107 0;
+#X msg 194 107 1;
+#X obj 131 76 sel 0 1;
+#X obj 131 46 inlet;
+#X obj 38 46 inlet;
+#X connect 0 0 2 3;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 7 2 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X restore 123 342 pd register;
+#X floatatom 123 370 0 0 0 0 - - -;
+#X obj 55 424 pitch2note 4;
+#X obj 151 166 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 258 233 show;
+#X obj 55 293 permutate;
+#X obj 151 203 scale-changer;
+#X obj 55 264 bng 15 50 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 101 87 506 367 rhythm 0;
+#N canvas 203 143 578 209 chords 0;
+#X obj 23 95 repchord-rhythm 100 1000 12 6 0.8 0.2;
+#X obj 23 37 inlet;
+#X obj 23 131 outlet;
+#X floatatom 458 68 0 0 0 0 - - -;
+#X floatatom 385 68 0 0 0 0 - - -;
+#X floatatom 313 68 0 0 0 0 - - -;
+#X floatatom 240 68 0 0 0 0 - - -;
+#X floatatom 168 68 0 0 0 0 - - -;
+#X floatatom 95 68 0 0 0 0 - - -;
+#X obj 23 68 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X text 95 52 min.ED;
+#X text 168 52 max.ED;
+#X text 239 52 ED-values;
+#X text 451 39 periodicity of max.ED;
+#X text 379 39 periodicity of min.ED;
+#X text 306 39 max. chord size;
+#X connect 0 0 2 0;
+#X connect 1 0 9 0;
+#X connect 3 0 0 6;
+#X connect 4 0 0 5;
+#X connect 5 0 0 4;
+#X connect 6 0 0 3;
+#X connect 7 0 0 2;
+#X connect 8 0 0 1;
+#X connect 9 0 0 0;
+#X restore 265 136 pd chords;
+#X obj 151 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#N canvas 106 198 524 257 rubato 0;
+#X obj 35 150 outlet;
+#X text 406 150 chosen ED;
+#X text 234 150 row index;
+#X floatatom 196 150 0 0 0 0 - - -;
+#X floatatom 358 150 0 0 0 0 - - -;
+#X obj 35 53 inlet;
+#X obj 35 87 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X floatatom 275 91 0 0 0 0 - - -;
+#X floatatom 355 91 0 0 0 0 - - -;
+#X floatatom 195 91 0 0 0 0 - - -;
+#X floatatom 115 91 0 0 0 0 - - -;
+#X text 194 76 max. ED;
+#X text 115 76 min. ED;
+#X text 355 76 brownian factor;
+#X text 275 76 ED-values;
+#X text 325 201 max. ED;
+#X text 193 201 min. ED;
+#X obj 196 180 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 35 116 brown-rhythm 75 1000 24 0.07;
+#X connect 3 0 17 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 3;
+#X connect 8 0 18 4;
+#X connect 9 0 18 2;
+#X connect 10 0 18 1;
+#X connect 18 0 0 0;
+#X connect 18 1 3 0;
+#X connect 18 2 4 0;
+#X restore 151 136 pd rubato;
+#X obj 38 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#N canvas 63 44 278 222 pulsation 0;
+#X obj 39 53 inlet;
+#X text 158 86 speed;
+#X obj 39 147 outlet;
+#X obj 39 112 metro 250;
+#X floatatom 109 85 0 0 0 0 - - -;
+#X obj 39 85 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X connect 0 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X restore 38 136 pd pulsation;
+#X obj 38 178 outlet;
+#X obj 38 42 inlet;
+#X obj 265 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 135 88 unpack 0 0 0;
+#X msg 145 23 1 0 0;
+#X msg 146 64 0 0 1;
+#X msg 146 43 0 1 0;
+#X msg 195 65 0 0 0;
+#X obj 38 70 select 1 2 3;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 13 0;
+#X connect 7 0 0 0;
+#X connect 8 0 3 0;
+#X connect 8 1 1 0;
+#X connect 8 2 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 9 0;
+#X connect 13 1 11 0;
+#X connect 13 2 10 0;
+#X connect 13 3 12 0;
+#X restore 55 235 pd rhythm;
+#N canvas 63 44 363 294 start-scale 0;
+#X obj 44 36 inlet;
+#X obj 44 63 sel 0 1 2 3 4 5;
+#X msg 44 96 0 1 0 1 0 0 1 0 1 0 1 0;
+#X msg 60 117 1 0 1 0 1 1 0 1 0 1 0 1;
+#X msg 76 140 1 0 1 1 0 1 0 1 1 0 1 0;
+#X msg 94 162 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 246 36 inlet;
+#X msg 109 189 1 0 1 1 0 1 1 0 1 1 0 1;
+#X obj 44 232 outlet;
+#X msg 124 213 1 0 0 1 1 0 0 1 1 0 0 1;
+#X msg 179 59 0;
+#X obj 179 36 loadbang;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X connect 1 4 7 0;
+#X connect 1 5 9 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 9 0 8 0;
+#X connect 10 0 1 0;
+#X connect 11 0 10 0;
+#X restore 281 183 pd start-scale;
+#X obj 151 241 show;
+#N canvas 396 226 538 308 construct-scale 0;
+#X msg 410 153 0;
+#X msg 410 103 clear;
+#X obj 79 231 outlet;
+#X obj 79 200 pack 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 249 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 79 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 100 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 121 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 142 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 185 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 206 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 227 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 312 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 291 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 164 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X obj 270 170 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+1;
+#X text 52 25 Type in the desired scale...;
+#X text 134 117 pitch class;
+#X obj 49 116 t b a;
+#X floatatom 49 97 5 0 0 0 - - -;
+#X text 397 84 clear scale;
+#X obj 79 141 sel 0 1 2 3 4 5 6 7 8 9 10 11;
+#X obj 49 74 hradio 15 1 0 12 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 0 0 8 0;
+#X connect 0 0 14 0;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 0 0 11 0;
+#X connect 0 0 4 0;
+#X connect 0 0 15 0;
+#X connect 0 0 13 0;
+#X connect 0 0 12 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 8;
+#X connect 5 0 3 0;
+#X connect 6 0 3 1;
+#X connect 7 0 3 2;
+#X connect 8 0 3 3;
+#X connect 9 0 3 5;
+#X connect 10 0 3 6;
+#X connect 11 0 3 7;
+#X connect 12 0 3 11;
+#X connect 13 0 3 10;
+#X connect 14 0 3 4;
+#X connect 15 0 3 9;
+#X connect 18 0 3 0;
+#X connect 18 1 21 0;
+#X connect 19 0 18 0;
+#X connect 21 0 5 0;
+#X connect 21 1 6 0;
+#X connect 21 2 7 0;
+#X connect 21 3 8 0;
+#X connect 21 4 14 0;
+#X connect 21 5 9 0;
+#X connect 21 6 10 0;
+#X connect 21 7 11 0;
+#X connect 21 8 4 0;
+#X connect 21 9 15 0;
+#X connect 21 11 13 0;
+#X connect 21 12 12 0;
+#X connect 22 0 19 0;
+#X restore 380 132 pd construct-scale;
+#X text 39 73 Changes one single pitch of a given scale whenever you
+send a bang to the left inlet. A start scale must be sent to the right
+inlet frist - note its special format: a list of size 12 consisting
+only of 0 and 1 where 1 means an active pitch class and 0 a inactive
+one.;
+#X text 38 50 scale-changer;
+#X text 35 497 1996 by Karlheinz Essl;
+#X obj 55 209 hradio 15 1 0 4 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 281 164 hradio 15 1 0 6 empty empty select_start_scale 0 -6
+0 8 -262144 -1 -1 0;
+#X obj 195 322 hradio 15 1 0 3 empty empty empty 0 -6 0 8 -262144 -1
+-1 0;
+#X obj 55 464 play2 127 500 1 1;
+#X obj 55 316 t a a;
+#X floatatom 163 433 5 0 0 0 - - -;
+#X obj 123 395 + 0;
+#X floatatom 153 397 5 0 0 1 octave - -;
+#X text 382 152 open to construct a;
+#X text 382 166 specific start scale;
+#X connect 8 0 9 0;
+#X connect 9 0 29 0;
+#X connect 10 0 26 0;
+#X connect 11 0 14 0;
+#X connect 12 0 2 0;
+#X connect 13 0 27 0;
+#X connect 14 0 18 0;
+#X connect 14 0 13 1;
+#X connect 14 1 12 0;
+#X connect 15 0 13 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 1;
+#X connect 18 0 3 0;
+#X connect 19 0 17 1;
+#X connect 23 0 16 0;
+#X connect 24 0 17 0;
+#X connect 25 0 8 1;
+#X connect 27 0 10 0;
+#X connect 27 1 8 0;
+#X connect 28 0 26 2;
+#X connect 29 0 10 1;
+#X connect 30 0 29 1;
+#X restore 15 513 pd PPL_PD_INTRO_18_scale_changer;
+#N canvas 721 82 530 401 PPL_PD_INTRO_19_atomic_messages 0;
+#X obj 12 11 cnv 15 500 30 empty empty atomic_messages 20 12 0 24 -260097
+-66577 0;
+#X msg 89 160 symbol atom;
+#X msg 67 292 float 1.234;
+#X text 35 45 To send one piece of data to an object \, send an atomic
+message. There are atomic messages to match each of the atom types.
+;
+#X symbolatom 81 202 10 0 0 0 - - -;
+#X msg 74 134 atom;
+#X text 192 201 <-- the symbol box expects a symbol message;
+#X text 126 134 <-- this gives an error (check the Pd window);
+#X text 216 159 <-- this works;
+#X text 34 103 When using symbolic atoms \, the symbol message is essential:
+;
+#X floatatom 94 359 5 0 0 0 - - -;
+#X msg 104 323 362;
+#X text 37 232 When using numeric atoms \, the float message is optional.
+This is because the float message is automatically implied when sending
+a numeric atom:;
+#X connect 1 0 4 0;
+#X connect 2 0 10 0;
+#X connect 5 0 4 0;
+#X connect 11 0 10 0;
+#X restore 15 393 pd PPL_PD_INTRO_19_atomic_messages;
+#N canvas 537 61 576 454 PPL_PD_INTRO_20_selectors 0;
+#X obj 8 -9 cnv 15 550 30 empty empty selectors 20 12 0 24 -260097
+-66577 0;
+#X obj 301 324 cnv 15 240 60 empty empty not_selectors 5 12 0 14 -261234
+-66577 0;
+#X obj 31 324 cnv 15 250 60 empty empty possible_selectors 5 12 0 14
+-204786 -66577 0;
+#N canvas 10 40 620 460 object 0;
+#X obj 79 36 inlet;
+#X obj 86 270 outlet;
+#X obj 308 267 outlet;
+#X obj 71 131 route output-left output-right;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X restore 51 215 pd object;
+#X floatatom 51 258 5 0 0 0 - - -;
+#X floatatom 136 258 5 0 0 0 - - -;
+#X msg 83 169 output-right 309;
+#X msg 50 119 output-left 8675;
+#X text 39 38 Every message has a selector. The selector is the first
+element in the message. It tells the object which receives that message
+what to do with it. A selector is basically like a command or a function.
+;
+#X text 220 120 <-- "output-left" is the selector;
+#X text 250 170 <-- "output-right" is the selector;
+#X text 205 392 For more info:;
+#X obj 230 407 pddp/pddplink http://crca.ucsd.edu/~msp/Pd_documentation/x2.htm#s3.1
+;
+#X text 40 360 symbol;
+#X text 147 345 list;
+#X text 83 367 my23;
+#X text 99 357 output-left;
+#X text 316 348 2523;
+#X text 433 328 -134.4;
+#X text 423 351 is \; next;
+#X text 28 292 The selector has a specific format. It needs to be a
+symbolic atom with no spaces \, semicolons \, or commas.;
+#X text 61 344 fl--^;
+#X text 359 364 my \, 23;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X restore 15 413 pd PPL_PD_INTRO_20_selectors;
+#N canvas 721 82 439 397 PPL_PD_INTRO_22_subpatches 0;
+#X obj 20 20 cnv 15 400 30 empty empty subpatches 20 12 0 24 -260097
+-66577 0;
+#X text 22 79 Encapsulation is a key concept in Pd programming. Each
+object is an idea that is bundled up into an easy-to-use package. You
+should make encapsulated your ideas. Subpatches are the easiest way
+to do this.;
+#N canvas 10 40 330 267 what's 0;
+#X obj 140 91 loadbang;
+#X obj 139 149 float;
+#X obj 198 149 + 1;
+#X floatatom 139 221 5 0 0 0 - - -;
+#X obj 30 149 delay 1000;
+#X text 39 39 just counting away in here...;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 4 0 1 0;
+#X restore 67 170 pd what's in here?;
+#X text 36 324 A subpatch is part of the same file \, its just a way
+of organizing the logic of a program.;
+#X text 29 251 To make a subpatch \, create an object that started
+with the word "pd" \, then type anything after that to identify it.
+Try making one below:;
+#X text 149 194 ^-- right-click here and select "Open";
+#X restore 15 453 pd PPL_PD_INTRO_22_subpatches;
+#N canvas 362 88 602 475 PPL_PD_INTRO_21_implied_selectors 0;
+#X obj 12 3 cnv 15 575 30 empty empty implied_selectors 20 12 0 24
+-260097 -66577 0;
+#X msg 220 155 534 2334;
+#X msg 296 155 5 cats;
+#X floatatom 234 226 5 0 0 0 - - -;
+#X symbolatom 282 225 10 0 0 0 - - -;
+#X obj 187 246 bng 15 250 50 0 empty empty bang -6 23 1 12 -262144
+-1 -1;
+#X obj 187 202 route bang float symbol list;
+#X obj 234 246 bng 15 250 50 0 empty empty float -4 23 1 12 -262144
+-1 -1;
+#X obj 282 246 bng 15 250 50 0 empty empty symbol -12 23 1 12 -262144
+-1 -1;
+#X obj 331 246 bng 15 250 50 0 empty empty list -2 23 1 12 -262144
+-1 -1;
+#X obj 380 246 bng 15 250 50 0 empty empty undefined -18 23 1 12 -262144
+-1 -1;
+#X msg 180 125 12;
+#X obj 36 385 list;
+#X obj 36 409 pddp/print;
+#X msg 36 356 list 1 2 3;
+#X obj 246 409 pddp/print;
+#X msg 246 356 float 9876;
+#X obj 246 385 float;
+#X msg 110 125 0.0003;
+#X msg 359 155 1 2 3 4 5 6 7 8 9;
+#X text 38 61 In the case of messages whose first element is a numeric
+atom \, the selector is implied (either a "float" or a "list"):;
+#X msg 50 125 -999;
+#X obj 136 409 pddp/print;
+#X obj 136 385 route list;
+#X msg 136 356 list 1 2 3 4;
+#X obj 347 409 pddp/print;
+#X floatatom 347 387 9 0 0 0 - - -;
+#X msg 347 356 float -0.9876;
+#X obj 466 409 pddp/print;
+#X msg 466 356 float 782.32;
+#X obj 466 385 trigger float;
+#X text 36 291 Most objects output using the implied selector \, even
+converting messages with an explicit "list" or "float" selector:;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 6 0 5 0;
+#X connect 6 1 3 0;
+#X connect 6 2 4 0;
+#X connect 6 3 9 0;
+#X connect 6 4 10 0;
+#X connect 11 0 6 0;
+#X connect 12 0 13 0;
+#X connect 14 0 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 6 0;
+#X connect 19 0 6 0;
+#X connect 21 0 6 0;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 26 0 25 0;
+#X connect 27 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 28 0;
+#X restore 15 433 pd PPL_PD_INTRO_21_implied_selectors;
+#N canvas 435 81 587 380 PPL_PD_INTRO_23_pack_mixed_symbols 0;
+#X obj 5 5 cnv 15 575 30 empty empty pack_mixed_symbols 20 12 0 24
+-260097 -66577 0;
+#X msg 205 67 test;
+#X msg 63 67 test;
+#X text 63 49 this works;
+#X text 205 48 this complains;
+#X msg 205 113 symbol test;
+#X text 206 96 this works;
+#X obj 29 111 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 108 236 5 0 0 0 - - -;
+#X symbolatom 156 235 10 0 0 0 - - -;
+#X obj 61 256 bng 15 250 50 0 empty empty bang -6 23 1 12 -262144 -1
+-1;
+#X obj 61 212 route bang float symbol list;
+#X obj 108 256 bng 15 250 50 0 empty empty float -4 23 1 12 -262144
+-1 -1;
+#X obj 156 256 bng 15 250 50 0 empty empty symbol -12 23 1 12 -262144
+-1 -1;
+#X obj 204 256 bng 15 250 50 0 empty empty list -2 23 1 12 -262144
+-1 -1;
+#X obj 252 256 bng 15 250 50 0 empty empty undefined -18 23 1 12 -262144
+-1 -1;
+#X obj 77 176 print;
+#X obj 62 143 pack symbol symbol;
+#X msg 75 113 symbol test;
+#X text 76 96 this works;
+#X obj 27 326 unpack symbol symbol;
+#X symbolatom 27 347 10 0 0 0 - - -;
+#X symbolatom 144 347 10 0 0 0 - - -;
+#X msg 343 67 test;
+#X text 343 49 this works;
+#X floatatom 388 236 5 0 0 0 - - -;
+#X symbolatom 436 235 10 0 0 0 - - -;
+#X obj 341 256 bng 15 250 50 0 empty empty bang -6 23 1 12 -262144
+-1 -1;
+#X obj 341 212 route bang float symbol list;
+#X obj 388 256 bng 15 250 50 0 empty empty float -4 23 1 12 -262144
+-1 -1;
+#X obj 436 256 bng 15 250 50 0 empty empty symbol -12 23 1 12 -262144
+-1 -1;
+#X obj 484 256 bng 15 250 50 0 empty empty list -2 23 1 12 -262144
+-1 -1;
+#X obj 532 256 bng 15 250 50 0 empty empty undefined -18 23 1 12 -262144
+-1 -1;
+#X obj 357 176 print;
+#X obj 342 143 pack symbol;
+#X connect 1 0 17 1;
+#X connect 2 0 17 0;
+#X connect 5 0 17 1;
+#X connect 7 0 17 0;
+#X connect 8 0 12 0;
+#X connect 9 0 13 0;
+#X connect 11 0 10 0;
+#X connect 11 1 8 0;
+#X connect 11 2 9 0;
+#X connect 11 3 14 0;
+#X connect 11 4 15 0;
+#X connect 17 0 11 0;
+#X connect 17 0 16 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 20 0 21 0;
+#X connect 20 1 22 0;
+#X connect 23 0 34 0;
+#X connect 25 0 29 0;
+#X connect 26 0 30 0;
+#X connect 28 0 27 0;
+#X connect 28 1 25 0;
+#X connect 28 2 26 0;
+#X connect 28 3 31 0;
+#X connect 28 4 32 0;
+#X connect 34 0 28 0;
+#X connect 34 0 33 0;
+#X restore 15 473 pd PPL_PD_INTRO_23_pack_mixed_symbols;
+#N canvas 546 51 539 502 PPL_PD_INTRO_25_time 0;
+#X obj 22 -4 cnv 15 500 30 empty empty time 20 12 0 24 -260097 -66577
+0;
+#X text 44 33 Besides the metronome \, there are three objects for
+dealing with time:;
+#X obj 49 137 print;
+#X msg 49 79 bang;
+#X msg 95 81 stop;
+#X obj 49 109 delay 2000;
+#X msg 61 212 bang;
+#X obj 61 259 timer;
+#X text 145 137 The right inlet can be used to set the time value without
+scheduling any output.;
+#X obj 91 234 delay 123.45;
+#X floatatom 61 284 0 0 0 0 - - -;
+#X text 46 312 Note that all time calculations are idealized \; they
+do not show the effects of computation time or OS latency. This way
+you can write deterministic algorithms dealing with time passage.;
+#X obj 59 407 pipe 2000;
+#X floatatom 59 380 0 0 0 0 - - -;
+#X floatatom 59 433 0 0 0 0 - - -;
+#X text 140 381 The pipe object allocates memory dynamically in order
+to schedule any number of delayed events. The events may hold any collection
+of data (as usual \, for more details you can consult the help window.)
+;
+#X text 355 473 updated for Pd version 0.43;
+#X text 45 174 The timer \, shown below \, measures the time elapsed
+between the arrival of 'bang' messages to its left and right inlets:
+;
+#X text 144 60 The delay object schedules an event for a future time
+expressed in milliseconds. Unlike in Max \, time values need not be
+integers. If a delay has been scheduled and you "bang" it again \,
+it is rescheduled (the previously scheduled output is cancelled.);
+#X obj 102 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 19 0;
+#X connect 6 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 9 0 7 1;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X restore 15 153 pd PPL_PD_INTRO_25_time;
+#N canvas 429 55 439 484 PPL_PD_INTRO_26_dollarsigns2 0;
+#X text 22 374 An abstraction's creation arguments may be either numbers
+or symbols. Gory details are inside:;
+#N canvas 472 22 417 695 dollarsign2 0;
+#X text 222 672 updated for Pd version 0.34;
+#X text 44 16 This is an abstraction used in example 13 \, "dollarsigns".
+;
+#X obj 98 117 send \$1;
+#X obj 209 116 + \$2;
+#X floatatom 313 98 0 0 0 0 - - -;
+#X obj 313 149 print;
+#X msg 313 123 blah \$1;
+#X text 46 173 This may sound inconsistant \, but it's not--object
+and message boxes are both actually messages \, but in the case of
+the Object box the message is passed at creation time \, and for the
+Message box \, at message time.;
+#X msg 198 282 bang;
+#X obj 198 310 symbol \$1;
+#X msg 108 282 bang;
+#X obj 108 310 float \$2;
+#X floatatom 108 337 5 0 0 0 - - -;
+#X symbolatom 198 339 10 0 0 0 - - -;
+#X text 46 243 So how do you put creation arguments in messages? Use
+"float" and "symbol" as shown:;
+#X msg 107 393 bang;
+#X obj 107 417 float \$2;
+#X msg 107 444 five \$1;
+#X text 51 367 Then if you wish \, connect to a message box as in:
+;
+#X obj 107 469 print;
+#X msg 153 522 bang;
+#X obj 153 574 symbol \$1;
+#X obj 247 570 f \$2;
+#X obj 153 550 t b b;
+#X obj 152 597 pack symbol float;
+#X msg 152 623 six \$1 \$2;
+#X obj 152 650 print;
+#X text 41 495 For messages combining more than one creation argument
+try:;
+#X text 47 60 In Object boxes \, dollar signs refer to the abstraction's
+creation arguments. In Messages \, they change dynamically:;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 0;
+#X connect 20 0 23 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 1;
+#X connect 23 0 21 0;
+#X connect 23 1 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X restore 23 408 pd dollarsign2 three 4;
+#X obj 177 44 inlet;
+#X obj 177 71 s \$1-a;
+#X obj 272 72 s \$1-b;
+#X text 242 445 updated for Pd version 0.34;
+#X text 33 7 This is an abstraction used in example 12 \, "locality".
+;
+#X obj 272 47 inlet;
+#X obj 32 249 s \$1-c;
+#X obj 32 279 r \$1-c;
+#X floatatom 32 218 5 0 0 0 - - -;
+#X floatatom 32 307 5 0 0 0 - - -;
+#X obj 134 250 s here's-what-happens-if-you-dont;
+#X obj 133 280 r here's-what-happens-if-you-dont;
+#X floatatom 133 308 5 0 0 0 - - -;
+#X floatatom 134 220 5 0 0 0 - - -;
+#X floatatom 377 224 5 0 0 0 - - -;
+#X floatatom 378 307 5 0 0 0 - - -;
+#X obj 377 251 s \$0-d;
+#X obj 378 281 r \$0-d;
+#X text 17 94 The sends above get named "one-a" \, etc. The window
+title bar tells you the creation arguments for this particular instance.
+You can use this to make internal local connections as shown below.
+The "\$1-c" boxes act locally whereas the middle boxes get crosstalk
+between the windows. The boxes at right also get unique names but in
+this case you don't have to secify "1044" \, it's just something unique.
+;
+#X connect 2 0 3 0;
+#X connect 7 0 4 0;
+#X connect 9 0 11 0;
+#X connect 10 0 8 0;
+#X connect 13 0 14 0;
+#X connect 15 0 12 0;
+#X connect 16 0 18 0;
+#X connect 19 0 17 0;
+#X restore 15 533 pd PPL_PD_INTRO_26_dollarsigns2;
+#N canvas 433 22 810 724 PPL_PD_INTRO_27_array 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array99 100 float 0;
+#X coords 0 1 99 -1 400 300 1;
+#X restore 384 49 graph;
+#X msg 138 315 \; array99 resize \$1;
+#X floatatom 138 282 0 0 0 0 - - -;
+#X floatatom 11 251 0 0 0 0 - - -;
+#X obj 11 285 / 100;
+#X msg 11 315 \; array99 const \$1;
+#X text 12 224 You can send messages to an array object:;
+#X msg 267 314 \; array99 print;
+#X text 54 253 <-- set to a constant value;
+#X text 180 281 resize;
+#X text 268 275 print size;
+#X text 12 478 read a text file;
+#X text 13 549 write a text file;
+#X text 261 550 write a WAV format soundfile;
+#X obj 492 650 tabread;
+#X obj 643 650 tabwrite;
+#X text 10 656 Objects are provided for reading and writing the contents
+of arrays via control messages:;
+#X obj 492 595 tabread4~;
+#X obj 492 620 tabwrite~;
+#X obj 585 595 tabreceive~;
+#X text 483 542 ...and audio signals:;
+#X obj 585 571 tabsend~;
+#X msg 371 391 \; array99 normalize;
+#X msg 372 433 \; array99 normalize 0.5;
+#X text 365 369 normalize to 1 or otherwise;
+#X obj 256 528 soundfiler;
+#X obj 702 572 tabosc4~;
+#X msg 9 393 \; array99 sinesum 64 0.2 0.2 0.2 0.2;
+#X msg 9 435 \; array99 cosinesum 64 0.2 0.2 0.2 0.2;
+#X text 13 369 Fourier synthesis (resizes table);
+#X text 247 475 read a soundfile;
+#X text 591 693 last updated for release 0.34;
+#X obj 563 651 tabread4;
+#X obj 492 569 tabread~;
+#X msg 257 502 read ../sound/voice2.wav array99;
+#X text 9 38 Arrays in Pd provide a unified way to deal with lists
+of numbers \, treating them as either audio samples or for "control"
+uses. To make one \, select "array" on the "new" menu. Dialogs appear
+to help you choose the name \, number of elements \, and various flags.
+;
+#X text 7 125 You can also change the array size using the "resize"
+message shown below. Arrays live in graphs and graphs may hold more
+than one array--however \, graphs containing more than one array won't
+know how to readjust themselves automatically when the arrays are resized.
+;
+#X msg 5 498 \; array99 read 15.file.txt;
+#X obj 16 572 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 16 591 savepanel;
+#X msg 16 614 \; array99 write \$1;
+#X obj 260 568 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 260 587 savepanel;
+#X obj 260 633 soundfiler;
+#X msg 260 610 write \$1 array99;
+#N canvas 269 137 874 634 PPL_PD_INTRO_more_on_arrays 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array99 5 float 0;
+#X array array98 7 float 0;
+#X coords 0 1 5 -1 200 150 1;
+#X restore -5284 60 graph;
+#X text -5613 8 MORE ON ARRAYS;
+#X msg -5731 219 \; array99 rename george;
+#X msg -5527 219 \; george rename array99;
+#X msg -5431 156 \; array99 3 -0.5 0.5;
+#X text -5731 197 renaming an array:;
+#X text -5732 266 setting the bounds rectangle:;
+#X msg -5730 286 \; array99 bounds 0 -2 10 2;
+#X msg -5503 284 \; array99 bounds 0 -1 5 1;
+#X msg -5729 385 \; array99 xticks 0 1 1;
+#X msg -5536 384 \; array99 yticks 0 0.1 5;
+#X text -5733 332 adding x and y labels: give a point to put a tick
+\, the interval between ticks \, and the number of ticks overall per
+large tick.;
+#X msg -5733 462 \; array99 xlabel -1.1 0 1 2 3 4 5;
+#X text -5736 426 adding labels. Give a y value and a bunch of x values
+or vice versa:;
+#X msg -5731 156 \; array98 0 -1 1 -1 1 -1 1 -1 1 -1;
+#X msg -5443 462 \; array99 ylabel 5.15 -1 0 1;
+#X text -5456 596 last updated for release 0.33;
+#X text -5738 29 Arrays have methods to set their values explicitly
+\; to set their "bounds" rectangles \, to rename them (but if you have
+two with the same name this won't necessarily do what you want) and
+to add markings. To set values by message \, send a list whise first
+element gives the index to start at. The second example sets two values
+starting at index three. Indices count up from zero.;
+#X text -5737 512 You can also change x and y range and size in the
+"properties" dialog. Note that information about size and ranges is
+saved \, but ticks \, labels \, and the actual data are lost between
+Pd sessions.;
+#X restore 12 693 pd PPL_PD_INTRO_more_on_arrays;
+#X obj 5 -3 cnv 15 800 30 empty empty arrays 20 12 0 24 -260097 -66577
+0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 34 0 25 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 41 0 42 0;
+#X connect 42 0 44 0;
+#X connect 44 0 43 0;
+#X restore 15 373 pd PPL_PD_INTRO_27_array;
+#N canvas 288 22 677 640 PPL_PD_INTRO_28_sampler_looper 0;
+#X obj 12 -7 cnv 15 650 30 empty empty sampler_looper 20 12 0 24 -260097
+-66577 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array table20 44103 float 0;
+#X coords 0 1.02 44100 -1.02 200 130 1;
+#X restore 440 40 graph;
+#X obj 400 381 loadbang;
+#X obj 29 436 hip~ 5;
+#X floatatom 101 61 0 0 0 0 - - -;
+#X text 140 60 <-- frequency (Hz.);
+#X floatatom 164 128 0 0 0 0 - - -;
+#X obj 164 153 * 441;
+#X obj 66 238 +~ 1;
+#X obj 101 93 phasor~ 0;
+#X msg 187 370 bang;
+#X text 203 127 <-- chunk size (100ths of a second);
+#X text 448 398 v-- re-read the original sample;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array graph20 44100 float 0;
+#X coords 0 44100 44100 0 200 130 1;
+#X restore 442 209 graph;
+#X obj 29 412 *~;
+#X obj 88 299 line~;
+#X obj 117 241 * 441;
+#X floatatom 117 219 0 0 0 0 - - -;
+#X obj 88 275 pack 0 100;
+#X text 152 218 <-- read point in 100ths of a second;
+#X obj 67 347 +~;
+#X text 230 369 <-- graph table index;
+#X obj 88 323 samphold~;
+#X obj 88 190 samphold~;
+#X obj 67 214 *~;
+#X text 452 345 ----- 1 second ------;
+#X text 440 174 ---- 44103 samples ---;
+#X obj 409 442 soundfiler;
+#X text 39 39 SLIDING STABLE LOOPS WITHOUT DOPPLER SHIFT;
+#X msg 400 468 \; graph20 ylabel 48000 0 44100;
+#X obj 29 462 output~;
+#X obj 26 123 -~ 0.5;
+#X obj 26 147 *~ 0.5;
+#X obj 26 170 cos~;
+#X obj 190 394 tabwrite~ graph20;
+#X obj 62 392 tabread4~ table20;
+#X text 28 506 This example differs from the previous one in having
+samphold~ objects which allow the chunk size and especially the read
+point to change only at points where the phase wraps around. This removes
+signal discontinuities (when the chunk size changes) and doppler shift
+when the read point is changing.;
+#X text 487 600 updated for Pd version 0.37;
+#X msg 408 418 read ./sound/voice.wav table20;
+#X obj 273 62 hsl 50 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 329 61 0-1;
+#X connect 2 0 29 0;
+#X connect 2 0 38 0;
+#X connect 3 0 30 0;
+#X connect 3 0 30 1;
+#X connect 4 0 9 0;
+#X connect 6 0 7 0;
+#X connect 7 0 23 0;
+#X connect 8 0 20 0;
+#X connect 9 0 22 1;
+#X connect 9 0 23 1;
+#X connect 9 0 24 0;
+#X connect 9 0 31 0;
+#X connect 10 0 34 0;
+#X connect 14 0 3 0;
+#X connect 15 0 22 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 20 0 34 0;
+#X connect 20 0 35 0;
+#X connect 22 0 20 1;
+#X connect 23 0 24 1;
+#X connect 24 0 8 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 14 0;
+#X connect 35 0 14 1;
+#X connect 38 0 27 0;
+#X connect 39 0 9 0;
+#X restore 15 573 pd PPL_PD_INTRO_28_sampler_looper;
+#N canvas 195 22 986 633 PPL_PD_INTRO_29_envloper_sampler_loop 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array cos-output 44100 float 0;
+#X coords 0 1.02 44100 -1.02 200 130 1;
+#X restore 734 201 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array table18 44103 float 0;
+#X coords 0 1.02 44103 -1.02 200 130 1;
+#X restore 731 26 graph;
+#X obj 594 501 loadbang;
+#X obj 55 259 hip~ 5;
+#X floatatom 56 60 0 0 0 0 - - -;
+#X text 95 59 <-- frequency (Hz.);
+#X floatatom 142 97 0 0 0 0 - - -;
+#X obj 142 124 * 441;
+#X obj 120 173 +~ 1;
+#X text 181 96 <-- chunk size (100ths of a second);
+#X obj 594 414 adc~ 1;
+#X msg 609 439 bang;
+#X text 50 19 ENVELOPING YOUR LOOPING SAMPLER;
+#X obj 55 149 -~ 0.5;
+#X obj 55 199 cos~;
+#X obj 55 232 *~;
+#X obj 594 555 soundfiler;
+#X text 746 158 -- 44103 samples ---;
+#X text 737 332 ----- 1 second ------;
+#X obj 56 87 phasor~;
+#X obj 55 174 *~ 0.5;
+#X obj 54 291 output~;
+#X obj 120 148 *~;
+#X text 38 372 Here we apply an amplitude envelope to protect against
+discontinuities at the loop point. The envelope is just a cosine wave
+from -90 degrees to +90 degrees \, (-pi/2 to pi/2 radians) \, i.e.
+\, the part that is zero or positive in sign. The "cos~" object's input
+is in cycles (units of 2pi radians) so -1/4 to +1/4 addresses the desired
+part of the waveform.;
+#X obj 177 257 tabwrite~ cos-output;
+#X obj 177 233 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 198 230 <-- click to graph envelope;
+#X text 38 486 To see the envelope \, put the phasor on 2 Hz or so
+\, click the "graph" button \, and look at "cos-output." This is multiplied
+by the tabread4~ output so that it doesn't click when the phase wraps
+around.;
+#X text 36 555 It is possible to get much more control over the shape
+of the envelope \, but this will be taken up later.;
+#X obj 120 199 tabread4~ table18;
+#X obj 594 466 tabwrite~ table18;
+#X text 651 440 <-- click here to record to table;
+#X text 685 509 v-- re-read the original sound;
+#X text 718 575 updated for Pd version 0.37;
+#X msg 594 530 read ./sound/voice.wav table18;
+#X obj 27 48 vsl 15 25 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 2 0 34 0;
+#X connect 3 0 21 0;
+#X connect 3 0 21 1;
+#X connect 4 0 19 0;
+#X connect 6 0 7 0;
+#X connect 7 0 22 1;
+#X connect 8 0 29 0;
+#X connect 10 0 30 0;
+#X connect 11 0 30 0;
+#X connect 13 0 20 0;
+#X connect 14 0 15 0;
+#X connect 14 0 24 0;
+#X connect 15 0 3 0;
+#X connect 19 0 13 0;
+#X connect 19 0 22 0;
+#X connect 20 0 14 0;
+#X connect 22 0 8 0;
+#X connect 25 0 24 0;
+#X connect 29 0 15 1;
+#X connect 34 0 16 0;
+#X connect 35 0 19 0;
+#X restore 15 593 pd PPL_PD_INTRO_29_envloper_sampler_loop;
+#X text 213 511 :(;
+#N canvas 357 74 800 459 PPL_PD_INTRO_30_2xwavetable 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array waveform11 259 float 1;
+#A 0 -0.0896033 0 0.807381 0.807381 0.807381 0.807381 0.807381 0.807381
+0.807381 0.807381 0.807381 0.807381 0.807381 0.807381 0.807382 0.809997
+0.812612 0.815228 0.817843 0.820459 0.823074 0.825689 0.828305 0.83092
+0.833536 0.836151 0.838766 0.841382 0.843997 0.846613 0.849228 0.851843
+0.854459 0.855953 0.857448 0.858942 0.860437 0.861931 0.863426 0.86492
+0.866415 0.867909 0.869404 0.870898 0.872393 0.873887 0.875382 0.876876
+0.878371 0.879866 0.88136 0.882855 0.884349 0.885843 0.886526 0.887208
+0.88789 0.888573 0.889255 0.889937 0.890619 0.891302 0.891984 0.892666
+0.893349 0.894031 0.894713 0.895395 0.896078 0.89676 0.897442 0.898125
+0.898807 0.899489 0.900172 0.900854 0.901536 0.901536 0.901536 0.901536
+0.901536 0.901536 0.901536 0.901536 0.901536 0.901536 0.901536 0.901536
+0.901536 0.901536 0.901536 0.901536 0.901536 0.901536 0.901536 0.900415
+0.899294 0.898173 0.897052 0.895931 0.894811 0.89369 0.892569 0.891448
+0.890327 0.889206 0.888085 0.886964 0.885844 0.880613 0.875382 0.870151
+0.86492 0.85969 0.854459 0.849228 0.843997 0.838766 0.833535 0.828305
+0.823074 0.815228 0.807381 0.799535 0.791689 0.783843 0.775996 0.76815
+0.760304 0.748535 0.736765 0.571994 0.573956 0.575917 0.577879 0.579841
+0.581802 0.583764 0.585725 0.587687 0.587687 0.587687 -0.240091 -0.245584
+-0.251076 -0.256568 -0.262061 -0.267553 -0.273045 -0.278538 -0.28403
+-0.289522 -0.295015 -0.300507 -0.306 -0.311492 -0.316984 -0.322477
+-0.328183 -0.333889 -0.339596 -0.345302 -0.351008 -0.356715 -0.362421
+-0.368127 -0.373834 -0.37954 -0.385246 -0.385247 0.735338 0.754597
+0.773856 0.793115 0.812374 0.831633 0.850892 0.870151 0.891336 0.912521
+0.933706 0.954891 0.976075 0.99726 1.01845 1.03963 1.06081 1.082 1.10318
+1.12437 1.14555 1.16674 1.18792 1.20911 1.23029 1.25148 1.27266 1.29385
+1.31739 1.34093 1.36446 1.388 1.41154 1.43508 1.45862 1.48216 1.5057
+1.52924 1.55277 1.57631 1.58573 1.59514 1.60456 1.61397 1.62339 1.62339
+1.6077 1.58416 1.56062 1.5397 1.51877 1.49785 1.456 1.41416 1.37231
+1.32523 1.27816 1.23108 1.19342 1.15575 1.11809 1.08043 1.04277 1.014
+0.985229 0.95646 0.92769 0.898921 0.870151 0.843997 0.817843 0.791689
+0.765535 0.739381 0.713227 0.689688 0.666149 0.64261 0.619072 0.599456
+0.57984 0.560225 0.540609 0.493532 -0.265443 -0.178375 -0.0896226 -1.94061e-05
+0.089584;
+#X coords 0 1.02 258 -1.02 258 130 1;
+#X restore 484 229 graph;
+#X text 40 173 oscillator -->;
+#X text 566 427 updated for Pd version 0.34;
+#X text 43 80 WAVETABLE OSCILLATORS;
+#X text 46 156 wavetable;
+#X text 98 104 pitch->;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array pitch11 259 float 1;
+#A 0 757.143 757.143 735.714 442.857 450 457.143 458.928 460.714 462.5
+464.285 466.326 468.367 470.408 472.449 474.489 476.53 478.571 480
+481.428 482.857 484.285 485.714 487.142 488.571 490 491.428 492.857
+500.649 514.934 529.22 545.887 562.553 579.22 588.403 597.587 606.771
+615.954 625.138 634.322 643.505 654.219 664.934 675.648 686.362 697.076
+707.791 718.505 729.219 739.933 750.648 768.505 786.362 797.076 807.79
+829.219 400.649 419.697 438.744 457.792 473.506 489.22 504.934 520.649
+536.363 550.649 564.934 579.22 593.505 605.41 617.315 629.22 636.362
+643.505 650.648 657.791 664.934 668.505 672.077 675.648 679.219 679.219
+679.219 679.219 679.219 672.077 664.934 657.791 650.648 643.505 636.362
+629.22 622.077 614.934 607.791 597.791 587.791 577.791 567.791 557.791
+550.649 543.506 536.363 529.22 525.649 522.077 524.458 526.839 529.22
+539.934 550.649 554.22 557.791 572.077 572.077 593.505 622.077 664.934
+707.791 734.576 761.362 788.147 814.933 843.504 872.076 900.647 919.694
+938.742 957.789 976.837 995.884 1036.36 1043.5 1043.5 1043.5 1022.07
+1000.65 992.313 983.98 975.647 967.313 958.98 950.646 937.789 924.932
+912.075 899.218 886.361 873.266 860.171 847.076 833.98 820.885 807.79
+797.076 786.362 775.647 764.933 754.219 743.505 732.791 722.076 712.076
+702.076 692.076 682.076 672.077 664.934 657.791 650.648 643.505 636.362
+631.005 625.648 620.291 614.934 613.505 612.077 610.648 609.22 607.791
+607.791 607.791 607.791 607.791 607.791 614.934 622.077 629.22 636.362
+643.505 656.362 669.219 682.077 694.934 707.791 723.862 739.933 756.005
+772.076 784.576 797.076 809.576 822.076 843.504 864.933 872.076 879.218
+886.361 907.79 911.361 914.932 929.218 929.218 378.572 373.214 367.857
+362.5 357.143 350 342.857 335.715 328.572 326.191 323.81 321.429 321.429
+321.429 321.429 321.429 321.429 321.429 321.429 321.429 321.429 321.429
+326.191 330.953 335.715 342.857 350 357.143 367.857 378.572 385.714
+392.857 407.143 421.428 435.714 450 464.285 478.571 485.714 492.857
+500 507.142 514.285 526.19 538.095 714.284;
+#X coords 0 1000 258 0 259 140 1;
+#X restore 484 76 graph;
+#X obj 174 137 tabosc4~ pitch11;
+#X obj 174 173 tabosc4~ waveform11;
+#X obj 174 105 sig~ 0.5;
+#X text 23 369 Here's a tabosc4~ controlling the frequency of another
+one. If you get properties on the two arrays \, you'll see that the
+top graph has a vertical scale from 0 to 1000 \; we're looping through
+that at a frequency of 0.5 Hz. and the output is used as the frequency
+input of the second tabosc4~. I've detected Klingons \, Captain Kirk...
+;
+#X obj 174 256 output~;
+#X obj 15 13 cnv 15 777 30 empty empty 2x_wavetable 20 12 0 24 -260097
+-66577 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 8 0 11 1;
+#X connect 9 0 7 0;
+#X restore 15 633 pd PPL_PD_INTRO_30_2xwavetable;
+#N canvas 485 22 700 585 PPL_PD_INTRO_31_analogue_synth_sequencer 0
+;
+#N canvas 0 22 450 366 (subpatch) 0;
+#X array 29-sequence 9 float 1;
+#A 0 155 200 225 80 115 150 40 60 150;
+#X coords 0 500 8 0 200 100 1;
+#X restore 472 88 graph;
+#X obj 27 456 *~;
+#X obj 27 484 hip~ 5;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array 29-envelope 103 float 1;
+#A 0 0.777777 0.787777 0.797777 0.805777 0.813777 0.821777 0.829777
+0.837777 0.844027 0.167778 0.227777 0.297777 0.342777 0.387777 0.412777
+0.437777 0.482777 0.527777 0.545277 0.562777 0.580277 0.597777 0.610277
+0.622777 0.635277 0.647777 0.657777 0.667777 0.672777 0.677777 0.682777
+0.687777 0.687777 0.687777 0.687777 0.682777 0.677777 0.647777 0.635277
+0.622777 0.610277 0.597777 0.582777 0.617777 0.597777 0.267777 0.237777
+0.197778 0.177778 0.167778 0.157778 0.157778 0.157778 0.157778 0.162778
+0.167778 0.167778 0.197778 0.202778 0.207778 0.217777 0.227777 0.247777
+0.257777 0.267777 0.297777 0.317777 0.347777 0.367777 0.387777 0.417777
+0.457777 0.487777 0.507777 0.527777 0.541111 0.554444 0.567777 0.582777
+0.597777 0.607777 0.617777 0.624444 0.63111 0.637777 0.64111 0.644444
+0.647777 0.657777 0.667777 0.677777 0.687777 0.694444 0.70111 0.707777
+0.287777 0.287777 0.287777 0.277777 0.277777 0.277777 0.267777 0.267777
+;
+#X coords 0 1 102 0 200 100 1;
+#X restore 472 206 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array 29-sample 259 float 1;
+#A 0 -0.890963 -0.750963 -0.735963 -0.720963 -0.705963 -0.690963 -0.670963
+-0.650963 -0.630963 -0.610963 -0.590963 -0.570963 -0.550963 -0.524297
+-0.49763 -0.470963 -0.460963 -0.450963 -0.440964 -0.0709639 -0.0576305
+-0.0442972 -0.0309639 0.00903606 0.049036 0.069036 0.089036 0.129036
+0.169036 0.209036 0.249036 0.329036 0.969035 0.969035 0.969035 0.969035
+-0.870963 -0.880963 -0.890963 -0.900963 -0.910963 -0.91763 -0.924296
+-0.930963 -0.93763 -0.944296 -0.950963 -0.956677 -0.962392 -0.968106
+-0.97382 -0.979535 -0.985249 -0.990963 -0.993185 -0.995407 -0.99763
+-0.999852 -1.00207 -1.0043 -1.00652 -1.00874 -1.01096 -1.01896 -1.02696
+-1.03496 -1.04296 -1.05096 -1.05096 -1.05096 -1.05096 -1.05096 -1.05096
+-1.05896 -1.06696 -1.07496 -1.08296 -1.09096 -1.09096 -1.09096 -1.09096
+-1.09096 -1.09096 -1.09096 -1.09096 -1.09096 -1.11096 -1.11763 -1.1243
+-1.13096 -1.13096 -1.13096 -1.13096 -1.13096 -1.13096 -1.13096 -1.13096
+-1.13096 -1.13096 -1.07096 -0.960963 -0.910963 -0.790963 -0.754963
+-0.718963 -0.682963 -0.646963 -0.610963 -0.57763 -0.544297 -0.510963
+-0.47763 -0.444297 -0.410964 -0.37763 -0.344297 -0.310964 -0.27763
+-0.244297 -0.210964 -0.17763 -0.144297 -0.110964 -0.0855093 -0.0600548
+-0.0346003 -0.00914574 0.0163088 0.0417633 0.0672178 0.0926723 0.118127
+0.143581 0.169036 0.193651 0.218267 0.242882 0.267497 0.292113 0.316728
+0.341343 0.365959 0.390574 0.415189 0.439805 0.46442 0.489035 0.512112
+0.535189 -0.321733 -0.321733 -0.321733 -0.321733 -0.321733 -0.321733
+-0.321733 -0.321733 -0.321733 -0.321733 -0.321733 -0.321733 -0.321733
+-0.321733 -0.316733 -0.311733 -0.306733 -0.301733 -0.301733 -0.301733
+-0.301733 -0.301733 -0.301733 -0.301733 -0.301733 -0.301733 -0.301733
+-0.301733 -0.301733 -0.301733 -0.301733 -0.301733 -0.301733 -0.315066
+-0.3284 -0.341733 -0.381733 -0.395066 -0.408399 -0.461733 -0.501733
+-0.521733 -0.355964 -0.390964 -0.414964 -0.438964 -0.462964 -0.486964
+-0.510963 -0.525963 -0.540963 -0.555963 -0.570963 -0.585963 -0.600963
+-0.615963 -0.630963 -0.645963 -0.660963 -0.675963 -0.690963 -0.705963
+-0.720963 -0.735963 -0.750963 -0.764297 -0.77763 -0.790963 -0.804296
+-0.81763 -0.830963 -0.840963 -0.850963 -0.860963 -0.870963 -0.880963
+-0.890963 -0.900963 -0.910963 -0.920963 -0.930963 -0.940963 -0.950963
+-0.963463 -0.975963 -0.988463 -1.00096 -1.01346 -1.02596 -1.03846 -1.05096
+-1.0643 -1.07763 -1.09096 -1.1043 -1.11763 -1.13096 -1.14296 -1.15496
+-1.16696 -1.17896 -1.19096 -1.19896 -1.20696 -1.21496 -1.22296 -1.23096
+-1.23763 -1.2443 -1.25096;
+#X coords 0 1 258 -1 200 100 1;
+#X restore 469 341 graph;
+#X text 496 513 updated for Pd version 0.37;
+#X obj 26 248 tabread~ 29-sequence;
+#X obj 106 271 wrap~;
+#X obj 106 295 *~ 100;
+#X obj 106 319 +~ 1;
+#X obj 26 272 phasor~;
+#X obj 26 296 -~ 0.5;
+#X obj 27 407 cos~;
+#X obj 84 366 *~;
+#X obj 28 518 output~;
+#X obj 84 438 tabread4~ 29-sample;
+#X obj 106 343 tabread4~ 29-envelope;
+#X obj 84 390 *~ 128;
+#X obj 84 414 +~ 129;
+#X obj 27 431 +~ 1;
+#X obj 26 224 *~ 9;
+#N canvas 531 156 609 424 make-tables 0;
+#X msg 109 52 bang;
+#X obj 109 77 t b b;
+#X obj 152 134 f;
+#X obj 190 134 + 1;
+#X msg 174 106 0;
+#X obj 109 103 until;
+#X obj 152 162 t f f;
+#X obj 27 190 moses 10;
+#X obj 18 272 tabwrite 29-envelope;
+#X obj 75 159 sel 102;
+#X obj 23 218 expr ($f1-1)/10;
+#X obj 35 243 expr (101-$f1)/90;
+#X msg 120 380 \; 29-sample cosinesum 256 0 0 0 0 0 0 1;
+#X msg 120 338 \; 29-sequence 0 55 550 385 495 165 385 495 275 615
+;
+#X text 30 8 bang to recalculate the envelope table (I did this but
+then went in and changed it with the mouse afterward.);
+#X text 84 299 The sequence is just a list of specified frequencies
+\; the wavetable is a cosine.;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 1;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 1;
+#X connect 7 0 10 0;
+#X connect 7 1 11 0;
+#X connect 9 0 5 1;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X restore 539 461 pd make-tables;
+#X obj 26 200 phasor~ 0.6;
+#X text 97 224 main loop: sawtooth of amplitude 9;
+#X text 218 249 read frequency sequence;
+#X text 162 271 9x original frequency sawtooth;
+#X text 173 296 adjust for reading;
+#X text 346 296 envelope sample;
+#X text 123 366 multiply envelope by audio-frequency sawtooth;
+#X text 147 391 adjust amplitude and center for wavetable;
+#X text 62 458 multiply by raised-cosine smoothing function;
+#X text 328 461 how to make the tables:;
+#X text 27 57 Some control operations can be carried out entirely by
+tilde objects passing audio signals around. Here is an imitation of
+an analog sequencer and envelope generator. A phasor~ loops through
+the "sequence" table at 0.6 Hz \, generating 9 frequencies. Simultaneously
+\, by multiplying by 9 and wrapping \, we create a sawtooth at 9*0.6=5.4
+Hz \, which reads a second table for an envelope shape. This becomes
+the grain size for a sampler based on the 18.sampler.looped example
+earlier.;
+#X text 481 53 --- DRAW ON THESE SUCKAZ ---;
+#X obj 15 13 cnv 15 666 30 empty empty ANALOG-SYNTH-STYLE_SEQUENCER
+20 12 0 24 -260097 -66577 0;
+#X connect 1 0 2 0;
+#X connect 2 0 14 0;
+#X connect 2 0 14 1;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 17 0;
+#X connect 15 0 1 1;
+#X connect 16 0 13 1;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 19 0 1 0;
+#X connect 20 0 6 0;
+#X connect 20 0 7 0;
+#X connect 22 0 20 0;
+#X restore 15 653 pd PPL_PD_INTRO_31_analogue_synth_sequencer;
+#N canvas 220 22 791 730 PPL_PD_INTRO_32_one_shot_sampler 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array tab28 176403 float 0;
+#X coords 0 1.02 176403 -1.02 200 130 1;
+#X restore 569 68 graph;
+#X obj 430 496 loadbang;
+#X obj 24 350 hip~ 5;
+#X obj 440 355 adc~ 1;
+#X obj 440 385 hip~ 5;
+#X msg 411 316 bang;
+#X text 534 502 v-- re-read the original sample;
+#X obj 24 316 *~;
+#X obj 64 289 r cutoff;
+#X obj 24 204 r phase;
+#X msg 17 47 bang;
+#X obj 117 102 delay 5;
+#X text 70 47 <-- play the sample;
+#X msg 17 138 \; cutoff 0 5;
+#X text 27 95 cut the;
+#X text 27 114 sound off;
+#X text 197 87 Wait for the;
+#X text 195 107 cutoff to finish;
+#X text 342 131 set the upper line~ to start;
+#X text 342 150 at the first sample and go;
+#X text 341 171 forever (until the next trigger);
+#X text 11 476 To start a note \, first we have to mute the output
+in case ther's already something playing---otherwise we'll get a click.
+The "cutoff" line~ then takes 5 msec to get to zero. After that amount
+of delay \, we reset the phase to sample number 1 and set it in motion.
+We want the line~ output to increase by 1 each sample of output \,
+so we ask for it to do 4.41e+08 samples in 1e+07 milliseconds.;
+#X text 11 592 The cutoff mechanism is still safe if we happen to ask
+for two notes in under 5 msec. The second request would reset the delay
+\, so that there's no way the delay can possibly fire without the cutoff
+line~ at zero.;
+#X text 449 315 <-- record;
+#X obj 475 415 line~;
+#X obj 440 420 *~;
+#X obj 508 352 del 3990;
+#X msg 508 380 0 10;
+#X text 559 381 <--stop recording;
+#X text 12 662 We avoid clicking at the end of the table by getting
+the table's own contents to go smoothly to zero. To do this we added
+a level control to the recording patch that cuts off just before the
+recording reaches the end of the table.;
+#X text 429 609 this is.;
+#X text 431 585 My apologies to Jonathan Harvey whose bell;
+#X obj 430 555 soundfiler;
+#X text 12 433 Here's how to make a sampler with a line~ object \,
+instead of a phasor~ \, to generate the read location signal.;
+#X obj 64 316 vline~;
+#X obj 23 379 output~;
+#X obj 24 234 vline~;
+#X obj 411 449 tabwrite~ tab28;
+#X obj 24 264 tabread4~ tab28;
+#X msg 117 137 \; phase 1 \, 4.41e+08 1e+07 \; cutoff 1;
+#X msg 350 396 0 \, 1 5;
+#X text 606 692 updated for Pd version 0.37;
+#X msg 430 526 read ./sound/bell.aiff tab28;
+#X obj 5 3 cnv 15 777 30 empty empty ONE-SHOT_SAMPLER_USING_LINE~_AS_PHASE
+20 12 0 24 -260097 -66577 0;
+#X text 567 209 -------- 4 second buffer --------;
+#X connect 1 0 42 0;
+#X connect 2 0 35 0;
+#X connect 2 0 35 1;
+#X connect 3 0 4 0;
+#X connect 4 0 25 0;
+#X connect 5 0 26 0;
+#X connect 5 0 40 0;
+#X connect 5 0 37 0;
+#X connect 7 0 2 0;
+#X connect 8 0 34 0;
+#X connect 9 0 36 0;
+#X connect 10 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 39 0;
+#X connect 24 0 25 1;
+#X connect 25 0 37 0;
+#X connect 26 0 27 0;
+#X connect 27 0 24 0;
+#X connect 34 0 7 1;
+#X connect 36 0 38 0;
+#X connect 38 0 7 0;
+#X connect 40 0 24 0;
+#X connect 42 0 32 0;
+#X restore 15 613 pd PPL_PD_INTRO_32_one_shot_sampler;
+#N canvas 521 90 420 442 PPL_PD_INTRO_32_zipper_noise_issue 0;
+#X obj 22 265 output~;
+#X text 212 292 updated for Pd version 0.37;
+#X obj 23 237 *~;
+#X obj 105 266 output~;
+#X obj 106 238 *~;
+#X obj 45 178 line;
+#X obj 129 178 line~;
+#N canvas 0 22 450 300 metro 0;
+#X obj 88 39 loadbang;
+#X msg 87 65 1;
+#X obj 87 96 metro 500;
+#X obj 87 131 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+;
+#X obj 87 153 sel 0 1;
+#X obj 87 190 outlet;
+#X obj 151 192 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X restore 45 86 pd metro;
+#X obj 45 114 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 112 115 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 45 135 1 300;
+#X msg 112 137 0 300;
+#X obj 52 206 osc~ 880;
+#X text 10 -56 Here is a related issue: if we use a (control) line
+object to change an amplitude \, it sends ramping control messages
+\, once every 20 msec by default. At left we use this to control the
+amplitude of a sinusoid. In effect we're multiplying the sinusoid by
+a staircase signal (50 increments per second.) Using the signal version
+\, line~ \, fixes the problem. Line~ outputs a ramp that is incremented
+every sample.;
+#X obj 9 -97 cnv 15 400 30 empty empty ZIPPER_NOISE 20 12 0 24 -260097
+-66577 0;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 2 1;
+#X connect 6 0 4 1;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 5 0;
+#X connect 10 0 6 0;
+#X connect 11 0 5 0;
+#X connect 11 0 6 0;
+#X connect 12 0 2 0;
+#X connect 12 0 4 0;
+#X restore 16 673 pd PPL_PD_INTRO_32_zipper_noise_issue;
+#N canvas 423 22 414 660 PPL_PD_INTRO_33_nyquist 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array table24 259 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1.02 258 -1.02 258 130 1;
+#X restore 91 342 graph;
+#X obj 31 222 line~;
+#X msg 31 171 500 \, 1423 4000;
+#X floatatom 39 196 5 0 0 0 - - -;
+#X text 21 490 Synthesis techniques vary in their tendency to make
+foldover. For higher pitched sounds you'll want to try out relatively
+folvover-resistant ones.;
+#X obj 31 276 output~;
+#X obj 199 215 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 618 384 make-tab 0;
+#X obj 13 28 inlet;
+#X obj 99 28 inlet;
+#X obj 183 28 inlet;
+#X obj 255 29 inlet;
+#X msg 38 176 \; table24 sinesum 256 1 1 1 1 0 0 0 0 1 0 0 0 0 0 0
+1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 \, normalize
+0.4;
+#X msg 14 277 \; table24 sinesum 256 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 \, normalize
+0.2;
+#X msg 183 101 \; table24 const 0 \, 0 1 1 1 1 1;
+#X msg 255 58 \; table24 const 0;
+#X connect 0 0 5 0;
+#X connect 1 0 4 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X restore 199 289 pd make-tab;
+#X obj 230 234 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 261 251 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 293 268 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 220 210 sine;
+#X text 250 231 complex;
+#X text 282 248 rectangle;
+#X text 311 266 clear;
+#X obj 31 249 tabosc4~ table24;
+#X text 28 -33 WARNING: PLAY THIS QUIETLY TO AVOID UNPLEASANTNESS AND
+POSSIBLE EAR DAMAGE.;
+#X text 27 11 Foldover occurs when you synthesize frequencies greater
+than the Nyquist frequency (half the sample rate). In this example
+\, the fundamental only reaches 1423 \, but the tables contain high
+partials. As the partials sweep upward you hear them reflect off the
+Nyquist frequency. Also \, partials can come into contact with each
+other causing beating. The value of 1423 was chosen to make the beating
+effect especially strong if you're running at a sample rate of 44100
+(the usual one.);
+#X text 231 554 updated for Pd version 0.37;
+#X text 217 179 waveforms:;
+#X obj 8 -73 cnv 15 400 30 empty empty NYQUIST_THEOREM_&_FOLDOVER 20
+12 0 24 -260097 -66577 0;
+#X connect 1 0 15 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 6 0 7 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 2;
+#X connect 10 0 7 3;
+#X connect 15 0 5 0;
+#X connect 15 0 5 1;
+#X restore 17 695 pd PPL_PD_INTRO_33_nyquist;
+#N canvas 522 22 620 649 PPL_PD_INTRO_34_pulsing_between_several_osc
+0;
+#X obj 371 222 output~;
+#X obj 372 188 +~;
+#X text 417 552 updated for Pd version 0.40.;
+#X obj 32 120 +~;
+#X obj 277 115 +~;
+#X obj 277 62 osc~ 440;
+#X obj 32 67 osc~ 330;
+#X obj 53 91 osc~ 330.2;
+#X obj 298 85 osc~ 440.33;
+#X obj 472 112 +~;
+#X obj 473 62 osc~ 587;
+#X obj 494 85 osc~ 587.25;
+#X obj 163 157 +~;
+#X text 113 290 In each of the three pairs of oscillators above \,
+the two frequencies are within 1/3 Hz or closer (for example \, the
+leftmost ones are close to 330 Hz but separated by 1/5 Hz.) The result
+is a gradual change in amplitude as the phases of the two slip against
+each other. This is called beating. More complex beating pattenrs may
+be made by using three or more oscillators. Also their amplitudes need
+not be equal (as they are here).;
+#X text 111 417 They are all summed using "+~" boxes. They could have
+been summed in any order ("+~" is commutative for practical purposes)
+but here they are added in pairs to emphasize the relationships between
+them.;
+#X text 110 484 In contrast to the previous example \, the oscillators
+are not tuned to the overtone series (ratios 1:2:3:4...) and so the
+frequencies 330 \, 440 \, and 587 are heard separately.;
+#X obj 8 -63 cnv 15 600 30 empty empty Pulsing_between_closely_tuned_sinusoids
+20 12 0 24 -260097 -66577 0;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 3 0 12 0;
+#X connect 4 0 12 1;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 1;
+#X connect 8 0 4 1;
+#X connect 9 0 1 1;
+#X connect 10 0 9 0;
+#X connect 11 0 9 1;
+#X connect 12 0 1 0;
+#X restore 18 714 pd PPL_PD_INTRO_34_pulsing_between_several_osc;
+#N canvas 395 98 640 481 PPL_PD_INTRO_24_building_waveforms 0;
+#X obj 15 15 cnv 15 610 30 empty empty building_waveforms_with_sines
+20 12 0 24 -260097 -66577 0;
+#X obj 555 22 pddp/dsp;
+#X obj 457 383 output~;
+#X obj 62 229 sixteen_harmonics wavetable;
+#X obj 497 248 random 64;
+#X obj 497 272 + 32;
+#X obj 497 295 mtof;
+#X msg 398 198 bang;
+#X obj 469 346 *~;
+#X obj 497 319 tabosc4~ wavetable;
+#X obj 430 115 cnv 15 100 60 empty empty empty 20 12 0 14 -241291 -66577
+0;
+#X obj 436 135 vsl 10 32 0 1 0 1 \$0-a \$0-a a 0 -8 0 8 -262144 -1
+-1 3100 0;
+#X obj 449 135 vsl 10 32 0 1 0 1 \$0-d \$0-d d 0 -8 0 8 -262144 -1
+-1 2900 0;
+#X obj 462 135 vsl 10 32 0 1 0 1 \$0-s \$0-s s 0 -8 0 8 -262144 -1
+-1 3100 0;
+#X obj 475 135 vsl 10 32 0 1 0 1 \$0-r \$0-r r 0 -8 0 8 -262144 -1
+-1 3100 0;
+#N canvas 95 141 435 501 env 0;
+#X obj 29 5 inlet;
+#X obj 29 457 outlet~;
+#X obj 29 423 vline~;
+#X msg 29 203 0 \, 1 \$1;
+#X msg 224 375 0 \$1;
+#X obj 254 307 * 500;
+#X obj 59 71 * 500;
+#X obj 100 253 pack;
+#X obj 224 240 random 1000;
+#X msg 100 274 \$2 \$1;
+#X obj 129 148 * 500;
+#X obj 100 189 max 10;
+#X obj 29 114 max 10;
+#X obj 224 352 max 10;
+#X obj 29 25 bang;
+#X obj 129 126 receive \$0-d;
+#X obj 59 50 receive \$0-a;
+#X obj 223 218 delay;
+#X obj 254 287 receive \$0-r;
+#X obj 224 331 float;
+#X obj 224 261 delay;
+#X obj 29 92 float;
+#X obj 46 139 delay;
+#X obj 100 170 float;
+#X obj 122 231 receive \$0-s;
+#X connect 0 0 14 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 19 1;
+#X connect 6 0 21 1;
+#X connect 7 0 9 0;
+#X connect 8 0 20 0;
+#X connect 9 0 2 0;
+#X connect 10 0 23 1;
+#X connect 11 0 7 0;
+#X connect 11 0 17 0;
+#X connect 12 0 3 0;
+#X connect 12 0 22 0;
+#X connect 13 0 4 0;
+#X connect 14 0 21 0;
+#X connect 15 0 10 0;
+#X connect 16 0 6 0;
+#X connect 17 0 8 0;
+#X connect 18 0 5 0;
+#X connect 19 0 13 0;
+#X connect 20 0 19 0;
+#X connect 21 0 12 0;
+#X connect 22 0 23 0;
+#X connect 23 0 11 0;
+#X connect 24 0 7 1;
+#X restore 397 313 pd env;
+#X text 48 155 To start with \, we have something close to a square
+wave;
+#X text 45 72 Any waveform can be contructed using sine waves. This
+patch allows you to construct a waveform using harmonics.;
+#X obj 398 221 trigger bang bang;
+#X text 37 383 You can make a triangle wave by setting each harmonic
+to an amplitude that is the inverse of the harmonic number. That means
+for harmonic 2 \, set the slider to an amplitude of 1/2 \, or halfway
+in the middle. For harmonic 3 \, set it at 1/3 \, harmonic 4 \, set
+to 1/4 \, and so on...;
+#X obj 419 249 hsl 66 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 416 276 t b f;
+#X obj 551 179 metro 1000;
+#X obj 551 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 576 155 hsl 35 15 0 10000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 18 0;
+#X connect 8 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 8 1;
+#X connect 15 0 8 0;
+#X connect 18 0 15 0;
+#X connect 18 1 4 0;
+#X connect 20 0 21 0;
+#X connect 21 0 15 0;
+#X connect 21 1 6 0;
+#X connect 22 0 20 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 1;
+#X restore 15 493 pd PPL_PD_INTRO_24_building_waveforms;
+#N canvas 403 22 591 489 PPL_PD_INTRO_35_sequencing_glist 0;
+#X obj 5 7 cnv 15 575 30 empty empty sequencing_with_glist 20 12 0
+24 -260097 -66577 0;
+#X text 415 454 updated for Pd version 0.26;
+#X text 25 40 You can use "qlist" or "textfile" objects for sequencing.
+Qlist is simpler to use than the (more versatile) textfile.;
+#X obj 335 156 r receive1;
+#X obj 431 158 r receive2;
+#X msg 195 100 clear \, add receive1 1 \, add 1000 receive1 0 \, add
+receive2 2 \, add 1000 receive2 0 \, add receive1 3 \, bang;
+#X obj 195 141 qlist;
+#X floatatom 335 182 0 0 0 0 - - -;
+#X floatatom 431 183 0 0 0 0 - - -;
+#X text 38 214 The "add" messages add lines to the qlist \, so that
+it contains:;
+#X text 145 245 receive1 1;
+#X text 144 266 1000 receive1 0;
+#X text 145 286 receive2 2;
+#X text 143 306 1000 receive2 0;
+#X text 145 324 receive1 3;
+#X text 36 403 If you have more than 5 lines or so wou will probably
+want to store them as a separate file and have qlist read it. You can
+also write files \, set tempo \, and single step... see the help patch
+for details.;
+#X text 38 353 and the "bang" instructs qlist to play the sequence
+by sending messages to "receive" objects. Messages starting with numbers
+request that amount of delay.;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X restore 14 553 pd PPL_PD_INTRO_35_sequencing_glist;

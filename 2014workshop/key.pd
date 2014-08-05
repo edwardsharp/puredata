@@ -1,0 +1,4 @@
+#N canvas 636 22 450 300 10;
+#X obj 103 49 key;
+#X obj 134 48 keyup;
+#X obj 177 45 keyname;
