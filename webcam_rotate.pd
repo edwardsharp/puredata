@@ -51,20 +51,20 @@
 #X obj 770 94 cup;
 #X obj 771 59 metro 300;
 #X obj 861 -39 vsl 15 128 0.1 5000 0 0 empty empty empty 0 -9 0 10
--262144 -1 -1 6900 1;
+-262144 -1 -1 12200 1;
 #X obj 770 128 % 2;
 #X msg 853 310 360 \$1;
 #X obj 682 353 nbx 10 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0
-10 -262144 -1 -1 326.003 256;
+10 -262144 -1 -1 338.778 256;
 #X obj 770 153 moses 1;
 #X obj 776 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 804 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 855 274 hsl 128 15 0 10000 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 6900 1;
+-262144 -1 -1 12200 1;
 #X obj 784 215 hsl 128 15 0 5000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6900 1;
+-1 -1 12200 1;
 #X obj 815 377 == 360;
 #X obj 875 389 moses 1;
 #X obj 866 158 * 2;
@@ -100,12 +100,12 @@
 #X connect 29 0 30 0;
 #X connect 29 1 31 0;
 #X connect 30 0 33 0;
-#X connect 30 0 54 0;
 #X connect 31 0 32 0;
 #X connect 32 0 27 0;
 #X connect 33 0 26 0;
 #X connect 36 0 43 0;
 #X connect 36 0 49 0;
+#X connect 36 0 10 3;
 #X connect 37 0 39 0;
 #X connect 38 0 41 0;
 #X connect 39 0 38 0;
@@ -114,7 +114,6 @@
 #X connect 40 0 51 0;
 #X connect 41 0 44 0;
 #X connect 42 0 36 0;
-#X connect 43 0 10 3;
 #X connect 44 0 45 0;
 #X connect 44 1 46 0;
 #X connect 46 0 47 0;
