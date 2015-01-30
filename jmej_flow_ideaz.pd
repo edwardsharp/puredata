@@ -1,0 +1,28 @@
+#N canvas 160 23 742 405 10;
+#X obj 37 23 list;
+#X obj 19 57 key;
+#X obj 47 57 keyname;
+#X msg 312 90 Vowel sounds on;
+#X msg 152 90 Vowel sounds off;
+#X msg 152 54 Listen for command;
+#X msg 152 19 MIC INPUT;
+#X msg 152 112 Listen for "set";
+#X msg 152 134 Listen for bank name (ex. "vca");
+#X msg 152 156 Listen for bank number;
+#X msg 152 178 Listen for value;
+#X msg 312 111 Process/match 2 & 1 letter vowel sounds via fiddle~
+;
+#X floatatom 31 135 3 0 0 0 - - -;
+#X obj 31 109 keyname;
+#X symbolatom 75 136 10 0 0 0 - - -;
+#X msg 32 184;
+#X connect 3 0 11 0;
+#X connect 4 0 7 0;
+#X connect 5 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 13 0 12 0;
+#X connect 13 1 14 0;
