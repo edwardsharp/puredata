@@ -1,0 +1,28 @@
+#N canvas 545 317 646 313 10;
+#X floatatom 127 229 0 0 0 0 - - -;
+#X text 161 230 <--- number of open connections;
+#X obj 10 229 print tcp;
+#X text 144 137 creation arguments:;
+#X text 212 156 optional -u flag for UDP;
+#X text 212 175 optional -b flag for binary;
+#X text 211 196 optional port number;
+#X msg 10 65 listen 0;
+#X text 120 41 listen message to set or change port;
+#X text 116 66 (0 or negative number to close);
+#X msg 31 114 send foo \$1;
+#X floatatom 31 91 0 0 0 0 - - -;
+#X text 68 91 "send" (for TCP connections only) sends back to connected
+netreceive objects, f 76;
+#X msg 10 39 listen 5000;
+#X obj 10 141 netreceive 5000;
+#X obj 460 179 print udp;
+#X obj 460 151 netreceive -u 5000;
+#X msg 570 60 listen 5000;
+#X connect 7 0 14 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 2 0;
+#X connect 14 1 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;

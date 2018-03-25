@@ -1,0 +1,44 @@
+#N canvas 429 23 800 629 10;
+#X obj 177 317 qlist;
+#X msg 223 99 rewind;
+#X msg 222 124 next;
+#X floatatom 177 371 0 0 0 0 - - -;
+#X msg 224 43 bang;
+#X obj 191 345 print done;
+#X msg 224 69 tempo 1;
+#X text 299 37 sequence automatically;
+#X text 301 68 set relative tempo;
+#X text 299 94 go to beginning (and stop);
+#X text 299 121 single-step forward;
+#X text 344 262 read a file;
+#X text 408 289 write one;
+#X text 183 393 This outlet gets a list of leading numbers for the
+next message \, for you to use in designing your own sequencer.;
+#X msg 217 263 read qlist.txt;
+#X msg 217 289 write /tmp/qlist.txt;
+#X msg 220 179 clear;
+#X msg 220 205 add 500 this is another message;
+#X msg 221 231 add2 that;
+#X text 297 176 empty the qlist;
+#X text 513 206 add a message to a qlist;
+#X text 314 229 add a message to a qlist but don't terminate it;
+#X text 264 330 This outlet gets a bang when you hit the end of the
+sequence. In the file "qlist.txt" the end is delayed 1000 milliseconds
+after the last message.;
+#X text 299 147 single-step forward SUPRESSING MESSAGE-SENDING;
+#X msg 222 150 next 1;
+#X msg 224 18 print;
+#X text 298 17 print contents to Pd window;
+#X connect 0 0 3 0;
+#X connect 0 1 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 0 0;
+#X connect 24 0 0 0;
+#X connect 25 0 0 0;

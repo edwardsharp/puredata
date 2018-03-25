@@ -1,0 +1,47 @@
+#N canvas 540 201 675 464 10;
+#X obj 74 99 shell;
+#X obj 201 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 201 71 metro 500;
+#X obj 201 103 random 127;
+#X obj 224 133 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 187 182 list;
+#X obj 460 135 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X text 455 113 clear;
+#X obj 416 179 t l;
+#X obj 299 173 list prepend;
+#X obj 357 216 print list;
+#X obj 149 139 print STDOUT;
+#X symbolatom 54 209 10 0 0 0 - - -, f 10;
+#X symbolatom 95 284 10 0 0 0 - - -, f 10;
+#X floatatom 13 210 5 0 0 0 - - -, f 5;
+#X floatatom 154 230 5 0 0 0 - - -, f 5;
+#X symbolatom 64 230 10 0 0 0 - - -, f 10;
+#X floatatom 23 231 5 0 0 0 - - -, f 5;
+#X symbolatom 74 250 10 0 0 0 - - -, f 10;
+#X floatatom 33 251 5 0 0 0 - - -, f 5;
+#X msg 49 -6 /Users/edward/Desktop/count.sh \$1;
+#X obj 11 178 unpack f s f s f s;
+#X msg 48 -34 a b a c d e f d g a f g g b b;
+#X obj 139 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 426 37 zexy;
+#X connect 0 0 11 0;
+#X connect 0 0 21 0;
+#X connect 0 1 23 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 9 0;
+#X connect 6 0 9 1;
+#X connect 8 0 9 1;
+#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 20 0 0 0;
+#X connect 21 0 14 0;
+#X connect 21 1 12 0;
+#X connect 21 2 17 0;
+#X connect 21 3 16 0;
+#X connect 22 0 20 0;

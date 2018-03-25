@@ -1,0 +1,115 @@
+#N canvas 226 23 541 531 10;
+#X obj 42 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 1;
+#X obj 60 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 127;
+#X obj 78 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 1;
+#X obj 96 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 127;
+#X obj 114 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 1;
+#X obj 132 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 127;
+#X obj 150 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 1;
+#X obj 168 202 tgl 15 0 empty empty empty 17 7 0 10 -232576 -159808
+-1 0 127;
+#X obj 39 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 58 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 76 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 94 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 112 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 130 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 148 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 167 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -117 243 spigot;
+#X obj -107 253 spigot;
+#X obj -97 263 spigot;
+#X obj -87 273 spigot;
+#X obj -77 283 spigot;
+#X obj -67 293 spigot;
+#X obj -57 303 spigot;
+#X obj -47 313 spigot;
+#X obj 15 37 tgl 15 0 empty empty empty 17 7 0 10 -232576 -1 -1 0 1
+;
+#X obj 45 37 tgl 15 0 empty empty empty 17 7 0 10 -232576 -1 -1 0 127
+;
+#X obj 77 37 tgl 15 0 empty empty empty 17 7 0 10 -232576 -1 -1 0 127
+;
+#X obj 109 37 tgl 15 0 empty empty empty 17 7 0 10 -232576 -1 -1 0
+1;
+#X text 15 37 1x;
+#X text 45 37 2x;
+#X text 77 37 3x;
+#X text 109 37 4x;
+#X obj 15 65 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -232576
+-1 -1 0 1;
+#X text 7 202 f_lck;
+#X obj -146 481 outlet;
+#X obj -106 481 outlet;
+#X obj -66 481 outlet;
+#X obj -26 481 outlet;
+#X obj 14 481 outlet;
+#X obj 54 481 outlet;
+#X obj 94 481 outlet;
+#X obj 134 481 outlet;
+#X text -140 22 graph on parent size;
+#X text -142 37 x:320 y:200;
+#X connect 0 0 16 1;
+#X connect 1 0 17 1;
+#X connect 2 0 18 1;
+#X connect 3 0 19 1;
+#X connect 4 0 20 1;
+#X connect 5 0 21 1;
+#X connect 6 0 22 1;
+#X connect 7 0 23 1;
+#X connect 8 0 34 0;
+#X connect 9 0 35 0;
+#X connect 10 0 36 0;
+#X connect 11 0 37 0;
+#X connect 12 0 38 0;
+#X connect 13 0 39 0;
+#X connect 14 0 40 0;
+#X connect 15 0 41 0;
+#X connect 16 0 8 0;
+#X connect 17 0 9 0;
+#X connect 18 0 10 0;
+#X connect 19 0 11 0;
+#X connect 20 0 12 0;
+#X connect 21 0 13 0;
+#X connect 22 0 14 0;
+#X connect 23 0 15 0;
+#X connect 24 0 0 0;
+#X connect 24 0 1 0;
+#X connect 24 0 2 0;
+#X connect 24 0 3 0;
+#X connect 24 0 4 0;
+#X connect 24 0 5 0;
+#X connect 24 0 6 0;
+#X connect 24 0 7 0;
+#X connect 25 0 1 0;
+#X connect 25 0 3 0;
+#X connect 25 0 5 0;
+#X connect 25 0 7 0;
+#X connect 26 0 2 0;
+#X connect 26 0 5 0;
+#X connect 27 0 3 0;
+#X connect 27 0 7 0;
+#X connect 32 0 16 0;
+#X connect 32 0 17 0;
+#X connect 32 0 18 0;
+#X connect 32 0 19 0;
+#X connect 32 0 20 0;
+#X connect 32 0 21 0;
+#X connect 32 0 22 0;
+#X connect 32 0 23 0;
+#X coords 0 -1 1 1 320 200 1 10 20;

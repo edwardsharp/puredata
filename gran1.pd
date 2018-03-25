@@ -1,14 +1,14 @@
-#N canvas 195 22 1011 518 10;
+#N canvas 265 23 1011 518 10;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array sample 8.33453e+06 float 2;
-#X coords 0 1 8.33453e+06 -1 750 140 1 0 0;
+#X array sample 2.75491e+07 float 2;
+#X coords 0 1 2.75491e+07 -1 750 140 1 0 0;
 #X restore 44 42 graph;
 #X obj 118 347 dac~;
 #X obj 66 312 tabplay~ sample;
 #X obj 69 291 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 47 187 hsl 750 15 0 8.33453e+06 0 0 pos pos empty -2 -8 0 10
--262144 -1 -1 0 1;
+#X obj 47 187 hsl 750 15 0 2.75491e+07 0 0 pos pos empty -2 -8 0 10
+-262144 -1 -1 37600 1;
 #N canvas 14 53 450 300 load 0;
 #X obj 32 72 soundfiler;
 #X msg 32 52 read -resize holger.wav sample;
@@ -53,15 +53,15 @@
 #X connect 19 0 0 0;
 #X restore 741 20 pd load;
 #X obj 47 204 hsl 750 15 0 194574 0 0 empty endpos empty -2 -8 0 10
--262144 -1 -1 8488 1;
-#X obj 289 249 nbx 9 14 0 8.33453e+06 0 0 pos pos empty 0 -8 0 10 -262144
--1 -1 0 256;
+-262144 -1 -1 74900 1;
+#X obj 289 249 nbx 9 14 0 2.75491e+07 0 0 pos pos empty 0 -8 0 10 -262144
+-1 -1 1.38297e+07 256;
 #X text 288 299 grain length (ms);
 #X obj 176 253 bng 25 250 50 0 trig empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 288 335 speed;
 #X obj 290 283 nbx 9 14 -1e+37 1e+37 0 0 empty endpos empty 0 -8 0
-10 -262144 -1 -1 22050 256;
+10 -262144 -1 -1 1.43137e+07 256;
 #X text 288 267 end position;
 #N canvas 519 26 571 500 playback 0;
 #X obj 68 362 vline~;
@@ -180,15 +180,15 @@
 #X connect 31 2 11 0;
 #X connect 32 0 2 1;
 #X restore 182 313 pd playback;
-#X obj 290 317 nbx 5 14 1 500 0 0 grainsize grainsize empty 0 -8 0
-10 -262144 -1 -1 500 256;
+#X obj 290 317 nbx 5 14 1 10999 0 0 grainsize grainsize empty 0 -8
+0 10 -262144 -1 -1 10974 256;
 #X obj 216 254 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 168 225 play;
 #X text 285 230 start position;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array grain 22050 float 0;
-#X coords 0 1 22049 -1 250 100 1 0 0;
+#X array grain 483953 float 0;
+#X coords 0 1 483952 -1 250 100 1 0 0;
 #X restore 520 245 graph;
 #N canvas 531 257 639 483 showgrain 0;
 #X obj 110 342 tabplay~ sample;
@@ -231,9 +231,9 @@
 #X connect 16 0 5 0;
 #X restore 519 350 pd showgrain;
 #X obj 290 351 nbx 5 14 0.2 3 0 0 speed speed empty 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 0.942857 256;
 #X obj 293 368 hsl 50 10 0.2 3 0 0 speed speed empty -2 -8 0 10 -262144
--1 -1 1400 1;
+-1 -1 1300 1;
 #X text 168 236 grain;
 #X text 213 225 loop;
 #X text 212 236 grain;

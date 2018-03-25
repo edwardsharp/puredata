@@ -1,0 +1,66 @@
+#N canvas 987 23 293 346 10;
+#X obj 15 272 sendOSC;
+#X msg 33 150 disconnect;
+#X msg 74 218 send /nextText 0;
+#X obj 210 209 adc~;
+#X obj 189 256 env~;
+#X obj 194 61 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 40.8561 256;
+#X obj 138 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 164 311 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 74.3817 256;
+#X msg 79 240 send /randText 0;
+#X msg 45 172 send /sel1/ \$1;
+#X msg 35 192 send /sel2/ \$1;
+#X obj 129 44 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 129 26 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 217 167 + 1;
+#X obj 173 281 moses 70;
+#X obj 101 305 spigot;
+#X obj 12 60 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 12 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 12 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 96 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 94 25 sel1;
+#X text 93 42 sel2;
+#X text 155 60 test;
+#X text 113 60 out;
+#X text 32 58 env out;
+#X text 31 25 osc conn;
+#X text 30 41 osc diss;
+#X msg 15 124 connect localhost 11000;
+#X obj 134 187 r pd303b_main_mod;
+#X obj 224 251 dac~;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 0 29 0;
+#X connect 3 0 29 1;
+#X connect 3 1 4 0;
+#X connect 3 1 29 0;
+#X connect 3 1 29 1;
+#X connect 4 0 5 0;
+#X connect 4 0 14 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 1 6 0;
+#X connect 14 1 7 0;
+#X connect 14 1 15 0;
+#X connect 15 0 19 0;
+#X connect 15 0 8 0;
+#X connect 16 0 15 1;
+#X connect 17 0 27 0;
+#X connect 18 0 1 0;
+#X connect 27 0 0 0;
+#X coords 0 -1 1 1 240 68 1 10 10;

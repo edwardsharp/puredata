@@ -1,0 +1,37 @@
+#N canvas 114 379 504 237 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-draw_envelope 100 float 0;
+#X coords 0 1 99 0 200 100 1 0 0;
+#X restore 15 60 graph;
+#X obj 229 175 outlet~;
+#X obj 137 45 tgl 15 0 empty empty io 0 -8 0 10 -33289 -262144 -1 1
+1;
+#X obj 161 46 nbx 5 14 1 1e+37 0 0 empty grate rate 0 -8 0 10 -33289
+-262144 -1 32 256;
+#X obj 229 6 loadbang;
+#X obj 229 82 f;
+#X obj 267 81 + 1;
+#X obj 85 6 inlet;
+#X obj 140 6 inlet;
+#X obj 229 104 % 100;
+#X obj 229 60 metro 10;
+#X msg 229 29 10;
+#X obj 303 153 snapshot~;
+#X obj 303 175 outlet;
+#X obj 229 126 tabread~ \$0-draw_envelope;
+#X connect 2 0 10 0;
+#X connect 3 0 10 1;
+#X connect 4 0 11 0;
+#X connect 5 0 6 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 1;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 14 0;
+#X connect 10 0 5 0;
+#X connect 10 0 12 0;
+#X connect 11 0 3 0;
+#X connect 12 0 13 0;
+#X connect 14 0 1 0;
+#X connect 14 0 12 0;
+#X coords 0 -1 1 1 200 130 1 15 30;
