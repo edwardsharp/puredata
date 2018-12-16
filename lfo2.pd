@@ -1,11 +1,11 @@
-#N canvas 116 204 236 408 10;
+#N canvas 213 207 236 431 10;
 #X obj 21 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -33289 -262144
 -1;
 #X obj 21 46 tgl 15 0 empty empty empty 17 7 0 10 -33289 -262144 -1
-0 1;
+1 1;
 #X obj 7 179 metro 1000;
 #X obj 41 47 nbx 5 14 1 1e+37 0 0 empty empty empty 0 -8 0 10 -33289
--262144 -1 1000 256;
+-262144 -1 1000 256 0;
 #X obj 121 5 loadbang;
 #X msg 121 30 1000;
 #X obj 7 253 sel 1;
@@ -22,7 +22,7 @@
 #X obj 18 134 hsl 80 20 1 10000 0 0 line_off empty line_off -2 -8 0
 10 -33289 -262144 -1 0 1;
 #X obj 18 99 hsl 80 20 1 10000 0 0 line_on empty line_on -2 -8 0 10
--33289 -262144 -1 2800 1;
+-33289 -262144 -1 0 1;
 #X obj 7 302 pack f f;
 #X msg 7 279 1;
 #X msg 85 277 0;
@@ -57,4 +57,4 @@
 #X connect 20 0 21 0;
 #X connect 21 0 15 0;
 #X connect 24 0 23 0;
-#X coords 0 -1 1 1 85 130 1 15 30;
+#X coords 0 -1 1 1 90 130 1 15 30;

@@ -41,14 +41,14 @@
 #X obj 20 380 outlet~;
 #X msg 636 181 2;
 #X obj 18 82 hsl 80 25 0 127 0 0 empty empty _freq -2 -8 0 10 -33289
--262144 -1 3476 1;
-#X obj 18 121 hsl 80 25 0 200 0 0 empty empty _rez -2 -8 0 10 -33289
 -262144 -1 0 1;
+#X obj 18 121 hsl 80 25 0 200 0 0 empty empty _rez -2 -8 0 10 -33289
+-262144 -1 4977 1;
 #X obj 62 162 bng 15 250 50 0 empty empty rst 17 7 0 10 -262144 -1
 -1;
 #X obj 492 9 inlet;
 #X obj 573 6 inlet;
-#X obj 18 184 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 18 184 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 40 185 bypass;
 #X obj 633 5 inlet;
@@ -78,6 +78,7 @@
 #X connect 32 0 0 0;
 #X connect 33 0 1 2;
 #X connect 34 0 35 0;
+#X connect 34 0 46 0;
 #X connect 35 0 4 0;
 #X connect 36 0 1 0;
 #X connect 36 0 52 0;
@@ -96,4 +97,4 @@
 #X connect 50 0 49 1;
 #X connect 51 0 52 1;
 #X connect 52 0 39 0;
-#X coords 0 -1 1 1 85 155 1 15 50;
+#X coords 0 -1 1 1 90 155 1 15 50;
